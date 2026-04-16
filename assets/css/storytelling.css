@@ -1,0 +1,281 @@
+/* ===== MODULAR STORYTELLING DESIGN SYSTEM ===== */
+/* This file contains styles ONLY for project case studies */
+
+.dashboard-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(189, 147, 249, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(139, 233, 253, 0.05) 0%, transparent 50%);
+  opacity: 0.8;
+}
+
+.dashboard-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.details {
+  position: fixed;
+  top: 25%;
+  left: 8%;
+  width: 50%;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.details .text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.details .title-1,
+.details .title-2 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.details .title-2 {
+  opacity: 0.15;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+  color: transparent;
+  margin-top: -10px;
+}
+
+.details .desc {
+  margin-top: 3.5rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--color-text-dim);
+  max-width: 600px;
+  font-weight: 300;
+}
+
+/* FOOTER UI (BOTTOM LEFT) */
+.dashboard-footer {
+    position: fixed;
+    bottom: 8%;
+    left: 8%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pagination-text {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-text-dim);
+    letter-spacing: 4px;
+}
+
+.pagination-text span { color: #fff; font-weight: 700; }
+
+.progress-container {
+    width: 200px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent-glow);
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.discover-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: transform 0.3s;
+}
+
+.discover-btn:hover { transform: translateX(10px); }
+.discover-btn svg { width: 40px; height: auto; stroke-width: 1.5; }
+
+/* STORY CANVAS - CHAPTER BASED LAYOUT */
+.story-canvas {
+  position: relative;
+  z-index: 200;
+  margin-top: 100vh;
+  background: #000;
+  padding: 120px 5%;
+}
+
+.story-container { 
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.story-intro {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.story-chapter {
+    margin-bottom: 12rem; /* Large gap between chapters */
+}
+
+.story-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 4rem;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.story-chapter-body {
+    column-count: 2;
+    column-gap: 5rem;
+    text-align: justify;
+}
+
+/* TECH GRID (STATIC) */
+.tech-grid {
+    column-span: all;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 5rem;
+    padding: 3rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s;
+}
+
+.tech-item:hover { transform: translateY(-5px); }
+
+.tech-item img {
+    height: 45px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.tech-item:hover img { opacity: 1; filter: none; }
+
+.tech-item span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-text-dim);
+    letter-spacing: 2px;
+}
+
+.story-paragraph strong { color: #fff; font-weight: 600; }
+
+/* CARDS NAVIGATION (BOTTOM RIGHT) */
+#demo {
+  position: fixed;
+  bottom: 8%;
+  right: 5%;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+  flex-direction: row-reverse;
+}
+
+.card {
+  width: 240px;
+  height: 160px;
+  background: #0a0b10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.card.active { border-color: var(--color-accent); transform: translateY(-10px); }
+
+.card-img-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    filter: grayscale(80%) brightness(0.6);
+    transition: 0.5s;
+}
+
+.card.active .card-img-bg { opacity: 0.7; filter: grayscale(0%) brightness(0.8); }
+
+.card-content-overlay {
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.content-place { font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.content-title-1 { font-size: 1rem; font-weight: 800; color: #fff; text-transform: uppercase; line-height: 1.2; }
+
+.scroll-hint { position: fixed; bottom: 8%; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 0.65rem; color: rgba(255,255,255,0.2); z-index: 100; }
+
+.scrolled-past .details, .scrolled-past #demo, .scrolled-past .dashboard-footer { opacity: 0; pointer-events: none; transition: opacity 0.5s; }
+
+.back-btn { position: fixed; top: 2.5rem; left: 2.5rem; z-index: 100; text-decoration: none; color: var(--color-text-dim); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 2px; }
+
+@media (max-width: 900px) {
+    .story-chapter-body { column-count: 1; text-align: left; }
+    .details { width: 90%; top: 15%; }
+    .dashboard-footer { display: none; }
+}

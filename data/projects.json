@@ -1,0 +1,38 @@
+[
+    {
+        "id": "macropulse",
+        "title": "Macropulse",
+        "subtitle": "Inteligência Macroeconômica",
+        "image": "assets/images/macropulse.jpg",
+        "tags": ["Python", "FastAPI", "Redis"],
+        "url": "projetos/macropulse.html",
+        "featured": true
+    },
+    {
+        "id": "churn",
+        "title": "Churn Analysis",
+        "subtitle": "ML Pipeline with XGBoost",
+        "image": "assets/images/churn.jpg",
+        "tags": ["XGBoost", "Streamlit"],
+        "url": "projetos/streaming-churn.html",
+        "featured": false
+    },
+    {
+        "id": "spacex",
+        "title": "SpaceX ETL",
+        "subtitle": "Data Pipeline Automation",
+        "image": "exemples/Animated Image Gallery/3.jpg",
+        "tags": ["Python", "Pandas"],
+        "url": "https://github.com/RicsonRamos/pipeline_etl_spacex",
+        "featured": false
+    },
+    {
+        "id": "smtp",
+        "title": "Email SMTP",
+        "subtitle": "Messaging Microservice",
+        "image": "exemples/Animated Image Gallery/4.jpg",
+        "tags": ["SMTP", "Python"],
+        "url": "https://github.com/RicsonRamos/remetente_de_email_smtp",
+        "featured": false
+    }
+]

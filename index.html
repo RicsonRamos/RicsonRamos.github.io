@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="snap-active">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricson Ramos | Data Engineer Portfolio</title>
+    <meta name="description"
+        content="Engenheiro de Dados e Desenvolvedor Python. Automação, ETL e inteligência de dados com foco em performance.">
+
+    <!-- Dependencies -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/core.js"></script>
+    <script src="assets/js/pages/home.js"></script>
+</head>
+
+<body class="dracula">
+
+    <!-- Header / Nav with Active Indicator -->
+    <header class="container sticky-nav">
+        <div class="nav-wrapper"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div class="logo">
+                <!-- Injected by main.js -->
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li class="nav-item active"><button data-section="hero">Home</button></li>
+                    <li class="nav-item"><button data-section="projects">Projects</button></li>
+                    <li class="nav-item"><button data-section="experience">Experience</button></li>
+                    <li class="nav-item"><button data-section="contact">Contact</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Dynamic Hero Section -->
+        <section id="hero" class="container text-center">
+            <div class="reveal">
+                <span class="hero-prefix"><!-- Injected --></span>
+                <h1 style="font-size: 5.5rem; letter-spacing: -3px; margin-bottom: 2rem;">
+                    <!-- Injected -->
+                </h1>
+
+                <p class="hero-instruction"><!-- Injected --></p>
+
+                <!-- Technology Marquee (Kept static for layout stability) -->
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="Python">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fastapi.svg" alt="FastAPI">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="Docker">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg" alt="PostgreSQL">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redis.svg" alt="Redis">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pandas.svg" alt="Pandas">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apacheairflow.svg" alt="Airflow">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachespark.svg" alt="Spark">
+                        <!-- Duplicates for loop -->
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="Python">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fastapi.svg" alt="FastAPI">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="Docker">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg" alt="PostgreSQL">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redis.svg" alt="Redis">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pandas.svg" alt="Pandas">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apacheairflow.svg" alt="Airflow">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachespark.svg" alt="Spark">
+                    </div>
+                </div>
+
+                <div class="cta-group" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 4rem;">
+                    <a href="#contact" class="btn outline-btn"
+                        style="padding: 0.6rem 1.8rem; font-size: 0.85rem;">Contact Me</a>
+                    <a href="#" class="btn glow-btn" style="padding: 0.6rem 1.8rem; font-size: 0.85rem;"
+                        id="github-cta">Github</a>
+                </div>
+            </div>
+
+            <div class="scroll-hook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Dynamic Project Gallery -->
+        <section id="projects" class="container section-padding">
+            <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
+                <span class="text-upper">Recent Work</span>
+                <h2 style="font-size: 3.5rem;">Selected Projects</h2>
+            </div>
+
+            <div class="animated-gallery reveal">
+                <!-- Content Injected from projects.json -->
+            </div>
+
+            <div class="scroll-hook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Dynamic Experience Section -->
+        <section id="experience" class="container section-padding">
+            <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
+                <span class="text-upper">Professional Path</span>
+                <h2 style="font-size: 3.5rem;">Experience</h2>
+            </div>
+
+            <div class="experience-container reveal">
+                <!-- Timeline Nodes Injected -->
+                <div class="timeline-h"></div>
+
+                <!-- Interactive IDE Window -->
+                <div class="ide-window" style="margin-top: 2rem;">
+                    <div class="ide-tab-bar">
+                        <!-- Tabs Injected -->
+                    </div>
+                    <div class="ide-code-container">
+                        <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6</div>
+                        <div class="code-field"><code id="ide-content"></code></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Dynamic Contact Section -->
+        <section id="contact" class="container section-padding text-center">
+            <div class="reveal">
+                <span class="text-upper">Status: Available</span>
+                <h2 style="font-size: 5rem; margin-bottom: 3rem;">Let's Connect</h2>
+                <div class="contact-links" style="display: flex; gap: 3rem; justify-content: center;">
+                    <!-- Links Injected -->
+                </div>
+
+                <!-- UFO Abduction (Animação Identica ao Exemplo 8) -->
+                <div id="ufo-trigger" class="ufo-abduction-container">
+                    <div class="ufo-head"></div>
+                    <div class="ufo-beam"></div>
+                    <div class="ufo-btn">
+                        <span class="word-sub">Sub</span>
+                        <span class="word-mit">mit</span>
+                        <span class="word-thanks">Abduction Complete // Thank You</span>
+                    </div>
+                </div>
+
+                <script>
+                    const ufoObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('active');
+                                setTimeout(() => entry.target.classList.add('triggered'), 1000);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    ufoObserver.observe(document.getElementById('ufo-trigger'));
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container text-center" style="padding: var(--space-lg) 0; opacity: 0.5;">
+        <p class="text-upper">© 2024 Ricson Ramos // Built with Speed & Intent</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
