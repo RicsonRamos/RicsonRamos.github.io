@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title | Case Study</title>
-    <!-- GLOBAL THEME -->
+    <title>Obsidian AI | Case Study</title>
     <link rel="stylesheet" href="../../assets/css/main.css">
-    <!-- PROJECT SPECIFIC STYLES -->
     <link rel="stylesheet" href="../../assets/css/storytelling.css">
 </head>
 
@@ -26,7 +24,10 @@
                 </a>
             </div>
             <nav id="main-nav">
-                <ul>
+                <button id="nav-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-list">
                     <li class="nav-item"><a href="../../index.html#hero" data-section="hero">Home</a></li>
                     <li class="nav-item"><a href="../../index.html#projects" data-section="projects">Projects</a></li>
                     <li class="nav-item"><a href="../../index.html#experience" data-section="experience">Experience</a></li>
@@ -37,10 +38,9 @@
         </div>
     </header>
 
-    <!-- GLOBAL COMPONENTS -->
     <a href="../../index.html" class="back-btn">← TERMINAL // EXIT_PROJECT</a>
 
-    <!-- MAIN NARRATIVE AREA (Project Dashboard) -->
+    <!-- MAIN NARRATIVE AREA -->
     <div id="narrative-layer">
         <div class="details" id="details-even">
             <span class="text">PHASE</span>
@@ -59,17 +59,18 @@
     <!-- UI COMPONENTS (Pagination, Bar, Arrow - Injected by JS) -->
     <div class="dashboard-footer"></div>
 
-    <!-- MODULAR STORYTELLING CANVAS (Paragraphs) -->
+    <!-- MODULAR STORYTELLING CANVAS -->
     <section class="story-canvas" id="story-canvas"></section>
 
-    <!-- CARDS NAVIGATION (Injected by JS) -->
+    <!-- NAVIGATION SNIPPETS -->
     <div id="demo"></div>
 
-    <!-- CORE LOGIC -->
+    <!-- Core Logic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../../assets/js/data.js"></script>
     <script src="../../assets/js/core.js"></script>
-    <script src="./story.js"></script> <!-- MODULAR DATA UNIQUE TO PROJECT -->
-    <script src="../../assets/js/pages/case-study.js"></script> <!-- PROJECT ENGINE -->
+    <script src="./story.js"></script>
+    <script src="../../assets/js/pages/case-study.js"></script>
 </body>
 </html>
+

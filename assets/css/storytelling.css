@@ -270,12 +270,62 @@
 
 .scroll-hint { position: fixed; bottom: 8%; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 0.65rem; color: rgba(255,255,255,0.2); z-index: 100; }
 
-.scrolled-past .details, .scrolled-past #demo, .scrolled-past .dashboard-footer { opacity: 0; pointer-events: none; transition: opacity 0.5s; }
+.scrolled-past .details, .scrolled-past #demo, .scrolled-past .dashboard-footer { opacity: 0; pointer-events: auto; transition: opacity 0.5s; }
 
-.back-btn { position: fixed; top: 2.5rem; left: 2.5rem; z-index: 100; text-decoration: none; color: var(--color-text-dim); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 2px; }
+.back-btn { position: fixed; top: 1.5rem; left: 2.5rem; z-index: 1100; text-decoration: none; color: var(--color-text-dim); font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 2px; }
+
+/* Force nav bar visibility on project pages */
+.sticky-nav {
+    position: fixed !important;
+    width: 100%;
+    z-index: 1050;
+}
+
+.nav-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
 
 @media (max-width: 900px) {
     .story-chapter-body { column-count: 1; text-align: left; }
-    .details { width: 90%; top: 15%; }
+    .details { width: 90%; left: 5%; top: 12%; }
+    .details .title-1, .details .title-2 { font-size: clamp(2rem, 8vw, 4rem); }
+    .details .desc { font-size: 0.95rem; margin-top: 2rem; }
     .dashboard-footer { display: none; }
+    #demo { display: none; }
+    .back-btn { font-size: 0.6rem; letter-spacing: 1px; top: 1rem; left: 1rem; }
+    .sticky-nav { padding: 0.5rem 0; }
+    .story-canvas { padding: 80px 5% 60px; }
+    .story-title { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+    .tech-grid { gap: 1.5rem; padding: 1.5rem; }
+    .tech-item img { height: 30px; }
+
+    /* Hamburger overlay inside case study pages */
+    #nav-list {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        z-index: 1100;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    #nav-list.open { display: flex; }
+    #nav-toggle { display: flex; z-index: 1200; }
+    #nav-list .nav-item a { font-size: 1.4rem; font-weight: 700; }
+}
+
+@media (max-width: 480px) {
+    .details { top: 8%; }
+    .details .title-1, .details .title-2 { font-size: clamp(1.8rem, 9vw, 3rem); }
+    .scroll-hint { display: none; }
 }

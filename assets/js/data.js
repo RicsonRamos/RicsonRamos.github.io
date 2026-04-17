@@ -34,24 +34,42 @@ const PortfolioData = {
             image: "assets/images/churn.jpg",
             tags: ["XGBoost", "Streamlit"],
             url: "projetos/churn/index.html",
+            featured: true
+        },
+        {
+            id: "sales-forecasting",
+            title: "Sales Forecasting",
+            subtitle: "Performance Analytics Dashboard",
+            image: "exemples/Animated Image Gallery/3.jpg",
+            tags: ["Python", "Pandas", "Scikit-Learn"],
+            url: "projetos/sales-forecasting/index.html",
+            featured: false
+        },
+        {
+            id: "obsidian-ai",
+            title: "Obsidian AI",
+            subtitle: "Knowledge Graph Intelligence",
+            image: "exemples/Animated Image Gallery/4.jpg",
+            tags: ["Python", "OpenAI", "RAG"],
+            url: "projetos/obsidian-ai/index.html",
             featured: false
         },
         {
             id: "spacex",
             title: "SpaceX ETL",
             subtitle: "Data Pipeline Automation",
-            image: "exemples/Animated Image Gallery/3.jpg",
-            tags: ["Python", "Pandas"],
-            url: "https://github.com/RicsonRamos/pipeline_etl_spacex",
+            image: "exemples/Animated Image Gallery/1.jpg",
+            tags: ["Python", "Apache Airflow"],
+            url: "projetos/spacex/index.html",
             featured: false
         },
         {
             id: "smtp",
             title: "Email SMTP",
             subtitle: "Messaging Microservice",
-            image: "exemples/Animated Image Gallery/4.jpg",
-            tags: ["SMTP", "Python"],
-            url: "https://github.com/RicsonRamos/remetente_de_email_smtp",
+            image: "exemples/Animated Image Gallery/2.jpg",
+            tags: ["SMTP", "Python", "Docker"],
+            url: "projetos/smtp/index.html",
             featured: false
         }
     ],

@@ -23,14 +23,20 @@
         <div class="nav-wrapper"
             style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <div class="logo">
-                <!-- Injected by main.js -->
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <!-- Injected by core.js -->
+                </a>
             </div>
             <nav id="main-nav">
-                <ul>
-                    <li class="nav-item active"><button data-section="hero">Home</button></li>
-                    <li class="nav-item"><button data-section="projects">Projects</button></li>
-                    <li class="nav-item"><button data-section="experience">Experience</button></li>
-                    <li class="nav-item"><button data-section="contact">Contact</button></li>
+                <button id="nav-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-list">
+                    <li class="nav-item active"><a href="#hero" data-section="hero">Home</a></li>
+                    <li class="nav-item"><a href="#projects" data-section="projects">Projects</a></li>
+                    <li class="nav-item"><a href="#experience" data-section="experience">Experience</a></li>
+                    <li class="nav-item"><a href="#contact" data-section="contact">Contact</a></li>
+                    <li class="nav-item"><a href="https://github.com/RicsonRamos/RicsonRamos" target="_blank">Sobre</a></li>
                 </ul>
             </nav>
         </div>
@@ -172,7 +178,6 @@
         <p class="text-upper">© 2024 Ricson Ramos // Built with Speed & Intent</p>
     </footer>
 
-    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

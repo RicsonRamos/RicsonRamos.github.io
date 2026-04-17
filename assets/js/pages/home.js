@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="badges">
                         ${p.tags.map(tag => `<span>${tag}</span>`).join('')}
                     </div>
+                    <div class="project-cta">Ver Projeto →</div>
                 </div>
             </div>
         `).join('');
