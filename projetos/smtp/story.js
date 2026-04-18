@@ -1,6 +1,8 @@
 /* ===== SMTP EMAIL SENDER - MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "smtp",
+    github: "https://github.com/RicsonRamos/SMTP-Sender",
+
     title: "SMTP Email Sender",
     storyline: [
         {

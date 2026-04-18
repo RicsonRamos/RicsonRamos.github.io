@@ -1,6 +1,8 @@
 /* ===== SPACEX ETL PIPELINE - MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "spacex",
+    github: "https://github.com/RicsonRamos/SpaceX-ETL",
+
     title: "SpaceX ETL Pipeline",
     storyline: [
         {

@@ -76,7 +76,7 @@
 /* FOOTER UI (BOTTOM LEFT) */
 .dashboard-footer {
   position: fixed;
-  bottom: 8%;
+  bottom: 5%;
   left: 8%;
   z-index: 100;
   display: flex;
@@ -147,11 +147,21 @@
   margin-top: 100vh;
   background: #000;
   padding: 120px 5%;
+  bottom: 5%;
 }
 
 .story-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.story-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1.5rem;
 }
 
 .story-intro {
@@ -160,10 +170,42 @@
   font-size: 0.8rem;
   letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 5rem;
-  text-align: center;
   opacity: 0.5;
 }
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  transition: all 0.3s var(--transition-smooth);
+  background: rgba(189, 147, 249, 0.1);
+  box-shadow: 0 0 10px rgba(189, 147, 249, 0.2);
+}
+
+.github-btn img {
+  height: 14px;
+  filter: brightness(1);
+}
+
+.github-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  box-shadow: 0 0 20px var(--color-accent-glow);
+}
+
+.github-btn:hover img {
+  filter: brightness(0);
+}
+
+
 
 .story-chapter {
   margin-bottom: 12rem;
@@ -292,6 +334,7 @@
   text-align: center;
   padding: 1rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  bottom: 10%;
 }
 
 .content-place {
@@ -313,12 +356,15 @@
 
 .scroll-hint {
   position: fixed;
-  bottom: 8%;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
+
   font-family: var(--font-mono);
   font-size: 0.65rem;
+  letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.2);
+
   z-index: 100;
 }
 
@@ -424,7 +470,4 @@
     font-size: clamp(1.8rem, 9vw, 3rem);
   }
 
-  .scroll-hint {
-    display: none;
-  }
 }

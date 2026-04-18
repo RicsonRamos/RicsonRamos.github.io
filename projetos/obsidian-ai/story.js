@@ -1,6 +1,8 @@
 /* ===== OBSIDIAN AI - MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "obsidian-ai",
+    github: "https://github.com/RicsonRamos/obsidian-ai",
+
     title: "Obsidian AI — Second Brain",
     storyline: [
         {

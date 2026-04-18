@@ -1,6 +1,8 @@
 /* ===== SALES FORECASTING - MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "sales-forecasting",
+    github: "https://github.com/RicsonRamos/Sales-Forecasting",
+
     title: "Sales Forecasting & Analytics",
     storyline: [
         {

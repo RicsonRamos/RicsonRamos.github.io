@@ -2,9 +2,9 @@ const PortfolioData = {
     config: {
         name: "Ricson Ramos",
         role: "Data Engineer / Python Specialist",
-        email: "contato@exemplo.com",
+        email: "ricsonramos@outlook.com",
         social: {
-            linkedin: "https://linkedin.com/in/ricson-ramos",
+            linkedin: "https://www.linkedin.com/in/ricsonramos/",
             github: "https://github.com/RicsonRamos"
         },
         hero: {
@@ -25,6 +25,7 @@ const PortfolioData = {
             image: "assets/images/macropulse.jpg",
             tags: ["Python", "FastAPI", "Redis"],
             url: "projetos/macropulse/index.html",
+            github: "https://github.com/RicsonRamos/MacroPulse",
             featured: true
         },
         {
@@ -34,6 +35,7 @@ const PortfolioData = {
             image: "assets/images/churn.jpg",
             tags: ["XGBoost", "Streamlit"],
             url: "projetos/churn/index.html",
+            github: "https://github.com/RicsonRamos/Churn-Analysis",
             featured: true
         },
         {
@@ -43,6 +45,7 @@ const PortfolioData = {
             image: "assets/images/salesforecasting.png",
             tags: ["Python", "Pandas", "Scikit-Learn"],
             url: "projetos/sales-forecasting/index.html",
+            github: "https://github.com/RicsonRamos/sales-forecasting-and-performance-analytics",
             featured: false
         },
         {
@@ -52,6 +55,7 @@ const PortfolioData = {
             image: "assets/images/obsidianai.png",
             tags: ["Python", "OpenAI", "RAG"],
             url: "projetos/obsidian-ai/index.html",
+            github: "https://github.com/RicsonRamos/obsidian-ai",
             featured: false
         },
         {
@@ -61,6 +65,7 @@ const PortfolioData = {
             image: "assets/images/spacexetl.jpg",
             tags: ["Python", "Apache Airflow"],
             url: "projetos/spacex/index.html",
+            github: "https://github.com/RicsonRamos/spacex_etl_pipeline",
             featured: false
         },
         {
@@ -70,9 +75,11 @@ const PortfolioData = {
             image: "assets/images/smtpsender.png",
             tags: ["SMTP", "Python", "Docker"],
             url: "projetos/smtp/index.html",
+            github: "https://github.com/RicsonRamos/smtp_email_sender",
             featured: false
         }
     ],
+
     experience: [
         {
             id: "job-4",

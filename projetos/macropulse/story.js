@@ -1,6 +1,8 @@
 /* ===== MACROPULSE MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "macropulse",
+    github: "https://github.com/RicsonRamos/MacroPulse",
+
     title: "MacroPulse Intelligence",
     storyline: [
         {
@@ -44,7 +46,7 @@ const ProjectContent = {
             title: "Tech Stack",
             paragraphs: [
                 "Abaixo, apresentamos as tecnologias fundamentais que transformaram a latência de minutos em milissegundos, permitindo uma análise preditiva real em tempo de execução.",
-                "O uso de conteinerização com **Docker** permitiu a escalabilidade horizontal de nossos pipelines de coleta de dados sem aumentar a sobrecarga de manutenção."
+                "O uso de conteinerização com **Docker** permitiu a escalabilidade horizontal de nossos pipelines de coleta de dados sem aumentar a Aboutcarga de manutenção."
             ],
             tech: [
                 { name: "Python", icon: "python" },

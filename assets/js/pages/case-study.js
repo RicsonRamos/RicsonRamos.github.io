@@ -7,7 +7,13 @@ async function initCaseStudy() {
     let project;
     if (typeof ProjectContent !== 'undefined') {
         project = ProjectContent;
+        // Sync with global catalog to get GitHub links and other metadata
+        if (typeof PortfolioData !== 'undefined') {
+            const globalData = PortfolioData.projects.find(p => p.id === project.id);
+            if (globalData) project.github = globalData.github;
+        }
     } else if (typeof PortfolioData !== 'undefined') {
+
         const path = window.location.pathname;
         const fileName = path.split('/').pop().replace('.html', '');
         project = PortfolioData.projects.find(p => p.id === fileName);
@@ -54,7 +60,15 @@ async function initCaseStudy() {
         if (project.sections) {
             canvas.innerHTML = `
                 <div class="story-container">
-                    <div class="story-intro">// CASE STUDY // 00${project.id || '1'}</div>
+                    <div class="story-header-row">
+                        <div class="story-intro">// CASE STUDY // 00${project.id || '1'}</div>
+                        ${project.github ? `
+                            <a href="${project.github}" target="_blank" class="github-btn">
+                                <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+                                VIEW ON GITHUB
+                            </a>
+                        ` : ''}
+                    </div>
                     ${project.sections.map((section, idx) => `
                         <div class="story-chapter">
                             <h2 class="story-title">${section.title}</h2>
@@ -69,7 +83,15 @@ async function initCaseStudy() {
         } else if (project.fullContent) {
             canvas.innerHTML = `
                 <div class="story-container">
-                    <div class="story-intro">// CASE STUDY // 00${project.id || '1'}</div>
+                    <div class="story-header-row">
+                        <div class="story-intro">// CASE STUDY // 00${project.id || '1'}</div>
+                        ${project.github ? `
+                            <a href="${project.github}" target="_blank" class="github-btn">
+                                <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+                                VIEW ON GITHUB
+                            </a>
+                        ` : ''}
+                    </div>
                     <h2 class="story-title">${project.title || 'Project Depth'}</h2>
                     <div class="story-chapter-body">
                         ${project.fullContent.map(para => `<p class="story-paragraph">${para}</p>`).join('')}

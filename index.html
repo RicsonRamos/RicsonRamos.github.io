@@ -37,7 +37,7 @@
                     <li class="nav-item"><a href="#projects" data-section="projects">Projects</a></li>
                     <li class="nav-item"><a href="#experience" data-section="experience">Experience</a></li>
                     <li class="nav-item"><a href="#contact" data-section="contact">Contact</a></li>
-                    <li class="nav-item"><a href="https://github.com/RicsonRamos/RicsonRamos" target="_blank">Sobre</a>
+                    <li class="nav-item"><a href="https://github.com/RicsonRamos/RicsonRamos" target="_blank">About</a>
                     </li>
                 </ul>
             </nav>
@@ -78,11 +78,10 @@
                     </div>
                 </div>
 
-                <div class="cta-group" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 4rem;">
-                    <a href="#contact" class="btn outline-btn"
-                        style="padding: 0.6rem 1.8rem; font-size: 0.85rem;">Contact Me</a>
-                    <a href="#" class="btn glow-btn" style="padding: 0.6rem 1.8rem; font-size: 0.85rem;"
-                        id="github-cta">Github</a>
+                <div class="cta-group" style="margin-top: 4rem;">
+                    <a href="#contact" class="btn outline-btn">Contact Me</a>
+                    <a href="#" class="btn glow-btn" id="github-cta">Github</a>
+
                 </div>
             </div>
 
@@ -94,22 +93,28 @@
         </section>
 
         <!-- Dynamic Project Gallery -->
-        <section id="projects" class="container section-padding">
-            <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
-                <span class="text-upper">Recent Work</span>
-                <h2 style="font-size: 3.5rem;">Selected Projects</h2>
+        <section id="projects" class="section-padding" style="width: 100%; overflow-x: hidden;">
+            <div class="container">
+                <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
+                    <span class="text-upper">Recent Work</span>
+                    <h2 style="font-size: 3.5rem;">Selected Projects</h2>
+
+                </div>
             </div>
 
             <div class="animated-gallery reveal">
                 <!-- Content Injected from projects.json -->
             </div>
 
-            <div class="scroll-hook">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                </svg>
+            <div class="container" style="position: relative; height: 100px; margin-top: 10rem;">
+                <div class="scroll-hook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                    </svg>
+                </div>
             </div>
         </section>
+
 
         <!-- Dynamic Experience Section -->
         <section id="experience" class="container section-padding">
@@ -150,28 +155,7 @@
                     <!-- Links Injected -->
                 </div>
 
-                <!-- UFO Abduction (Animação Identica ao Exemplo 8) -->
-                <div id="ufo-trigger" class="ufo-abduction-container">
-                    <div class="ufo-head"></div>
-                    <div class="ufo-beam"></div>
-                    <div class="ufo-btn">
-                        <span class="word-sub">Sub</span>
-                        <span class="word-mit">mit</span>
-                        <span class="word-thanks">Abduction Complete // Thank You</span>
-                    </div>
-                </div>
 
-                <script>
-                    const ufoObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('active');
-                                setTimeout(() => entry.target.classList.add('triggered'), 1000);
-                            }
-                        });
-                    }, { threshold: 0.5 });
-                    ufoObserver.observe(document.getElementById('ufo-trigger'));
-                </script>
             </div>
         </section>
     </main>

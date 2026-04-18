@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.title = config.seo.title;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', config.seo.description);
-    
+
     // Header Logo Injection
     const logoContainer = document.querySelector('.logo a');
     if (logoContainer) {
