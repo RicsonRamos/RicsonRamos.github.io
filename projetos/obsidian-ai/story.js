@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'CONHECIMENTO PERDIDO',
             description: 'Notas acumuladas ao longo de anos sem conexão entre si. Informações valiosas enterradas em arquivos Markdown sem possibilidade de recuperação inteligente.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Solução',
             title: 'LOCAL-FIRST',
             title2: 'LLM + RAG',
             description: 'Sistema de Second Brain que usa LLMs locais (Ollama) e nuvem (Gemini) para transformar notas Obsidian em grafos de conhecimento estruturados e consultáveis.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Resultado',
             title: 'KNOWLEDGE GRAPH',
             title2: 'PRIVACY FIRST',
             description: 'Processamento 100% local com Ollama. Sem dados saindo do seu computador. Integração nativa com o vault Obsidian, gerando automaticamente links entre conceitos.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         }
     ],
     fullContent: [

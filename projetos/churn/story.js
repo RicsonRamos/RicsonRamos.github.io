@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'EVASÃO DE CLIENTES',
             description: 'Altas taxas de cancelamento impactavam o faturamento mensal de uma empresa de serviços SaaS.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Ideia',
             title: 'A SOLUÇÃO',
             title2: 'IA PREDITIVA',
             description: 'Implementar um modelo de Machine Learning para prever a probabilidade de cancelamento antes de ele ocorrer.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Implementação',
             title: 'TECH STACK',
             title2: 'DATA SCIENCE',
             description: 'Uso de Scikit-Learn para modelagem e SHAP para explicabilidade do comportamento do cliente.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         }
     ],
     fullContent: [

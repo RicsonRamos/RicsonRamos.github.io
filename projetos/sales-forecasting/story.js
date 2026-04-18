@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'PREVISÃO DE VENDAS',
             description: 'Equipe comercial operando sem visibilidade do futuro. A falta de previsibilidade de receita comprometia a alocação de recursos e o planejamento estratégico.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Modelagem',
             title: 'TIME SERIES',
             title2: 'ML PIPELINE',
             description: 'Implementação de modelos de séries temporais com Scikit-Learn e Prophet, combinados com feature engineering baseado em sazonalidade e tendência histórica.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Resultados',
             title: 'DASHBOARD',
             title2: 'INSIGHTS',
             description: 'Dashboard interativo de performance de vendas com KPIs em tempo real, comparativo de metas vs. realizado e previsão de receita para os próximos 90 dias.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/windows.png'
         }
     ],
     fullContent: [
