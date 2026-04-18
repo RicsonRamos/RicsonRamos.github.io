@@ -40,22 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nav) {
         const indicator = document.createElement('div');
         indicator.classList.add('active-element');
-        nav.querySelector('ul').appendChild(indicator);
+        nav.appendChild(indicator); // Accessibility: Moved out of UL
+
+        let ticking = false; // Throttle flag for layout measurements
 
         function updateIndicator(targetEl) {
-            if (!targetEl) return;
-            // Use rAF to ensure we read data after any pending layout changes from class toggles
-            requestAnimationFrame(() => {
+            if (!targetEl || ticking) return;
+
+            ticking = true;
+            window.requestAnimationFrame(() => {
                 const rect = targetEl.getBoundingClientRect();
                 const navRect = nav.getBoundingClientRect();
+                
                 gsap.to(indicator, {
                     left: rect.left - navRect.left,
                     width: rect.width,
                     duration: 0.5,
                     ease: "power3.out"
                 });
+                
+                ticking = false;
             });
         }
+
 
 
         const initialActive = document.querySelector('.nav-item.active a, .nav-item.active button');

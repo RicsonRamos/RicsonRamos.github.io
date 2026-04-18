@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 #projects {
-    min-height: 800px;
+    min-height: 100vh;
+    contain: layout;
+}
+
+#main-nav {
+    position: relative;
+    margin-left: auto;
 }
 
 
@@ -340,10 +346,7 @@ h2 {
     z-index: var(--z-nav-toggle);
 }
 
-#main-nav {
 
-    margin-left: auto;
-}
 
 #nav-list {
     display: flex;
