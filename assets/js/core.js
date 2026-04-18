@@ -43,15 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.querySelector('ul').appendChild(indicator);
 
         function updateIndicator(targetEl) {
-            const rect = targetEl.getBoundingClientRect();
-            const navRect = nav.getBoundingClientRect();
-            gsap.to(indicator, {
-                left: rect.left - navRect.left,
-                width: rect.width,
-                duration: 0.5,
-                ease: "power3.out"
+            if (!targetEl) return;
+            // Use rAF to ensure we read data after any pending layout changes from class toggles
+            requestAnimationFrame(() => {
+                const rect = targetEl.getBoundingClientRect();
+                const navRect = nav.getBoundingClientRect();
+                gsap.to(indicator, {
+                    left: rect.left - navRect.left,
+                    width: rect.width,
+                    duration: 0.5,
+                    ease: "power3.out"
+                });
             });
         }
+
 
         const initialActive = document.querySelector('.nav-item.active a, .nav-item.active button');
         if (initialActive) updateIndicator(initialActive);
