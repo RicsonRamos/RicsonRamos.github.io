@@ -8,21 +8,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'DADOS ESPACIAIS',
             description: 'Transformar dados brutos de APIs da SpaceX e NASA em inteligência de negócio acionável, com qualidade e governança em cada camada.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Arquitetura',
             title: 'MEDALLION',
             title2: 'BRONZE > GOLD',
             description: 'Arquitetura em três camadas: Bronze (ingestão raw), Silver (limpeza e padronização via dbt) e Gold (KPIs prontos para BI).',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Qualidade',
             title: 'CI/CD',
             title2: '82% COBERTURA',
             description: 'Pipeline com 58 testes automatizados rodando via GitHub Actions a cada push. Observabilidade completa com logs JSON estruturados e alertas de SLA.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         }
     ],
     fullContent: [

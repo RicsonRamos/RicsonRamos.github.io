@@ -8,21 +8,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'AUTOMAÇÃO DE EMAIL',
             description: 'Criar um microserviço Python robusto para disparar emails HTML e texto em massa, com suporte a anexos e variáveis de ambiente seguras.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Implementação',
             title: 'SMTP SEGURO',
             title2: 'DISPATCHER',
             description: 'Integração com servidores SMTP via TLS, leitura de credenciais via .env, suporte a templates HTML e envio em bulk com retry automático.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Deploy',
             title: 'DOCKER',
             title2: 'CONTAINERIZADO',
             description: 'Empacotado em Docker para execução isolada e reproduzível em qualquer ambiente, com configuração mínima e zero dependências externas.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         }
     ],
     fullContent: [

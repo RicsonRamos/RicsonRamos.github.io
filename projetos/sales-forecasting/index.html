@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,16 @@
     <link rel="stylesheet" href="../../assets/css/storytelling.css">
 </head>
 
-<body class="dracula">
+<body class="dracula project-page">
 
     <!-- Dashboard Static UI -->
     <div class="dashboard-bg"></div>
     <div class="scroll-hint">SCROLL TO DISCOVER // DEEP DIVE</div>
 
     <!-- Header / Nav with Active Indicator -->
-    <header class="container sticky-nav">
-        <div class="nav-wrapper"
-            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <header class="navbar navbar--fixed">
+        <div class="container nav-wrapper">
+
             <div class="logo">
                 <a href="../../index.html" style="text-decoration: none; color: inherit;">
                     <!-- Injected by core.js -->
@@ -30,28 +31,38 @@
                 <ul id="nav-list">
                     <li class="nav-item"><a href="../../index.html#hero" data-section="hero">Home</a></li>
                     <li class="nav-item"><a href="../../index.html#projects" data-section="projects">Projects</a></li>
-                    <li class="nav-item"><a href="../../index.html#experience" data-section="experience">Experience</a></li>
+                    <li class="nav-item"><a href="../../index.html#experience" data-section="experience">Experience</a>
+                    </li>
                     <li class="nav-item"><a href="../../index.html#contact" data-section="contact">Contact</a></li>
-                    <li class="nav-item"><a href="https://github.com/RicsonRamos/RicsonRamos" target="_blank">Sobre</a></li>
+                    <li class="nav-item"><a href="https://github.com/RicsonRamos/RicsonRamos" target="_blank">Sobre</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <a href="../../index.html" class="back-btn">← TERMINAL // EXIT_PROJECT</a>
+    <a href="../../index.html" class="back-btn" style="padding-top: 15px;">← TERMINAL // EXIT_PROJECT</a>
 
     <!-- MAIN NARRATIVE AREA -->
     <div id="narrative-layer">
         <div class="details" id="details-even">
             <span class="text">PHASE</span>
-            <div class="title-box-1"><div class="title-1">TITLE</div></div>
-            <div class="title-box-2"><div class="title-2">SUBTITLE</div></div>
+            <div class="title-box-1">
+                <div class="title-1">TITLE</div>
+            </div>
+            <div class="title-box-2">
+                <div class="title-2">SUBTITLE</div>
+            </div>
             <p class="desc">Initializing project narrative...</p>
         </div>
         <div class="details" id="details-odd">
             <span class="text">PHASE</span>
-            <div class="title-box-1"><div class="title-1">TITLE</div></div>
-            <div class="title-box-2"><div class="title-2">SUBTITLE</div></div>
+            <div class="title-box-1">
+                <div class="title-1">TITLE</div>
+            </div>
+            <div class="title-box-2">
+                <div class="title-2">SUBTITLE</div>
+            </div>
             <p class="desc"></p>
         </div>
     </div>
@@ -72,5 +83,5 @@
     <script src="./story.js"></script>
     <script src="../../assets/js/pages/case-study.js"></script>
 </body>
-</html>
 
+</html>

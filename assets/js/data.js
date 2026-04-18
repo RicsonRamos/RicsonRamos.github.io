@@ -40,7 +40,7 @@ const PortfolioData = {
             id: "sales-forecasting",
             title: "Sales Forecasting",
             subtitle: "Performance Analytics Dashboard",
-            image: "exemples/Animated Image Gallery/3.jpg",
+            image: "assets/images/salesforecasting.png",
             tags: ["Python", "Pandas", "Scikit-Learn"],
             url: "projetos/sales-forecasting/index.html",
             featured: false
@@ -49,7 +49,7 @@ const PortfolioData = {
             id: "obsidian-ai",
             title: "Obsidian AI",
             subtitle: "Knowledge Graph Intelligence",
-            image: "exemples/Animated Image Gallery/4.jpg",
+            image: "assets/images/obsidianai.png",
             tags: ["Python", "OpenAI", "RAG"],
             url: "projetos/obsidian-ai/index.html",
             featured: false
@@ -58,7 +58,7 @@ const PortfolioData = {
             id: "spacex",
             title: "SpaceX ETL",
             subtitle: "Data Pipeline Automation",
-            image: "exemples/Animated Image Gallery/1.jpg",
+            image: "assets/images/spacexetl.jpg",
             tags: ["Python", "Apache Airflow"],
             url: "projetos/spacex/index.html",
             featured: false
@@ -67,7 +67,7 @@ const PortfolioData = {
             id: "smtp",
             title: "Email SMTP",
             subtitle: "Messaging Microservice",
-            image: "exemples/Animated Image Gallery/2.jpg",
+            image: "assets/images/smtpsender.png",
             tags: ["SMTP", "Python", "Docker"],
             url: "projetos/smtp/index.html",
             featured: false

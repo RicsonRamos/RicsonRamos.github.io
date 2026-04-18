@@ -4,7 +4,11 @@
         "title": "Macropulse",
         "subtitle": "Inteligência Macroeconômica",
         "image": "assets/images/macropulse.jpg",
-        "tags": ["Python", "FastAPI", "Redis"],
+        "tags": [
+            "Python",
+            "FastAPI",
+            "Redis"
+        ],
         "url": "projetos/macropulse/index.html",
         "featured": true
     },
@@ -13,7 +17,10 @@
         "title": "Churn Analysis",
         "subtitle": "ML Pipeline with XGBoost",
         "image": "assets/images/churn.jpg",
-        "tags": ["XGBoost", "Streamlit"],
+        "tags": [
+            "XGBoost",
+            "Streamlit"
+        ],
         "url": "projetos/churn/index.html",
         "featured": true
     },
@@ -22,7 +29,11 @@
         "title": "Sales Forecasting",
         "subtitle": "Performance Analytics Dashboard",
         "image": "exemples/Animated Image Gallery/3.jpg",
-        "tags": ["Python", "Pandas", "Scikit-Learn"],
+        "tags": [
+            "Python",
+            "Pandas",
+            "Scikit-Learn"
+        ],
         "url": "projetos/sales-forecasting/index.html",
         "featured": false
     },
@@ -30,8 +41,12 @@
         "id": "obsidian-ai",
         "title": "Obsidian AI",
         "subtitle": "Knowledge Graph Intelligence",
-        "image": "exemples/Animated Image Gallery/4.jpg",
-        "tags": ["Python", "OpenAI", "RAG"],
+        "image": "assets/images/obsidianai.png",
+        "tags": [
+            "Python",
+            "OpenAI",
+            "RAG"
+        ],
         "url": "projetos/obsidian-ai/index.html",
         "featured": false
     },
@@ -39,8 +54,11 @@
         "id": "spacex",
         "title": "SpaceX ETL",
         "subtitle": "Data Pipeline Automation",
-        "image": "exemples/Animated Image Gallery/1.jpg",
-        "tags": ["Python", "Apache Airflow"],
+        "image": "assets/images/spacexetl.jpg",
+        "tags": [
+            "Python",
+            "Apache Airflow"
+        ],
         "url": "projetos/spacex/index.html",
         "featured": false
     },
@@ -49,7 +67,11 @@
         "title": "Email SMTP",
         "subtitle": "Messaging Microservice",
         "image": "exemples/Animated Image Gallery/2.jpg",
-        "tags": ["SMTP", "Python", "Docker"],
+        "tags": [
+            "SMTP",
+            "Python",
+            "Docker"
+        ],
         "url": "projetos/smtp/index.html",
         "featured": false
     }

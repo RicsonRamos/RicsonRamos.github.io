@@ -8,21 +8,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'MERCADO VOLÁTIL',
             description: 'A fragmentação de dados macroeconômicos dificultava a tomada de decisão em tempo real para fundos de investimento.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Ideia',
             title: 'A SOLUÇÃO',
             title2: 'CONSOLIDAÇÃO ALFA',
             description: 'Criar um terminal único que processa sinais de OSINT e indicadores técnicos em uma arquitetura de baixa latência.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         },
         {
             phase: 'Implementação',
             title: 'TECH STACK',
             title2: 'PERFORMANCE PURA',
             description: 'Utilização de Redis para cache de sinais e FastAPI para entrega assíncrona de métricas em milissegundos.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/windows.png'
         }
     ],
     sections: [
