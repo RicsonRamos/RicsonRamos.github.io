@@ -245,7 +245,10 @@
   align-items: center;
   gap: 1rem;
   transition: transform 0.3s;
+  min-width: 80px;
+  text-align: center;
 }
+
 
 .tech-item:hover {
   transform: translateY(-5px);

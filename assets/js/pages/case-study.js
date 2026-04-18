@@ -107,9 +107,10 @@ async function initCaseStudy() {
             <div class="tech-grid">
                 ${techList.map(t => `
                     <div class="tech-item">
-                        <img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/white'">
+                        <img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" width="45" height="45" loading="lazy" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/white'">
                         <span>${t.name}</span>
                     </div>
+
                 `).join('')}
             </div>
         `;
