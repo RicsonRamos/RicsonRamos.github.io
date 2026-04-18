@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectsContainer) {
         projectsContainer.innerHTML = projects.map((p, index) => `
             <div class="project-card ${index === 0 ? 'active' : ''}" onclick="window.location.href='${p.url}'">
-                <img src="${p.image}" alt="${p.title}" loading="lazy">
+                <img src="${p.image}" alt="${p.title}" loading="lazy" width="400" height="218">
+
 
                 <div class="project-info">
                     <h3>${p.title}</h3>
