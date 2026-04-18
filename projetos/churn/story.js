@@ -1,7 +1,7 @@
 /* ===== CHURN ANALYSIS MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "churn",
-    github: "https://github.com/RicsonRamos/Churn-Analysis",
+    github: "https://github.com/RicsonRamos/streaming_service_analysis_churn",
 
     title: "Project Churn Analysis",
     storyline: [

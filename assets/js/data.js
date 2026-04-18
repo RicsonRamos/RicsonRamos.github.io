@@ -35,7 +35,7 @@ const PortfolioData = {
             image: "assets/images/churn.jpg",
             tags: ["XGBoost", "Streamlit"],
             url: "projetos/churn/index.html",
-            github: "https://github.com/RicsonRamos/Churn-Analysis",
+            github: "https://github.com/RicsonRamos/streaming_service_analysis_churn",
             featured: true
         },
         {
