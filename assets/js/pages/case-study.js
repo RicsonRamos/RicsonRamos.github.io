@@ -143,10 +143,24 @@ async function initCaseStudy() {
             activeEl.querySelector('.title-2').textContent = phaseData.title2 || '';
             activeEl.querySelector('.desc').textContent = phaseData.description;
 
+            // Mobile Tech Grid Injection
+            const techSummary = project.sections?.flatMap(s => s.tech || []).filter((v, i, a) => a.findIndex(t => t.name === v.name) === i) || [];
+            if (techSummary.length > 0) {
+                let techHTML = `<div class="details-tech-mini">`;
+                techSummary.slice(0, 5).forEach(t => {
+                    techHTML += `<img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/white'">`;
+                });
+                techHTML += `</div>`;
+                const existingTech = activeEl.querySelector('.details-tech-mini');
+                if (existingTech) existingTech.remove();
+                activeEl.querySelector('.desc').insertAdjacentHTML('afterend', techHTML);
+            }
+
             gsap.timeline()
                 .to(inactiveContainer, { opacity: 0, x: -30, duration: 0.4 })
                 .fromTo(activeContainer, { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.6 }, "-=0.2");
         }
+
         current = index;
     };
 
@@ -161,11 +175,24 @@ async function initCaseStudy() {
             initialContainer.querySelector('.title-1').textContent = initial.title;
             initialContainer.querySelector('.title-2').textContent = initial.title2 || '';
             initialContainer.querySelector('.desc').textContent = initial.description;
+
+            // Mobile Tech Grid Injection
+            const techSummary = project.sections?.flatMap(s => s.tech || []).filter((v, i, a) => a.findIndex(t => t.name === v.name) === i) || [];
+            if (techSummary.length > 0) {
+                let techHTML = `<div class="details-tech-mini">`;
+                techSummary.slice(0, 5).forEach(t => {
+                    techHTML += `<img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/white'">`;
+                });
+                techHTML += `</div>`;
+                initialContainer.querySelector('.desc').insertAdjacentHTML('afterend', techHTML);
+            }
+
             gsap.set("#details-even", { opacity: 1, x: 0 });
             document.getElementById(`card0`)?.classList.add('active');
             const progBar = document.getElementById('phase-progress');
             if (progBar) progBar.style.width = `${(1 / data.length) * 100}%`;
         }
+
     }
     setupFirstPhase();
 
