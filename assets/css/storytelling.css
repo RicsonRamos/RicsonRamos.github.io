@@ -509,15 +509,21 @@ body.project-page .navbar .container {
   .back-btn {
     font-size: 0.6rem;
     letter-spacing: 1.5px;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(0, 0, 0, 0.4);
+    top: 2rem; /* Increased top spacing to avoid overlapping with notches/top of screen */
+    left: 2rem;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker for better readability over content */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.4rem;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: fit-content;
+    z-index: 1000;
+  }
+
+  /* Force hide hamburger on project pages mobile override */
+  body.project-page #nav-toggle {
+    display: none !important;
   }
 
 
@@ -558,7 +564,7 @@ body.project-page .navbar .container {
 
 @media (max-width: 480px) {
   .details {
-    top: 8%;
+    top: 18%; /* Shifted down to avoid overlap with back button area */
   }
 
   .details .title-1,
