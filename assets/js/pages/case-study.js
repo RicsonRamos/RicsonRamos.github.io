@@ -78,7 +78,17 @@ async function initCaseStudy() {
                             ${section.tech ? renderTechGrid(section.tech) : ''}
                         </div>
                     `).join('')}
+                    
+                    ${project.github ? `
+                        <div class="story-footer">
+                            <a href="${project.github}" target="_blank" class="github-btn github-btn--large">
+                                <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+                                VIEW FULL REPOSITORY ON GITHUB
+                            </a>
+                        </div>
+                    ` : ''}
                 </div>
+
             `;
         } else if (project.fullContent) {
             canvas.innerHTML = `
@@ -198,7 +208,8 @@ async function initCaseStudy() {
 
     // 6. SCROLL INTERACTIONS
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY > 100;
+        const scrolled = window.scrollY > 200;
         document.body.classList.toggle('scrolled-past', scrolled);
     });
+
 }

@@ -141,14 +141,16 @@
 }
 
 /* STORY CANVAS - CHAPTER BASED LAYOUT */
-.story-canvas {
+#story-canvas {
   position: relative;
-  z-index: 200;
+  z-index: 10000 !important; /* Force top layer */
   margin-top: 100vh;
-  background: #000;
-  padding: 120px 5%;
-  bottom: 5%;
+  background-color: #000 !important; /* Force opaque curtain */
+  padding: 15vh 8% 10rem;
+  box-shadow: 0 -50px 100px #000;
 }
+
+
 
 .story-container {
   max-width: 1200px;
@@ -377,26 +379,48 @@
   z-index: 100;
 }
 
-.scrolled-past .details,
+/* EXPLICIT ID TARGETING FOR SCROLL OVERRIDES */
+.scrolled-past #details-even,
+.scrolled-past #details-odd,
 .scrolled-past #demo,
-.scrolled-past .dashboard-footer {
-  opacity: 0;
-  pointer-events: auto;
-  transition: opacity 0.5s;
+.scrolled-past .dashboard-footer,
+.scrolled-past .scroll-hint {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.4s, visibility 0.4s;
 }
+
+
+
 
 .back-btn {
   position: fixed;
-  top: 1.5rem;
-  left: 2.5rem;
+  top: 5rem; /* Reduced spacing from header */
+  left: 3rem;
   z-index: 1100;
   text-decoration: none;
   color: var(--color-text-dim);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 2px;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
   z-index: var(--z-nav-toggle);
 }
+
+
+.back-btn:hover {
+  color: var(--color-accent);
+  transform: translateX(-5px);
+}
+
+.back-btn svg {
+  display: none; /* Hide the gigantic arrow */
+}
+
 
 /* Fix mobile nav overlap: Hide logo when back-btn is present */
 @media (max-width: 900px) {
@@ -404,6 +428,28 @@
     display: none;
   }
 }
+
+/* PROJECT PAGE HEADER: Center logo, hide nav, move menu content */
+body.project-page #main-nav,
+body.project-page #nav-toggle {
+  display: none !important; /* Focus mode: hide global nav and hamburger on project pages */
+}
+
+body.project-page .navbar {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-bottom: none !important;
+}
+
+body.project-page .navbar .nav-wrapper {
+  justify-content: center; /* Center the logo */
+}
+
+body.project-page .navbar .container {
+  padding-left: 2rem; /* Reset the padding attempt from before */
+}
+
+
 
 
 
@@ -521,3 +567,43 @@
   }
 
 }
+
+/* STORY FOOTER & LARGE GITHUB BUTTON */
+.story-footer {
+  display: flex;
+  justify-content: center;
+  padding: 6rem 0 10rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 4rem;
+}
+
+.github-btn--large {
+  padding: 1.2rem 2.8rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+  background: rgba(189, 147, 249, 0.05) !important;
+  border: 1px solid var(--color-accent) !important;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s var(--transition-smooth) !important;
+  text-decoration: none !important;
+  color: var(--color-accent) !important;
+}
+
+.github-btn--large img {
+  height: 20px;
+}
+
+.github-btn--large:hover {
+  background: var(--color-accent) !important;
+  box-shadow: 0 10px 40px var(--color-accent-glow);
+  transform: translateY(-3px);
+  color: #000 !important;
+}
+
+.github-btn--large:hover img {
+  filter: brightness(0);
+}

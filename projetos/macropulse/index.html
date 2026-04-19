@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Macropulse | Case Study</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../assets/css/storytelling.css">
 </head>
@@ -14,10 +14,7 @@
 
     <!-- Dashboard Static UI -->
     <div class="dashboard-bg"></div>
-
-    <div class="scroll-hint">
-
-    </div>
+    <div class="scroll-hint">SCROLL TO DISCOVER // DEEP DIVE</div>
 
     <!-- Header / Nav with Active Indicator -->
     <header class="navbar navbar--fixed">
@@ -28,6 +25,7 @@
                     <!-- Injected by core.js -->
                 </a>
             </div>
+
             <nav id="main-nav">
                 <button id="nav-toggle" aria-label="Menu" aria-expanded="false">
                     <span></span><span></span><span></span>
@@ -45,66 +43,58 @@
         </div>
     </header>
 
-    <a href="../../index.html" class="back-btn" style="padding-top: 60px;">
-        ← TERMINAL // EXIT_PROJECT
-    </a>
-
-    <!-- MAIN NARRATIVE AREA -->
+    <!-- Project Specific Layer -->
     <div id="narrative-layer">
 
+        <!-- Narrative details (fixed left) -->
         <div class="details" id="details-even">
-
             <span class="text">PHASE</span>
-
             <div class="title-box-1">
                 <div class="title-1">TITLE</div>
             </div>
-
             <div class="title-box-2">
                 <div class="title-2">SUBTITLE</div>
             </div>
-
-            <p class="desc">
-                Initializing project narrative...
-            </p>
-
+            <p class="desc">Initializing project narrative...</p>
         </div>
 
         <div class="details" id="details-odd">
-
             <span class="text">PHASE</span>
-
             <div class="title-box-1">
                 <div class="title-1">TITLE</div>
             </div>
-
             <div class="title-box-2">
                 <div class="title-2">SUBTITLE</div>
             </div>
+            <p class="desc">Loading next chapter...</p>
+        </div>
 
-            <p class="desc"></p>
-
+        <!-- Scrollable Story Canvas -->
+        <div id="story-canvas">
+            <!-- Content Injected -->
         </div>
 
     </div>
 
-    <!-- UI COMPONENTS -->
-    <div class="dashboard-footer"></div>
+    <!-- Persistent Back Button -->
+    <a href="../../index.html#projects" class="back-btn">
+        ← TERMINAL // EXIT_PROJECT
+    </a>
 
-    <!-- STORY CANVAS -->
-    <section class="story-canvas" id="story-canvas"></section>
 
-    <!-- NAVIGATION SNIPPETS -->
+    <!-- Footer Counter -->
+    <div class="dashboard-footer container">
+        <!-- Injected by case-study.js -->
+    </div>
+
     <div id="demo"></div>
 
-    <!-- CORE LOGIC -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
+    <!-- CORE LOGIC / SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="../../assets/js/data.js"></script>
     <script src="../../assets/js/core.js"></script>
     <script src="./story.js"></script>
     <script src="../../assets/js/pages/case-study.js"></script>
-
 </body>
 
 </html>
