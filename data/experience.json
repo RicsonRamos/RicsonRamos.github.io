@@ -1,38 +1,29 @@
 [
     {
-        "id": "job-4",
-        "year": "2019",
-        "title": "Intern",
-        "company": "JP Morgan Chase",
-        "from": "June 2019",
-        "to": "December 2020",
-        "code": "const job = {\n  title: \"Intern\",\n  from: \"June 2019\",\n  to: \"December 2020\",\n  company: \"JP Morgan Chase\"\n}"
-    },
-    {
         "id": "job-3",
-        "year": "2021",
-        "title": "Data Analyst",
-        "company": "Nexus Finance",
-        "from": "January 2021",
-        "to": "May 2022",
-        "code": "const job = {\n  title: \"Data Analyst\",\n  from: \"January 2021\",\n  to: \"May 2022\",\n  company: \"Nexus Finance\",\n  tools: [\"Pandas\", \"SQL\", \"Tableau\"]\n}"
+        "year": "2016",
+        "title": "Public Safety Specialist",
+        "company": "PMMG",
+        "from": "2016",
+        "to": "Present",
+        "code": "const policeForce = {\n  title: \"Public Safety Specialist\",\n  experience: \"10 years\",\n  skills: [\"Operational Planning\", \"Decision Making\", \"Crisis Management\"],\n  observation: \"Applying tactical discipline to software lifecycle.\"\n}"
     },
     {
         "id": "job-2",
-        "year": "2022",
-        "title": "Senior Python Developer",
-        "company": "Elysium Tech",
-        "from": "June 2022",
-        "to": "December 2023",
-        "code": "const job = {\n  title: \"Senior Python Developer\",\n  from: \"June 2022\",\n  to: \"December 2023\",\n  company: \"Elysium Tech\",\n  stack: [\"FastAPI\", \"Redis\", \"Kafka\"]\n}"
+        "year": "2024",
+        "title": "Data Science Student",
+        "company": "Tech Degree",
+        "from": "Jan 2024",
+        "to": "Present",
+        "code": "const dataScience = {\n  degree: \"Associate Degree in Data Science\",\n  focus: \"Exploratory Data Analysis & Statistics\",\n  stack: [\"Python\", \"SQL\", \"Pandas\", \"Scikit-learn\"],\n  status: \"Final Stage / Advanced Projects\"\n}"
     },
     {
         "id": "job-1",
-        "year": "2024",
-        "title": "Lead Data Engineer",
-        "company": "MacroPulse Intelligence",
-        "from": "January 2024",
+        "year": "2025",
+        "title": "Software Engineer Student",
+        "company": "Advanced Engineering",
+        "from": "Jan 2025",
         "to": "Present",
-        "code": "const job = {\n  title: \"Lead Data Engineer\",\n  from: \"Jan 2024\",\n  to: \"Present\",\n  company: \"MacroPulse Intelligence\",\n  impact: \"Orchestrated ETL for 50M+ signals\"\n}"
+        "code": "const softwareEngineering = {\n  focus: \"Systems Architecture & Scalability\",\n  tools: [\"Docker\", \"CI/CD\", \"Clean Architecture\"],\n  goal: \"Bridge the gap between raw data and production-ready apps.\"\n}"
     }
 ]
