@@ -62,7 +62,7 @@ const PortfolioData = {
             id: "spacex",
             title: "SpaceX ETL",
             subtitle: "Data Pipeline Automation",
-            image: "assets/images/spacexetl.jpg",
+            image: "assets/images/spacexetl.png",
             tags: ["Python", "Apache Airflow"],
             url: "projetos/spacex/index.html",
             github: "https://github.com/RicsonRamos/spacex_etl_pipeline",
