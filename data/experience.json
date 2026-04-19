@@ -1,6 +1,6 @@
 [
     {
-        "id": "job-3",
+        "id": "job-1",
         "year": "2016",
         "title": "Public Safety Specialist",
         "company": "PMMG",
@@ -18,7 +18,7 @@
         "code": "const job = {\n  title: \"Data Science Student\",\n  from: \"Jan 2024\",\n  to: \"Present\",\n  stack: [\"Python\", \"Pandas\", \"Scikit-learn\"],\n  focus: \"ETL & Data Analysis\"\n}"
     },
     {
-        "id": "job-1",
+        "id": "job-3",
         "year": "2025",
         "title": "Software Engineer Student",
         "company": "Advanced Engineering",
