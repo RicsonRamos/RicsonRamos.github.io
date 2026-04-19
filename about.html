@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Ricson Ramos</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/storytelling.css">
+</head>
+
+<body class="dracula project-page">
+
+    <!-- Dashboard Static UI -->
+    <div class="dashboard-bg"></div>
+    <div class="scroll-hint">SCROLL TO DISCOVER // THE JOURNEY</div>
+
+    <!-- Header / Nav -->
+    <header class="navbar navbar--fixed">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <!-- Injected by core.js -->
+                </a>
+            </div>
+            <nav id="main-nav">
+                <button id="nav-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-list">
+                    <li class="nav-item"><a href="index.html#hero" data-section="hero">Home</a></li>
+                    <li class="nav-item"><a href="index.html#projects" data-section="projects">Projects</a></li>
+                    <li class="nav-item"><a href="index.html#experience" data-section="experience">Experience</a></li>
+                    <li class="nav-item active"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="index.html#contact" data-section="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Specific Layer -->
+    <div id="narrative-layer">
+        <div class="details" id="details-even">
+            <span class="text">PHASE</span>
+            <h1 class="title-1">LOADING</h1>
+            <h1 class="title-2">JOURNEY</h1>
+            <p class="desc">Initializing narrative...</p>
+        </div>
+
+        <div class="details" id="details-odd" style="opacity: 0;">
+            <span class="text">PHASE</span>
+            <h1 class="title-1">TITLE</h1>
+            <h1 class="title-2">SUBTITLE</h1>
+            <p class="desc">Loading next chapter...</p>
+        </div>
+
+        <!-- Scrollable Story Canvas -->
+        <div id="story-canvas">
+            <!-- Content Injected -->
+        </div>
+    </div>
+
+    <!-- Persistent Back Button -->
+    <a href="index.html" class="back-btn">
+        ← DISCONNECT // RETURN_HOME
+    </a>
+
+    <!-- Footer Counter -->
+    <div class="dashboard-footer container">
+        <!-- Injected by case-study.js -->
+    </div>
+
+    <div id="demo"></div>
+
+    <!-- CORE LOGIC / SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/core.js"></script>
+    <script>
+        // Hook for the storytelling engine
+        var ProjectContent = PortfolioData.about;
+    </script>
+    <script src="assets/js/pages/case-study.js"></script>
+</body>
+
+</html>

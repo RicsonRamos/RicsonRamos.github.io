@@ -2,7 +2,7 @@
 /* This file contains styles ONLY for project case studies */
 
 .dashboard-bg {
-  position: fixed;
+  position: fixed; /* Reverted to fixed */
   top: 0;
   left: 0;
   width: 100%;
@@ -29,7 +29,7 @@
 }
 
 .details {
-  position: fixed;
+  position: fixed; /* Reverted to fixed */
   top: 25%;
   left: 8%;
   width: 50%;
@@ -75,7 +75,7 @@
 
 /* FOOTER UI (BOTTOM LEFT) */
 .dashboard-footer {
-  position: fixed;
+  position: fixed; /* Reverted to fixed */
   bottom: 5%;
   left: 8%;
   z-index: 100;
@@ -143,9 +143,9 @@
 /* STORY CANVAS - CHAPTER BASED LAYOUT */
 #story-canvas {
   position: relative;
-  z-index: 10000 !important; /* Force top layer */
+  z-index: 10000 !important;
   margin-top: 100vh;
-  background-color: #000 !important; /* Force opaque curtain */
+  background-color: #000 !important;
   padding: 15vh 8% 10rem;
   box-shadow: 0 -50px 100px #000;
 }
@@ -280,7 +280,7 @@
 
 /* CARDS NAVIGATION (BOTTOM RIGHT) */
 #demo {
-  position: fixed;
+  position: fixed; /* Reverted to fixed */
   bottom: 8%;
   right: 5%;
   z-index: 100;
@@ -574,18 +574,17 @@ body.project-page .navbar .container {
 
 }
 
-/* STORY FOOTER & LARGE GITHUB BUTTON */
-.story-footer {
+/* STORY ACTIONS (BELOW TECH STACK) */
+.story-actions {
   display: flex;
   justify-content: center;
-  padding: 6rem 0 10rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 4rem;
+  padding: 2rem 0 4rem;
+  margin-top: 0;
 }
 
 .github-btn--large {
-  padding: 1.2rem 2.8rem !important;
-  font-size: 0.85rem !important;
+  padding: 0.8rem 2.2rem !important;
+  font-size: 0.75rem !important;
   font-weight: 700 !important;
   letter-spacing: 2px;
   background: rgba(189, 147, 249, 0.05) !important;

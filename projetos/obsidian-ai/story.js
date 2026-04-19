@@ -51,7 +51,7 @@ const ProjectContent = {
             tech: [
                 { name: "Python", icon: "python" },
                 { name: "Ollama", icon: "ollama" },
-                { name: "Gemini API", icon: "google-gemini" },
+                { name: "Gemini API", icon: "google-googlegemini" },
                 { name: "LangChain", icon: "langchain" }
             ]
         }

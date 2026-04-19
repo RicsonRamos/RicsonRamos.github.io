@@ -53,7 +53,7 @@ const PortfolioData = {
             title: "Obsidian AI",
             subtitle: "Knowledge Graph Intelligence",
             image: "assets/images/obsidianai.png",
-            tags: ["Python", "OpenAI", "RAG"],
+            tags: ["Python", "googlegemini", "RAG"],
             url: "projetos/obsidian-ai/index.html",
             github: "https://github.com/RicsonRamos/obsidian-ai",
             featured: false
@@ -62,7 +62,7 @@ const PortfolioData = {
             id: "spacex",
             title: "SpaceX ETL",
             subtitle: "Data Pipeline Automation",
-            image: "assets/images/spacexetl.png",
+            image: "assets/images/spacexetl.jpg",
             tags: ["Python", "Apache Airflow"],
             url: "projetos/spacex/index.html",
             github: "https://github.com/RicsonRamos/spacex_etl_pipeline",
@@ -117,5 +117,63 @@ const PortfolioData = {
             to: "Present",
             code: "const job = {\n  title: \"Lead Data Engineer\",\n  from: \"Jan 2024\",\n  to: \"Present\",\n  company: \"MacroPulse Intelligence\",\n  impact: \"Orchestrated ETL for 50M+ signals\"\n}"
         }
-    ]
+    ],
+
+    about: {
+        id: "about-me",
+        storyline: [
+            {
+                phase: 'Foundations',
+                title: 'ACADEMICS &',
+                title2: 'EARLY RESEARCH',
+                description: 'Starting with a deep curiosity for systems and logic, my journey began in theoretical research where I learned the rigor of data validation.',
+                image: 'assets/images/windows.png'
+            },
+            {
+                phase: 'Evolution',
+                title: 'DATA',
+                title2: 'ENGINEERING',
+                description: 'Transitioning into the corporate world, I focused on building high-performance Python backends and scalable ETL pipelines.',
+                image: 'assets/images/windows.png'
+            },
+            {
+                phase: 'Vision',
+                title: 'AI & DATA',
+                title2: 'ARCHITECTURE',
+                description: 'Currently leveraging advanced LLMs and RAG architectures to build the next generation of knowledge intelligence systems.',
+                image: 'assets/images/windows.png'
+            }
+        ],
+        sections: [
+            {
+                title: "O Início da Jornada",
+                paragraphs: [
+                    "Sempre fui fascinado por como os dados podem contar histórias. Minha formação acadêmica me deu as ferramentas para traduzir problemas complexos em algoritmos eficientes.",
+                    "Desde o início, foquei em **Python** como minha linguagem principal, explorando suas capacidades em automação e processamento científico."
+                ]
+            },
+            {
+                title: "A Especialização em Engenharia",
+                paragraphs: [
+                    "No mercado financeiro e em tech-hubs, percebi que o dado bruto é apenas o começo. O verdadeiro valor está na **infraestrutura**: pipelines que não quebram e sistemas que escalam.",
+                    "Especializei-me em arquiteturas orientadas a eventos e processamento em tempo real, garantindo que a informação certa chegue no momento exato."
+                ]
+            },
+            {
+                title: "Propósito e Tecnologias",
+                paragraphs: [
+                    "Hoje, meu foco está na interseção entre a **Engenharia de Dados Tradicional** e a **Inteligência Artificial Generativa**. Acredito em sistemas que não apenas armazenam, mas compreendem a informação.",
+                    "Utilizo uma stack moderna focada em performance, segurança e, acima de tudo, estabilidade operacional."
+                ],
+                tech: [
+                    { name: "Python", icon: "python" },
+                    { name: "FastAPI", icon: "fastapi" },
+                    { name: "Docker", icon: "docker" },
+                    { name: "PostgreSQL", icon: "postgresql" },
+                    { name: "Airflow", icon: "apacheairflow" },
+                    { name: "Gemini", icon: "googlegemini" }
+                ]
+            }
+        ]
+    }
 };

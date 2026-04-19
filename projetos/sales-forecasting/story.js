@@ -52,7 +52,7 @@ const ProjectContent = {
                 { name: "Python", icon: "python" },
                 { name: "Pandas", icon: "pandas" },
                 { name: "Scikit-Learn", icon: "scikitlearn" },
-                { name: "PowerBI", icon: "powerbi" }
+                { name: "Streamlit", icon: "streamlit" }
             ]
         }
     ]

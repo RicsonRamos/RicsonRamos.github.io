@@ -44,7 +44,7 @@
         "image": "assets/images/obsidianai.png",
         "tags": [
             "Python",
-            "OpenAI",
+            "googlegemini",
             "RAG"
         ],
         "url": "projetos/obsidian-ai/index.html",

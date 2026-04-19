@@ -75,18 +75,19 @@ async function initCaseStudy() {
                             <div class="story-chapter-body">
                                 ${section.paragraphs.map(para => `<p class="story-paragraph">${para}</p>`).join('')}
                             </div>
-                            ${section.tech ? renderTechGrid(section.tech) : ''}
+                            ${section.tech ? `
+                                ${renderTechGrid(section.tech)}
+                                ${project.github ? `
+                                    <div class="story-actions">
+                                        <a href="${project.github}" target="_blank" class="github-btn github-btn--large">
+                                            <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub">
+                                            VIEW FULL REPOSITORY
+                                        </a>
+                                    </div>
+                                ` : ''}
+                            ` : ''}
                         </div>
                     `).join('')}
-                    
-                    ${project.github ? `
-                        <div class="story-footer">
-                            <a href="${project.github}" target="_blank" class="github-btn github-btn--large">
-                                <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
-                                VIEW FULL REPOSITORY ON GITHUB
-                            </a>
-                        </div>
-                    ` : ''}
                 </div>
 
             `;
@@ -117,7 +118,7 @@ async function initCaseStudy() {
             <div class="tech-grid">
                 ${techList.map(t => `
                     <div class="tech-item">
-                        <img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" width="45" height="45" loading="lazy" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/white'">
+                        <img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" width="45" height="45" loading="lazy" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/ffffff'">
                         <span>${t.name}</span>
                     </div>
 
@@ -159,7 +160,7 @@ async function initCaseStudy() {
             if (techSummary.length > 0) {
                 let techHTML = `<div class="details-tech-mini">`;
                 techSummary.slice(0, 5).forEach(t => {
-                    techHTML += `<img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/white'">`;
+                    techHTML += `<img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/ffffff'">`;
                 });
                 techHTML += `</div>`;
                 const existingTech = activeEl.querySelector('.details-tech-mini');
@@ -192,7 +193,7 @@ async function initCaseStudy() {
             if (techSummary.length > 0) {
                 let techHTML = `<div class="details-tech-mini">`;
                 techSummary.slice(0, 5).forEach(t => {
-                    techHTML += `<img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/white'">`;
+                    techHTML += `<img src="../../assets/images/icons/${t.icon}.svg" alt="${t.name}" onerror="this.src='https://cdn.simpleicons.org/${t.icon}/ffffff'">`;
                 });
                 techHTML += `</div>`;
                 initialContainer.querySelector('.desc').insertAdjacentHTML('afterend', techHTML);
