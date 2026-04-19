@@ -9,29 +9,51 @@ const ProjectContent = {
             phase: 'Contexto',
             title: 'O DESAFIO',
             title2: 'PREVISÃO DE VENDAS',
-            description: 'Equipe comercial operando sem visibilidade do futuro. A falta de previsibilidade de receita comprometia a alocação de recursos e o planejamento estratégico.',
+            description: 'Equipe comercial operando sem visibilidade do futuro. A falta de previsibilidade de receita comprometia o planejamento estratégico.',
             image: '../../assets/images/windows.png'
         },
         {
             phase: 'Modelagem',
             title: 'TIME SERIES',
             title2: 'ML PIPELINE',
-            description: 'Implementação de modelos de séries temporais com Scikit-Learn e Prophet, combinados com feature engineering baseado em sazonalidade e tendência histórica.',
+            description: 'Implementação de modelos de séries temporais com Scikit-Learn e Prophet, combinados com feature engineering avançada.',
             image: '../../assets/images/windows.png'
         },
         {
             phase: 'Resultados',
             title: 'DASHBOARD',
             title2: 'INSIGHTS',
-            description: 'Dashboard interativo de performance de vendas com KPIs em tempo real, comparativo de metas vs. realizado e previsão de receita para os próximos 90 dias.',
+            description: 'Dashboard interativo de performance de vendas com KPIs em tempo real e previsão de receita para os próximos 90 dias.',
             image: '../../assets/images/windows.png'
         }
     ],
-    fullContent: [
-        "O projeto de **Sales Forecasting** combina análise exploratória de dados históricos de vendas com modelos preditivos de séries temporais para fornecer previsões de receita com alta acurácia.",
-        "Utilizando **Python, Pandas e Scikit-Learn**, o pipeline processa dados históricos de vendas, realiza feature engineering (sazonalidade, tendência, lag features) e treina modelos de regressão e séries temporais.",
-        "O dashboard de **Performance Analytics** exibe KPIs críticos como taxa de conversão por canal, ticket médio por segmento, desempenho por vendedor e variância entre meta e realizado.",
-        "A previsão de vendas alcançou um erro médio absoluto (**MAE**) de menos de 8% nos testes de validação, permitindo que a equipe comercial planejasse suas ações com base em dados confiáveis.",
-        "O sistema gera relatórios automatizados em PDF e CSV, com alertas configuráveis para desvios significativos entre a previsão e os números reais, disparados via email ou webhook."
+    sections: [
+        {
+            title: "O Problema da Previsibilidade",
+            paragraphs: [
+                "No setor comercial, a **incerteza é o maior custo**. Este projeto nasceu da necessidade de transformar dados históricos de vendas em um motor de previsão confiável para apoiar a tomada de decisão.",
+                "O principal desafio foi lidar com a sazonalidade agressiva e os efeitos externos que impactavam o comportamento de compra dos clientes B2B."
+            ]
+        },
+        {
+            title: "Arquitetura Analítica",
+            paragraphs: [
+                "Utilizamos uma abordagem híbrida de modelagem. O **Facebook Prophet** foi empregado para capturar tendências de longo prazo e sazonalidades anuais, enquanto modelos de **Boosting** trataram as variações locais.",
+                "O pipeline de dados foi desenhado para ser totalmente automatizado, desde a extração do ERP até a atualização dos modelos sem intervenção manual."
+            ]
+        },
+        {
+            title: "Performance e Stack",
+            paragraphs: [
+                "A previsão final alcançou um erro médio absoluto (**MAE**) de menos de 8%, permitindo uma redução significativa no excesso de estoque e uma melhor alocação da força de vendas.",
+                "A stack tecnológica foca em ferramentas de código aberto de alta performance, permitindo escalabilidade e facilidade de manutenção."
+            ],
+            tech: [
+                { name: "Python", icon: "python" },
+                { name: "Pandas", icon: "pandas" },
+                { name: "Scikit-Learn", icon: "scikitlearn" },
+                { name: "PowerBI", icon: "powerbi" }
+            ]
+        }
     ]
 };
