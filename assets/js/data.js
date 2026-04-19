@@ -82,40 +82,31 @@ const PortfolioData = {
 
     experience: [
         {
-            id: "job-4",
-            year: "2019",
-            title: "Intern",
-            company: "JP Morgan Chase",
-            from: "June 2019",
-            to: "December 2020",
-            code: "const job = {\n  title: \"Intern\",\n  from: \"June 2019\",\n  to: \"December 2020\",\n  company: \"JP Morgan Chase\"\n}"
-        },
-        {
-            id: "job-3",
-            year: "2021",
-            title: "Data Analyst",
-            company: "Nexus Finance",
-            from: "January 2021",
-            to: "May 2022",
-            code: "const job = {\n  title: \"Data Analyst\",\n  from: \"January 2021\",\n  to: \"May 2022\",\n  company: \"Nexus Finance\",\n  tools: [\"Pandas\", \"SQL\", \"Tableau\"]\n}"
+            id: "job-1",
+            year: "2025",
+            title: "Software Engineer",
+            company: "Advanced Engineering",
+            from: "Jan 2025",
+            to: "Present",
+            code: "const softwareEngineering = {\n  architecture: \"Clean Code & Scalability\",\n  tools: [\"Docker\", \"CI/CD\", \"Cloud Systems\"],\n  goal: \"High-performance data pipelines.\"\n}"
         },
         {
             id: "job-2",
-            year: "2022",
-            title: "Senior Python Developer",
-            company: "Elysium Tech",
-            from: "June 2022",
-            to: "December 2023",
-            code: "const job = {\n  title: \"Senior Python Developer\",\n  from: \"June 2022\",\n  to: \"December 2023\",\n  company: \"Elysium Tech\",\n  stack: [\"FastAPI\", \"Redis\", \"Kafka\"]\n}"
+            year: "2024",
+            title: "Data Science Tech",
+            company: "University",
+            from: "Jan 2024",
+            to: "Present",
+            code: "const dataScience = {\n  focus: \"ETL & Statistical Analysis\",\n  stack: [\"Python\", \"Pandas\", \"Scikit-learn\"],\n  status: \"Final Stage / Advanced Research\"\n}"
         },
         {
-            id: "job-1",
-            year: "2024",
-            title: "Lead Data Engineer",
-            company: "MacroPulse Intelligence",
-            from: "January 2024",
+            id: "job-3",
+            year: "2016",
+            title: "Public Safety Specialist",
+            company: "PMMG",
+            from: "2016",
             to: "Present",
-            code: "const job = {\n  title: \"Lead Data Engineer\",\n  from: \"Jan 2024\",\n  to: \"Present\",\n  company: \"MacroPulse Intelligence\",\n  impact: \"Orchestrated ETL for 50M+ signals\"\n}"
+            code: "const policeForce = {\n  role: \"Public Safety Specialist\",\n  tenure: \"10 years\",\n  expertise: [\"Operational Planning\", \"Crisis Mgmt\"],\n  legacy: \"Tactical discipline applied to dev workflow.\"\n}"
         }
     ],
 
