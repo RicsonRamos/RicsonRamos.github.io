@@ -1,29 +1,29 @@
-    experience: [
-        {
-            id: "job-3",
-            year: "2016",
-            title: "Public Safety Specialist",
-            company: "PMMG",
-            from: "2016",
-            to: "Present",
-            code: "const policeForce = {\n  role: \"Public Safety Specialist\",\n  tenure: \"10 years\",\n  expertise: [\"Operational Planning\", \"Crisis Mgmt\"],\n  legacy: \"Tactical discipline applied to dev workflow.\"\n}"
-        },
-        {
-            id: "job-2",
-            year: "2024",
-            title: "Data Science Tech",
-            company: "University",
-            from: "Jan 2024",
-            to: "Present",
-            code: "const dataScience = {\n  focus: \"ETL & Statistical Analysis\",\n  stack: [\"Python\", \"Pandas\", \"Scikit-learn\"],\n  status: \"Final Stage / Advanced Research\"\n}"
-        },
-        {
-            id: "job-1",
-            year: "2025",
-            title: "Software Engineer",
-            company: "Advanced Engineering",
-            from: "Jan 2025",
-            to: "Present",
-            code: "const softwareEngineering = {\n  architecture: \"Clean Code & Scalability\",\n  tools: [\"Docker\", \"CI/CD\", \"Cloud Systems\"],\n  goal: \"High-performance data pipelines.\"\n}"
-        }
-    ],
+[
+    {
+        "id": "job-1",
+        "year": "2016",
+        "title": "Public Safety Specialist",
+        "company": "PMMG",
+        "from": "2016",
+        "to": "Present",
+        "code": "const job = {\n  title: \"Public Safety Specialist\",\n  from: \"2016\",\n  to: \"Present\",\n  company: \"PMMG\",\n  skills: [\"Operational Planning\", \"Tactical Discipline\"]\n}"
+    },
+    {
+        "id": "job-2",
+        "year": "2024",
+        "title": "Data Science Student",
+        "company": "University",
+        "from": "January 2024",
+        "to": "Present",
+        "code": "const job = {\n  title: \"Data Science Student\",\n  from: \"Jan 2024\",\n  to: \"Present\",\n  stack: [\"Python\", \"Pandas\", \"Scikit-learn\"],\n  focus: \"ETL & Data Analysis\"\n}"
+    },
+    {
+        "id": "job-3",
+        "year": "2025",
+        "title": "Software Engineer Student",
+        "company": "Advanced Engineering",
+        "from": "January 2025",
+        "to": "Present",
+        "code": "const job = {\n  title: \"Software Engineer Student\",\n  from: \"Jan 2025\",\n  to: \"Present\",\n  tools: [\"Docker\", \"CI/CD\", \"FastAPI\"],\n  goal: \"Scalable Systems Architecture\"\n}"
+    }
+]
