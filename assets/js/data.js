@@ -19,6 +19,26 @@ const PortfolioData = {
     },
     projects: [
         {
+            id: "automation-saas",
+            title: "AutoProposta SaaS",
+            subtitle: "Automação de Propostas e Gestão",
+            image: "assets/images/automation_saas.png",
+            tags: ["Python", "Streamlit", "SQLite"],
+            url: "projetos/automation-saas/index.html",
+            github: "https://github.com/RicsonRamos/automation_saas",
+            featured: true
+        },
+        {
+            id: "olist-data-platform",
+            title: "Olist Data Platform",
+            subtitle: "Lakehouse Híbrido e Pipeline",
+            image: "assets/images/olist_data_platform.png",
+            tags: ["Python", "Docker", "dbt", "PostgreSQL"],
+            url: "projetos/olist-data-platform/index.html",
+            github: "https://github.com/RicsonRamos/olist-data-platform",
+            featured: true
+        },
+        {
             id: "macropulse",
             title: "Macropulse",
             subtitle: "Inteligência Macroeconômica",

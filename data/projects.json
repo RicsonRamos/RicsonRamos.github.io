@@ -1,5 +1,32 @@
 [
     {
+        "id": "automation-saas",
+        "title": "AutoProposta SaaS",
+        "subtitle": "Automação de Propostas e Gestão",
+        "image": "assets/images/automation_saas.png",
+        "tags": [
+            "Python",
+            "Streamlit",
+            "SQLite"
+        ],
+        "url": "projetos/automation-saas/index.html",
+        "featured": true
+    },
+    {
+        "id": "olist-data-platform",
+        "title": "Olist Data Platform",
+        "subtitle": "Lakehouse Híbrido e Pipeline",
+        "image": "assets/images/olist_data_platform.png",
+        "tags": [
+            "Python",
+            "Docker",
+            "dbt",
+            "PostgreSQL"
+        ],
+        "url": "projetos/olist-data-platform/index.html",
+        "featured": true
+    },
+    {
         "id": "macropulse",
         "title": "Macropulse",
         "subtitle": "Inteligência Macroeconômica",
