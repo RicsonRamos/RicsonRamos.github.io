@@ -22,90 +22,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (projectsContainer && projects.length > 0) {
         // Render projects with clones for infinite loop
-        const clonesCount = 4; // Increased clones for better coverage
-        const firstClones = projects.slice(0, clonesCount);
-        const lastClones = projects.slice(-clonesCount);
-        const displayProjects = [...lastClones, ...projects, ...firstClones];
+        const clonesCount = 4;
+        const displayProjects = [
+            ...projects.slice(-clonesCount), 
+            ...projects, 
+            ...projects.slice(0, clonesCount)
+        ];
 
         projectsContainer.innerHTML = displayProjects.map((p, index) => `
-            <div class="project-card" onclick="window.location.href='${p.url}'">
-                <img src="${p.image}" alt="${p.title}" loading="lazy">
+            <div class="project-card" onclick="window.location.href='${p.url}'" role="button" aria-label="Ver projeto ${p.title}">
+                <img src="${p.image}" alt="${p.title}" loading="lazy" width="450" height="550">
                 <div class="project-info">
                     <h3>${p.title}</h3>
                     <p>${p.subtitle}</p>
                     <div class="badges">
                         ${p.tags.map(tag => `<span>${tag}</span>`).join('')}
                     </div>
-                    <div class="project-cta">Ver Projeto →</div>
+                    <div class="project-cta" aria-hidden="true">Ver Projeto →</div>
                 </div>
             </div>
         `).join('');
 
         // Carousel State
         let currentIndex = clonesCount;
-        const gap = 32; // 2rem in px
+        let cachedTotalWidth = 0;
         
-        function getCardWidth() {
+        function updateLayoutCache() {
             const firstCard = projectsContainer.querySelector('.project-card');
-            return firstCard ? firstCard.offsetWidth : 450;
+            if (!firstCard) return;
+            
+            const style = window.getComputedStyle(projectsContainer);
+            const gap = parseFloat(style.gap) || 0;
+            cachedTotalWidth = firstCard.offsetWidth + gap;
         }
 
         function moveToIndex(index, animate = true) {
-            const totalWidth = getCardWidth() + gap;
             currentIndex = index;
-            const targetX = -currentIndex * totalWidth;
+            const targetX = -currentIndex * cachedTotalWidth;
 
-            if (animate) {
-                gsap.to(projectsContainer, {
-                    x: targetX,
-                    duration: 1.2, // Slightly slower for more premium feel
-                    ease: "power2.inOut",
-                    onComplete: () => {
-                        // Handle infinite loop jumps
-                        if (currentIndex >= projects.length + clonesCount) {
-                            currentIndex = clonesCount;
-                            gsap.set(projectsContainer, { x: -currentIndex * totalWidth });
-                        } else if (currentIndex < clonesCount) {
-                            currentIndex = projects.length + clonesCount - 1;
-                            gsap.set(projectsContainer, { x: -currentIndex * totalWidth });
-                        }
+            gsap.to(projectsContainer, {
+                x: targetX,
+                duration: animate ? 1.2 : 0,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    if (currentIndex >= projects.length + clonesCount) {
+                        currentIndex = clonesCount;
+                        gsap.set(projectsContainer, { x: -currentIndex * cachedTotalWidth });
+                    } else if (currentIndex < clonesCount) {
+                        currentIndex = projects.length + clonesCount - 1;
+                        gsap.set(projectsContainer, { x: -currentIndex * cachedTotalWidth });
                     }
-                });
-            } else {
-                gsap.set(projectsContainer, { x: targetX });
-            }
+                }
+            });
         }
 
-        // Initial position
+        // Initial Layout
+        updateLayoutCache();
         moveToIndex(currentIndex, false);
 
-        // Event Listeners for Nav Triggers
+        // Event Listeners for Nav Triggers (Buttons)
         const pTrigger = document.querySelector('.prev-trigger');
         const nTrigger = document.querySelector('.next-trigger');
-        if (pTrigger) pTrigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            moveToIndex(currentIndex - 1);
+        
+        if (pTrigger) pTrigger.addEventListener('click', () => moveToIndex(currentIndex - 1));
+        if (nTrigger) nTrigger.addEventListener('click', () => moveToIndex(currentIndex + 1));
+
+        // Optimized Resize Handling
+        const ro = new ResizeObserver(() => {
+            updateLayoutCache();
+            moveToIndex(currentIndex, false);
         });
-        if (nTrigger) nTrigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            moveToIndex(currentIndex + 1);
-        });
+        ro.observe(projectsContainer.parentElement);
 
-        // Resize handler
-        window.addEventListener('resize', () => moveToIndex(currentIndex, false));
-
-        // Auto-play periodic sliding
-        let autoPlay = setInterval(() => moveToIndex(currentIndex + 1), 4000);
-
+        // Auto-play
+        let autoPlay = setInterval(() => moveToIndex(currentIndex + 1), 5000);
         const container = document.querySelector('.carousel-container');
         if (container) {
             container.addEventListener('mouseenter', () => clearInterval(autoPlay));
             container.addEventListener('mouseleave', () => {
-                autoPlay = setInterval(() => moveToIndex(currentIndex + 1), 4000);
+                autoPlay = setInterval(() => moveToIndex(currentIndex + 1), 5000);
             });
         }
-
-        // Optional: Touch/Scroll support can be added here if needed
     }
 
     // 3. EXPERIENCE TIMELINE & IDE

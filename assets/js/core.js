@@ -4,22 +4,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const { config } = PortfolioData;
 
-    // 0. HAMBURGER MENU
+    // 0. HAMBURGER MENU & SCROLL LOCK
     const navToggle = document.getElementById('nav-toggle');
     const navList = document.getElementById('nav-list');
+    
+    function toggleMenu(forceClose = false) {
+        const isOpen = forceClose ? false : navList.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        navToggle.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+
+        if (isOpen) {
+            // Focus Trap - Focus first link
+            const firstLink = navList.querySelector('a');
+            if (firstLink) firstLink.focus();
+        } else {
+            // Restore Focus
+            navToggle.focus();
+        }
+    }
+
     if (navToggle && navList) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = navList.classList.toggle('open');
-            navToggle.setAttribute('aria-expanded', isOpen);
-            navToggle.classList.toggle('open', isOpen);
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
         });
+        
         // Close on link click
         navList.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                navList.classList.remove('open');
-                navToggle.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', false);
-            });
+            a.addEventListener('click', () => toggleMenu(true));
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (navList.classList.contains('open') && !navList.contains(e.target) && !navToggle.contains(e.target)) {
+                toggleMenu(true);
+            }
+        });
+
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navList.classList.contains('open')) {
+                toggleMenu(true);
+            }
+            
+            // Basic Focus Trap (Loop tabbing)
+            if (e.key === 'Tab' && navList.classList.contains('open')) {
+                const focusableEls = navList.querySelectorAll('a');
+                const first = focusableEls[0];
+                const last = focusableEls[focusableEls.length - 1];
+
+                if (e.shiftKey && document.activeElement === first) {
+                    last.focus();
+                    e.preventDefault();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    first.focus();
+                    e.preventDefault();
+                }
+            }
         });
     }
 
@@ -28,50 +70,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', config.seo.description);
 
-    // Header Logo Injection
-    const logoContainer = document.querySelector('.logo a');
-    if (logoContainer) {
-        const nameParts = config.name.split(' ');
-        logoContainer.innerHTML = `${nameParts[0]} <span class="hero-highlight">${nameParts[1]}</span>`;
-    }
-
-    // 2. STICKY NAV & INDICATOR LOGIC
+    // 2. NAV INDICATOR LOGIC (Optimized with ResizeObserver)
     const nav = document.querySelector('#main-nav');
     if (nav) {
         const indicator = document.createElement('div');
         indicator.classList.add('active-element');
-        nav.appendChild(indicator); // Accessibility: Moved out of UL
-
-        let ticking = false; // Throttle flag for layout measurements
+        nav.appendChild(indicator);
 
         function updateIndicator(targetEl) {
-            if (!targetEl || ticking) return;
-
-            ticking = true;
-            window.requestAnimationFrame(() => {
-                const rect = targetEl.getBoundingClientRect();
-                const navRect = nav.getBoundingClientRect();
-                
-                gsap.to(indicator, {
-                    left: rect.left - navRect.left,
-                    width: rect.width,
-                    duration: 0.5,
-                    ease: "power3.out"
-                });
-                
-                ticking = false;
+            if (!targetEl) return;
+            const rect = targetEl.getBoundingClientRect();
+            const navRect = nav.getBoundingClientRect();
+            
+            gsap.to(indicator, {
+                left: rect.left - navRect.left,
+                width: rect.width,
+                duration: 0.5,
+                ease: "power3.out"
             });
         }
 
-
-
-        const initialActive = document.querySelector('.nav-item.active a, .nav-item.active button');
-        if (initialActive) updateIndicator(initialActive);
-
-        window.addEventListener('resize', () => {
+        const resizeObserver = new ResizeObserver(() => {
             const activeEl = document.querySelector('.nav-item.active a, .nav-item.active button');
             if (activeEl) updateIndicator(activeEl);
         });
+        resizeObserver.observe(nav);
 
         // Global Nav Observer (Sections)
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -89,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.3 });
         document.querySelectorAll('section').forEach(s => sectionObserver.observe(s));
 
-        // Nav Click Handlers (Internal Scroll & External Redirect)
+        // Nav Click Handlers
         nav.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('click', (e) => {
                 const sectionId = el.getAttribute('data-section');
@@ -99,23 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (section) {
                     e.preventDefault();
                     section.scrollIntoView({ behavior: 'smooth' });
-                    // Update URL hash without jump
                     history.pushState(null, null, `#${sectionId}`);
-                } else {
-                    // Redirect to home if on subpage
-                    if (window.location.pathname.includes('/projetos/')) {
-                        e.preventDefault();
-                        window.location.href = `../../index.html#${sectionId}`;
-                    }
                 }
             });
         });
     }
 
-    // 3. GLOBAL REVEAL ANIMATIONS
+    // 3. REVEAL ANIMATIONS
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target); // Optimize performance
+            }
         });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(r => revealObserver.observe(r));
@@ -125,8 +144,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactLinks) {
         contactLinks.innerHTML = `
             <a href="mailto:${config.email}" class="link-item btn outline-btn">Email</a>
-            <a href="${config.social.linkedin}" class="link-item btn outline-btn" target="_blank">LinkedIn</a>
-            <a href="${config.social.github}" class="link-item btn outline-btn" target="_blank">GitHub</a>
+            <a href="${config.social.linkedin}" class="link-item btn outline-btn" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="${config.social.github}" class="link-item btn outline-btn" target="_blank" rel="noopener">GitHub</a>
         `;
+    }
+
+    // 5. PRODUCTION INSTRUMENTATION (Staff-Level Observability)
+    if ('PerformanceObserver' in window) {
+        // Track LCP (Largest Contentful Paint)
+        const lcpObserver = new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            console.log(`[RUM] LCP: ${lastEntry.startTime.toFixed(2)}ms`, lastEntry);
+        });
+        lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+
+        // Track INP / Long Animation Frames (Experimental but recommended)
+        const longTaskObserver = new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (entry.duration > 50) {
+                    console.warn(`[RUM] Long Task Detected: ${entry.duration.toFixed(2)}ms at ${entry.startTime.toFixed(2)}ms`);
+                }
+            }
+        });
+        longTaskObserver.observe({ type: 'longtask' });
+
+        // Track Layout Shifts (CLS)
+        let clsValue = 0;
+        const clsObserver = new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (!entry.hadRecentInput) {
+                    clsValue += entry.value;
+                    console.log(`[RUM] Cumulative Layout Shift: ${clsValue.toFixed(4)}`);
+                }
+            }
+        });
+        clsObserver.observe({ type: 'layout-shift', buffered: true });
     }
 });

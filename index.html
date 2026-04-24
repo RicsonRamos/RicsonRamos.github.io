@@ -5,12 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricson Ramos | Data Engineer Portfolio</title>
-    <meta name="description"
-        content="Engenheiro de Dados e Desenvolvedor Python. Automação, ETL e inteligência de dados com foco em performance.">
+    <meta name="description" content="Engenheiro de Dados e Desenvolvedor Python. Automação, ETL e inteligência de dados com foco em performance.">
+    <meta name="theme-color" content="#000000">
 
-    <!-- Dependencies -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- SEO & Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ricson Ramos | Data Engineer Portfolio">
+    <meta property="og:description" content="Data Engineering, Python Automation, and ETL Specialist.">
+    <meta property="og:image" content="assets/images/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ricson Ramos | Data Engineer Portfolio">
+
+    <!-- Performance: Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Critical CSS Fixes (Non-blocking font loading) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 
 
@@ -22,15 +35,15 @@
 
 
             <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: inherit;">
+                <a href="index.html" class="u-block">
                     <!-- Injected by core.js -->
                 </a>
             </div>
             <nav id="main-nav">
-                <button id="nav-toggle" aria-label="Menu" aria-expanded="false">
+                <button id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
                     <span></span><span></span><span></span>
                 </button>
-                <ul id="nav-list">
+                <ul id="nav-list" role="dialog" aria-modal="true" aria-label="Menu de Navegação">
                     <li class="nav-item active"><a href="#hero" data-section="hero">Home</a></li>
                     <li class="nav-item"><a href="#projects" data-section="projects">Projects</a></li>
                     <li class="nav-item"><a href="#experience" data-section="experience">Experience</a></li>
@@ -43,16 +56,16 @@
 
     <main>
         <!-- Dynamic Hero Section -->
-        <section id="hero" class="container text-center">
-            <div class="reveal">
+        <section id="hero" class="hero-section">
+            <div class="container reveal">
                 <span class="hero-prefix"><!-- Injected --></span>
-                <h1 style="font-size: 5.5rem; letter-spacing: -3px; margin-bottom: 2rem;">
+                <h1 class="hero-title">
                     <!-- Injected -->
                 </h1>
 
                 <p class="hero-instruction"><!-- Injected --></p>
 
-                <!-- Technology Marquee (Kept static for layout stability) -->
+                <!-- Technology Marquee -->
                 <div class="marquee-container">
                     <div class="marquee-content">
                         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="Python">
@@ -75,10 +88,9 @@
                     </div>
                 </div>
 
-                <div class="cta-group" style="margin-top: 4rem;">
+                <div class="cta-group">
                     <a href="#contact" class="btn outline-btn">Contact Me</a>
                     <a href="#" class="btn glow-btn" id="github-cta">Github</a>
-
                 </div>
             </div>
 
@@ -90,23 +102,23 @@
         </section>
 
         <!-- Dynamic Project Gallery -->
-        <section id="projects" class="section-padding" style="width: 100%; overflow-x: hidden;">
+        <section id="projects" class="section-padding u-w-full u-overflow-hidden">
             <div class="container">
-                <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
-                    <span class="text-upper">Recent Work</span>
-                    <h2 style="font-size: 3.5rem;">Selected Projects</h2>
+                <div class="section-header reveal u-mb-xl u-text-center">
+                    <span class="text-upper u-block">Recent Work</span>
+                    <h2 class="u-fz-h2">Selected Projects</h2>
 
                 </div>
             </div>
 
             <div class="carousel-container reveal">
+                <button class="nav-trigger prev-trigger" aria-label="Anterior"></button>
                 <div class="carousel-viewport">
-                    <div class="nav-trigger prev-trigger" aria-label="Previous"></div>
-                    <div class="nav-trigger next-trigger" aria-label="Next"></div>
                     <div class="animated-gallery">
                         <!-- Content Injected from data.js -->
                     </div>
                 </div>
+                <button class="nav-trigger next-trigger" aria-label="Próximo"></button>
             </div>
 
             <div class="container" style="position: relative; height: 100px; margin-top: 10rem;">
@@ -121,9 +133,9 @@
 
         <!-- Dynamic Experience Section -->
         <section id="experience" class="container section-padding">
-            <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
-                <span class="text-upper">Professional Path</span>
-                <h2 style="font-size: 3.5rem;">Experience</h2>
+            <div class="section-header reveal u-mb-xl u-text-center">
+                <span class="text-upper u-block">Professional Path</span>
+                <h2 class="u-fz-h2">Experience</h2>
             </div>
 
             <div class="experience-container reveal">
@@ -131,7 +143,7 @@
                 <div class="timeline-h"></div>
 
                 <!-- Interactive IDE Window -->
-                <div class="ide-window" style="margin-top: 2rem;">
+                <div class="ide-window u-mt-auto">
                     <div class="ide-tab-bar">
                         <!-- Tabs Injected -->
                     </div>
@@ -148,15 +160,15 @@
                 </svg>
             </div>
         </section>
-        
+
         </section>
 
         <!-- Dynamic Contact Section -->
         <section id="contact" class="container section-padding text-center">
             <div class="reveal">
                 <span class="text-upper">Status: Available</span>
-                <h2 style="font-size: 5rem; margin-bottom: 3rem;">Let's Connect</h2>
-                <div class="contact-links" style="display: flex; gap: 3rem; justify-content: center;">
+                <h2 class="u-fz-h1 u-mb-xl">Let's Connect</h2>
+                <div class="contact-links u-flex u-justify-center u-gap-3">
                     <!-- Links Injected -->
                 </div>
 
@@ -165,8 +177,8 @@
         </section>
     </main>
 
-    <footer class="container text-center" style="padding: var(--space-lg) 0; opacity: 0.5;">
-        <p class="text-upper">© 2024 Ricson Ramos // Built with Speed & Intent</p>
+    <footer class="container u-text-center u-py-lg u-opacity-50">
+        <p class="text-upper">© 2026 Ricson Ramos // Built with Speed & Intent</p>
     </footer>
 
     <!-- CORE LOGIC / SCRIPTS -->
