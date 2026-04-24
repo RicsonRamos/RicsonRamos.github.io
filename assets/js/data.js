@@ -102,40 +102,31 @@ const PortfolioData = {
 
     experience: [
         {
-            id: "job-4",
-            year: "2019",
-            title: "Intern",
-            company: "JP Morgan Chase",
-            from: "June 2019",
-            to: "December 2020",
-            code: "const job = {\n  title: \"Intern\",\n  from: \"June 2019\",\n  to: \"December 2020\",\n  company: \"JP Morgan Chase\"\n}"
-        },
-        {
-            id: "job-3",
-            year: "2021",
-            title: "Data Analyst",
-            company: "Nexus Finance",
-            from: "January 2021",
-            to: "May 2022",
-            code: "const job = {\n  title: \"Data Analyst\",\n  from: \"January 2021\",\n  to: \"May 2022\",\n  company: \"Nexus Finance\",\n  tools: [\"Pandas\", \"SQL\", \"Tableau\"]\n}"
+            id: "job-1",
+            year: "2016",
+            title: "Public Security Officer",
+            company: "Government Agency",
+            from: "January 2016",
+            to: "Actual",
+            code: "const job = {\n  title: \"Public Security Officer\",\n  from: \"January 2016\",\n  to: \"Actual\",\n  sector: \"Public Safety\"\n}"
         },
         {
             id: "job-2",
-            year: "2022",
-            title: "Senior Python Developer",
-            company: "Elysium Tech",
-            from: "June 2022",
-            to: "December 2023",
-            code: "const job = {\n  title: \"Senior Python Developer\",\n  from: \"June 2022\",\n  to: \"December 2023\",\n  company: \"Elysium Tech\",\n  stack: [\"FastAPI\", \"Redis\", \"Kafka\"]\n}"
-        },
-        {
-            id: "job-1",
             year: "2024",
-            title: "Lead Data Engineer",
-            company: "MacroPulse Intelligence",
+            title: "Data Science Student",
+            company: "Anhanguera University",
             from: "January 2024",
             to: "Present",
-            code: "const job = {\n  title: \"Lead Data Engineer\",\n  from: \"Jan 2024\",\n  to: \"Present\",\n  company: \"MacroPulse Intelligence\",\n  impact: \"Orchestrated ETL for 50M+ signals\"\n}"
+            code: "const job = {\n  title: \"Data Science Student\",\n  from: \"January 2024\",\n  to: \"Present\",\n  institution: \"Anhanguera University\"\n}"
+        },
+        {
+            id: "job-3",
+            year: "2026",
+            title: "Software Engineering Student",
+            company: "Gran University",
+            from: "January 2026",
+            to: "Present",
+            code: "const job = {\n  title: \"Software Engineering Student\",\n  from: \"January 2026\",\n  to: \"Present\",\n  institution: \"Gran Faculty\"\n}"
         }
     ],
 
