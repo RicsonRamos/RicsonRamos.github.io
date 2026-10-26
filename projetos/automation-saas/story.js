@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'CAOS DOCUMENTAL',
             description: 'O processo manual de "copia e cola" em propostas comerciais causava erros críticos e perda de tempo para freelancers e pequenas agências.',
-            image: '../../assets/images/automation_saas.png'
+            image: '../../assets/images/automation_saas.webp'
         },
         {
             phase: 'Ideia',
             title: 'A SOLUÇÃO',
             title2: 'CÉREBRO COMERCIAL',
             description: 'Desenvolver um ecossistema local que centraliza clientes, automatiza contratos e oferece um painel financeiro transparente.',
-            image: '../../assets/images/automation_saas.png'
+            image: '../../assets/images/automation_saas.webp'
         },
         {
             phase: 'Implementação',
             title: 'TECH STACK',
             title2: 'SIMPLICIDADE & PODER',
             description: 'Integração de Streamlit para UI, docxtpl para renderização de documentos dinâmicos e SQLite para persistência leve.',
-            image: '../../assets/images/automation_saas.png'
+            image: '../../assets/images/automation_saas.webp'
         }
     ],
     sections: [

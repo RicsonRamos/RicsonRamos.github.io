@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'INCERTEZA DE DEMANDA',
             description: 'Equipe comercial operando sem visibilidade do futuro: rupturas de estoque e capital de giro imobilizado em produtos de baixo giro.',
-            image: '../../assets/images/salesforecasting.png'
+            image: '../../assets/images/salesforecasting.webp'
         },
         {
             phase: 'Modelagem',
             title: 'CLUSTER & ML',
             title2: 'PREVISÃO ESTRATÉGICA',
             description: 'Segmentação comportamental de clientes com K-Means Clustering e modelos supervisionados para estimar receita futura por categoria.',
-            image: '../../assets/images/salesforecasting.png'
+            image: '../../assets/images/salesforecasting.webp'
         },
         {
             phase: 'Resultados',
             title: 'DASHBOARD',
             title2: 'AÇÃO OPERACIONAL',
             description: 'Aplicação analítica interativa em Streamlit conteinerizada com Docker, orientando decisões de compra e campanhas personalizadas.',
-            image: '../../assets/images/salesforecasting.png'
+            image: '../../assets/images/salesforecasting.webp'
         }
     ],
     sections: [

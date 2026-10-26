@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'EVASÃO DE RECEITA',
             description: 'Altas taxas de cancelamento impactavam o faturamento mensal recorrente (ARR). Descontos genéricos desperdiçavam margem de lucro.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/churn.webp'
         },
         {
             phase: 'Ideia',
             title: 'A SOLUÇÃO',
             title2: 'IA PREDITIVA COM XAI',
             description: 'Implementar modelo XGBoost para prever cancelamentos e SHAP Values para auditar exatamente por que cada cliente quer sair.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/churn.webp'
         },
         {
             phase: 'Implementação',
             title: 'MLOPS PRÁTICO',
             title2: 'AÇÃO & ROI',
             description: 'Painel operacional em Streamlit conteinerizado em Docker, com simulação em tempo real de retorno sobre investimento da retenção.',
-            image: '../../assets/images/churn.jpg'
+            image: '../../assets/images/churn.webp'
         }
     ],
     sections: [

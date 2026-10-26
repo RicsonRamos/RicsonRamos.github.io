@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'CONHECIMENTO DISPERSO',
             description: 'Milhares de notas analíticas e documentos isolados sem conexões semânticas, dificultando a recuperação rápida de insights.',
-            image: '../../assets/images/obsidianai.png'
+            image: '../../assets/images/obsidianai.webp'
         },
         {
             phase: 'Solução',
             title: 'LOCAL-FIRST',
             title2: 'LLM + RAG HÍBRIDO',
             description: 'Arquitetura que utiliza modelos de linguagem locais (Ollama) e Google Gemini para transformar notas em grafos de conhecimento estruturados.',
-            image: '../../assets/images/obsidianai.png'
+            image: '../../assets/images/obsidianai.webp'
         },
         {
             phase: 'Resultado',
             title: 'KNOWLEDGE GRAPH',
             title2: 'PRIVACIDADE & CONTROLE',
             description: 'Interface web moderna conectada a um motor de pesquisa semântica que opera sobre os vaults locais do Obsidian.',
-            image: '../../assets/images/obsidianai.png'
+            image: '../../assets/images/obsidianai.webp'
         }
     ],
     sections: [

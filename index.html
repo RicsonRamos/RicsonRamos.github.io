@@ -1,190 +1,206 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="snap-active">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricson Ramos | Data Scientist & Analytics Engineer</title>
-    <meta name="description" content="Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso focados em retorno de negócio, modelagem preditiva e inteligência operacional.">
-    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso focados em retenção de receita, governança métrica e inteligência preditiva.">
+    <meta name="theme-color" content="#07090e">
 
-    <!-- SEO & Social -->
+    <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ricsonramos.github.io/">
     <meta property="og:title" content="Ricson Ramos | Data Scientist & Analytics Engineer">
-    <meta property="og:description" content="Estudos de caso executivos em Ciência de Dados, MLOps e Engenharia Analítica.">
-    <meta property="og:image" content="assets/images/og-preview.png">
+    <meta property="og:description" content="Estudos de caso executivos em Ciência de Dados, MLOps e Engenharia Analítica com foco em ROI.">
+    <meta property="og:image" content="https://ricsonramos.github.io/assets/images/churn.webp">
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ricson Ramos | Data Scientist & Analytics Engineer">
+    <meta name="twitter:description" content="Estudos de caso executivos em Ciência de Dados, MLOps e Engenharia Analítica.">
+    <meta name="twitter:image" content="https://ricsonramos.github.io/assets/images/churn.webp">
 
-    <!-- Performance: Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
+    <link rel="canonical" href="https://ricsonramos.github.io/">
     <link rel="stylesheet" href="assets/css/main.css">
-
-    <!-- Critical CSS Fixes (Non-blocking font loading) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 
+<body>
 
-<body class="dracula">
-
-    <!-- Header / Nav with Active Indicator -->
-    <header class="navbar navbar--sticky">
+    <!-- Sticky Glass Header / Navbar -->
+    <header class="navbar">
         <div class="container nav-wrapper">
+            <a href="index.html" class="nav-brand" aria-label="Página Inicial">
+                <span class="nav-brand-dot"></span>
+                <span>Ricson Ramos</span>
+            </a>
 
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu de Navegação" aria-expanded="false" aria-controls="nav-menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
 
-            <div class="logo">
-                <a href="index.html" class="u-block">
-                    <!-- Injected by core.js -->
-                </a>
-            </div>
-            <nav id="main-nav">
-                <button id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
-                    <span></span><span></span><span></span>
-                </button>
-                <ul id="nav-list" role="dialog" aria-modal="true" aria-label="Menu de Navegação">
-                    <li class="nav-item active"><a href="#hero" data-section="hero">Home</a></li>
-                    <li class="nav-item"><a href="#projects" data-section="projects">Projects</a></li>
-                    <li class="nav-item"><a href="#experience" data-section="experience">Experience</a></li>
-                    <li class="nav-item"><a href="about.html">About</a></li>
-                    <li class="nav-item"><a href="#contact" data-section="contact">Contact</a></li>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#projects" class="nav-link">Estudos de Caso</a></li>
+                    <li><a href="#experience" class="nav-link">Trajetória</a></li>
+                    <li><a href="#philosophy" class="nav-link">Como Trabalho</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ricsonramos-analise-dados/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn ↗</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/RicsonRamos" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub ↗</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Dynamic Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container reveal">
-                <span class="hero-prefix"><!-- Injected --></span>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Disponível para novas oportunidades em Dados</span>
+                </div>
+
                 <h1 class="hero-title">
-                    <!-- Injected -->
+                    Ricson <span class="hero-title-gradient">Ramos</span>
                 </h1>
 
-                <p class="hero-instruction"><!-- Injected --></p>
+                <div class="hero-role">Data Scientist & Analytics Engineer</div>
 
-                <!-- Technology Marquee -->
-                <div class="marquee-container">
-                    <div class="marquee-content">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="Python">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fastapi.svg" alt="FastAPI">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="Docker">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg" alt="PostgreSQL">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redis.svg" alt="Redis">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pandas.svg" alt="Pandas">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apacheairflow.svg" alt="Airflow">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachespark.svg" alt="Spark">
-                        <!-- Duplicates for loop -->
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="Python">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fastapi.svg" alt="FastAPI">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="Docker">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg" alt="PostgreSQL">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redis.svg" alt="Redis">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pandas.svg" alt="Pandas">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apacheairflow.svg" alt="Airflow">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachespark.svg" alt="Spark">
-                    </div>
+                <p class="hero-description">
+                    Transformando dados brutos em <strong>decisões de negócio</strong>, <strong>retorno financeiro mensurável (ROI)</strong> e <strong>sistemas preditivos de produção</strong>.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Explorar Projetos & Estudos de Caso</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ricsonramos-analise-dados/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <span>LinkedIn</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                    </a>
+                    <a href="https://github.com/RicsonRamos" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <span>GitHub</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                    </a>
+                    <button id="copy-email-btn" class="btn btn-outline" type="button" aria-label="Copiar email de contato">
+                        <span>📋 Copiar E-mail</span>
+                    </button>
                 </div>
 
-                <div class="cta-group">
-                    <a href="#contact" class="btn outline-btn">Contact Me</a>
-                    <a href="#" class="btn glow-btn" id="github-cta">Github</a>
+                <!-- 4 Value Props Strip -->
+                <div class="value-strip" id="value-strip">
+                    <!-- Injected by home.js -->
                 </div>
-            </div>
-
-            <div class="scroll-hook">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                </svg>
             </div>
         </section>
 
-        <!-- Dynamic Project Gallery -->
-        <section id="projects" class="section-padding u-w-full u-overflow-hidden">
+        <!-- Projects / Case Studies Showcase -->
+        <section id="projects" class="section">
             <div class="container">
-                <div class="section-header reveal u-mb-xl u-text-center">
-                    <span class="text-upper u-block">Recent Work</span>
-                    <h2 class="u-fz-h2">Selected Projects</h2>
-
+                <div class="section-header">
+                    <span class="section-tag">Estudos de Caso de Negócio</span>
+                    <h2 class="section-title">Soluções que Geram Impacto Real</h2>
+                    <p class="section-subtitle">
+                        Cada projeto resolve um problema concreto de faturamento, eficiência ou governança métrica. Clique em "Estudo de Caso" para explorar a narrativa de negócio ou em "Código" para auditar a arquitetura técnica.
+                    </p>
                 </div>
-            </div>
 
-            <div class="carousel-container reveal">
-                <button class="nav-trigger prev-trigger" aria-label="Anterior"></button>
-                <div class="carousel-viewport">
-                    <div class="animated-gallery">
-                        <!-- Content Injected from data.js -->
-                    </div>
+                <!-- Category Filters -->
+                <div class="filter-tabs" role="tablist" aria-label="Filtro de Projetos">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos os Projetos</button>
+                    <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false">Machine Learning & MLOps</button>
+                    <button class="filter-btn" data-filter="data-eng" role="tab" aria-selected="false">Analytics Engineering</button>
+                    <button class="filter-btn" data-filter="analytics" role="tab" aria-selected="false">Inteligência & Varejo</button>
                 </div>
-                <button class="nav-trigger next-trigger" aria-label="Próximo"></button>
-            </div>
 
-            <div class="container" style="position: relative; height: 100px; margin-top: 10rem;">
-                <div class="scroll-hook">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                    </svg>
+                <!-- Responsive Project Grid -->
+                <div class="project-grid" id="projects-grid">
+                    <!-- Injected by home.js -->
                 </div>
             </div>
         </section>
 
-
-        <!-- Dynamic Experience Section -->
-        <section id="experience" class="container section-padding">
-            <div class="section-header reveal u-mb-xl u-text-center">
-                <span class="text-upper u-block">Professional Path</span>
-                <h2 class="u-fz-h2">Experience</h2>
-            </div>
-
-            <div class="experience-container reveal">
-                <!-- Timeline Nodes Injected -->
-                <div class="timeline-h"></div>
-
-                <!-- Interactive IDE Window -->
-                <div class="ide-window u-mt-auto">
-                    <div class="ide-tab-bar">
-                        <!-- Tabs Injected -->
-                    </div>
-                    <div class="ide-code-container">
-                        <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6</div>
-                        <div class="code-field"><code id="ide-content"></code></div>
-                    </div>
+        <!-- Experience & Education Timeline -->
+        <section id="experience" class="section" style="background: rgba(255,255,255,0.01);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Trajetória & Formação</span>
+                    <h2 class="section-title">Rigor Analítico e Prática Contínua</h2>
+                    <p class="section-subtitle">
+                        Combinação sólida de experiência em tomada de decisão crítica com formação superior em Ciência de Dados e Engenharia de Software.
+                    </p>
                 </div>
-            </div>
 
-            <div class="scroll-hook">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                </svg>
+                <div class="timeline" id="timeline-list">
+                    <!-- Injected by home.js -->
+                </div>
             </div>
         </section>
 
-        <!-- Dynamic Contact Section -->
-        <section id="contact" class="container section-padding text-center">
-            <div class="reveal">
-                <span class="text-upper">Status: Available</span>
-                <h2 class="u-fz-h1 u-mb-xl">Let's Connect</h2>
-                <div class="contact-links u-flex u-justify-center u-gap-3">
-                    <!-- Links Injected -->
+        <!-- Technical Philosophy / How I Work -->
+        <section id="philosophy" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Padrão de Qualidade</span>
+                    <h2 class="section-title">Como Eu Trabalho</h2>
+                    <p class="section-subtitle">
+                        Princípios inegociáveis que garantem que modelos e pipelines funcionem com estabilidade, transparência e valor financeiro.
+                    </p>
                 </div>
 
+                <div class="philosophy-grid" id="philosophy-grid">
+                    <!-- Injected by home.js -->
+                </div>
+            </div>
+        </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-card">
+                    <span class="section-tag">Contato Direto</span>
+                    <h2 class="section-title" style="margin-bottom: 0.5rem;">Vamos Conversar sobre Dados?</h2>
+                    <p class="section-subtitle" style="margin-bottom: 1.5rem;">
+                        Estou aberto para oportunidades em <strong>Ciência de Dados</strong>, <strong>Analytics Engineering</strong> e projetos de alta criticidade.
+                    </p>
+
+                    <div class="contact-links-grid">
+                        <a href="mailto:ricsonramos@outlook.com" class="btn btn-primary">
+                            <span>✉️ ricsonramos@outlook.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ricsonramos-analise-dados/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <span>LinkedIn ↗</span>
+                        </a>
+                        <a href="https://github.com/RicsonRamos" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <span>GitHub ↗</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="container u-text-center u-py-lg u-opacity-50">
-        <p class="text-upper">© 2026 Ricson Ramos // Built with Speed & Intent</p>
+    <!-- Clean Accessible Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>© 2026 Ricson Ramos. Todos os direitos reservados.</p>
+            <p>⚡ Carregamento Ultrarrápido • Otimizado em WebP • Código 100% Autoral</p>
+        </div>
     </footer>
 
-    <!-- CORE LOGIC / SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/core.js"></script>
-    <script src="assets/js/pages/home.js"></script>
+    <!-- Scripts (Zero Bloat, Defer Loading) -->
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/pages/home.js" defer></script>
 </body>
-
 
 </html>

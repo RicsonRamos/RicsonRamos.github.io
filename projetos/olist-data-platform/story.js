@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'DADOS FRAGMENTADOS',
             description: 'Transformar milhões de registros brutos de transações de e-commerce em uma "fonte da verdade" confiável e auditável.',
-            image: '../../assets/images/olist_data_platform.png'
+            image: '../../assets/images/olist_data_platform.webp'
         },
         {
             phase: 'Ideia',
             title: 'A SOLUÇÃO',
             title2: 'LAKEHOUSE HÍBRIDO',
             description: 'Implementação de uma Arquitetura Medalhão com processamento incremental para máxima eficiência e resiliência operacional.',
-            image: '../../assets/images/olist_data_platform.png'
+            image: '../../assets/images/olist_data_platform.webp'
         },
         {
             phase: 'Implementação',
             title: 'TECH STACK',
             title2: 'ENGENHARIA DE ELITE',
             description: 'Pipeline orquestrado com dbt, Python e PostgreSQL, utilizando Docker para portabilidade e CI/CD para qualidade garantida.',
-            image: '../../assets/images/olist_data_platform.png'
+            image: '../../assets/images/olist_data_platform.webp'
         }
     ],
     sections: [

@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'INGESTÃO COMPLEXA',
             description: 'Coletar e estruturar dados telemétricos e históricos de lançamentos da SpaceX e clima espacial da NASA em escala contínua.',
-            image: '../../assets/images/spacexetl.jpg'
+            image: '../../assets/images/spacexetl.webp'
         },
         {
             phase: 'Arquitetura',
             title: 'ORQUESTRAÇÃO',
             title2: 'AIRFLOW + DBT',
             description: 'Orquestração de DAGs no Apache Airflow integradas a transformações dimensionais no dbt e banco PostgreSQL.',
-            image: '../../assets/images/spacexetl.jpg'
+            image: '../../assets/images/spacexetl.webp'
         },
         {
             phase: 'Qualidade',
             title: 'BI & QUALIDADE',
             title2: 'DADOS CONFIÁVEIS',
             description: 'Camada analítica conectada ao Metabase com testes automatizados de dados e validação de cobertura via CI/CD.',
-            image: '../../assets/images/spacexetl.jpg'
+            image: '../../assets/images/spacexetl.webp'
         }
     ],
     sections: [

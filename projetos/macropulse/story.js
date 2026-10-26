@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'SINAIS DISPERSOS',
             description: 'A fragmentação e assincronia de indicadores macroeconômicos globais dificultavam a tomada de decisão ágil para alocação de capital.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/macropulse.webp'
         },
         {
             phase: 'Ideia',
             title: 'A SOLUÇÃO',
             title2: 'TERMINAL UNIFICADO',
             description: 'Consolidar indicadores de mercado, taxas de juros, inflação e atividade real em um motor único com pontuação dinâmica de risco.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/macropulse.webp'
         },
         {
             phase: 'Implementação',
             title: 'TECH STACK',
             title2: 'ALTA PERFORMANCE',
             description: 'Backend assíncrono em FastAPI, pipelines de ingestão ETL automatizados e camada de dados otimizada para séries temporais.',
-            image: '../../assets/images/macropulse.jpg'
+            image: '../../assets/images/macropulse.webp'
         }
     ],
     sections: [

@@ -3,7 +3,7 @@
         "id": "churn",
         "title": "Streaming Churn Radar",
         "subtitle": "Predição Preditiva & ROI de Retenção",
-        "image": "assets/images/churn.jpg",
+        "image": "assets/images/churn.webp",
         "tags": [
             "XGBoost",
             "MLOps",
@@ -18,7 +18,7 @@
         "id": "olist-data-platform",
         "title": "Olist Data Platform",
         "subtitle": "Lakehouse Híbrido & Confiabilidade Métrica",
-        "image": "assets/images/olist_data_platform.png",
+        "image": "assets/images/olist_data_platform.webp",
         "tags": [
             "dbt",
             "PostgreSQL",
@@ -33,7 +33,7 @@
         "id": "sales-forecasting",
         "title": "Retail Sales Intelligence",
         "subtitle": "Previsão de Demanda & Segmentação",
-        "image": "assets/images/salesforecasting.png",
+        "image": "assets/images/salesforecasting.webp",
         "tags": [
             "Scikit-Learn",
             "K-Means",
@@ -48,7 +48,7 @@
         "id": "macropulse",
         "title": "MacroPulse Intelligence",
         "subtitle": "Terminal Macroeconômico & Score de Risco",
-        "image": "assets/images/macropulse.jpg",
+        "image": "assets/images/macropulse.webp",
         "tags": [
             "FastAPI",
             "Python",
@@ -63,7 +63,7 @@
         "id": "spacex",
         "title": "SpaceX Production ETL",
         "subtitle": "Orquestração de Pipelines de Dados",
-        "image": "assets/images/spacexetl.jpg",
+        "image": "assets/images/spacexetl.webp",
         "tags": [
             "Airflow",
             "dbt",
@@ -78,7 +78,7 @@
         "id": "obsidian-ai",
         "title": "Obsidian AI Second Brain",
         "subtitle": "Knowledge Graph com LLMs & RAG",
-        "image": "assets/images/obsidianai.png",
+        "image": "assets/images/obsidianai.webp",
         "tags": [
             "LLM",
             "RAG Local",
@@ -93,7 +93,7 @@
         "id": "automation-saas",
         "title": "AutoProposta Platform",
         "subtitle": "Automação Operacional & Compliance",
-        "image": "assets/images/automation_saas.png",
+        "image": "assets/images/automation_saas.webp",
         "tags": [
             "Python",
             "Streamlit",
@@ -107,7 +107,7 @@
         "id": "smtp",
         "title": "Email Dispatcher Service",
         "subtitle": "Microsserviço de Mensageria",
-        "image": "assets/images/smtpsender.png",
+        "image": "assets/images/smtpsender.webp",
         "tags": [
             "SMTP",
             "Python",

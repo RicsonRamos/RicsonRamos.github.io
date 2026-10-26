@@ -1,145 +1,203 @@
-/* ===== HOMEPAGE MODULES ===== */
+/* ==============================================================================
+   RICSON RAMOS | HOMEPAGE CONTROLLER (2026)
+   Vanilla JS • Zero Bloat • 60fps Native Performance
+   ============================================================================== */
+
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof PortfolioData === 'undefined') return;
-    const { config, projects, experience } = PortfolioData;
-
-    // 1. HERO CONTENT
-    const heroPrefix = document.querySelector('.hero-prefix');
-    const heroH1 = document.querySelector('#hero h1');
-    const heroInstruct = document.querySelector('.hero-instruction');
-    const githubCta = document.getElementById('github-cta');
-
-    if (heroPrefix) heroPrefix.innerHTML = `${config.hero.welcome} <span class="hero-highlight">${config.hero.highlight}</span> of`;
-    if (heroH1) {
-        const nameParts = config.name.split(' ');
-        heroH1.innerHTML = `${nameParts[0]} <span class="hero-highlight">${nameParts[1]}</span>`;
+    if (typeof PortfolioData === 'undefined') {
+        console.error('PortfolioData not found.');
+        return;
     }
-    if (heroInstruct) heroInstruct.textContent = config.hero.instruction;
-    if (githubCta) githubCta.href = config.social.github;
 
-    // 2. PROJECT CAROUSEL RENDER & LOGIC
-    const projectsContainer = document.querySelector('.animated-gallery');
+    const { config, valueProps, projects, experience, philosophy } = PortfolioData;
 
-    if (projectsContainer && projects.length > 0) {
-        // Render projects with clones for infinite loop
-        const clonesCount = 4;
-        const displayProjects = [
-            ...projects.slice(-clonesCount), 
-            ...projects, 
-            ...projects.slice(0, clonesCount)
-        ];
+    // 1. MOBILE NAVBAR CONTROLS
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-        projectsContainer.innerHTML = displayProjects.map((p, index) => `
-            <div class="project-card" onclick="window.location.href='${p.url}'" role="button" aria-label="Ver projeto ${p.title}">
-                <img src="${p.image}" alt="${p.title}" loading="lazy" width="450" height="550">
-                <div class="project-info">
-                    <h3>${p.title}</h3>
-                    <p>${p.subtitle}</p>
-                    <div class="badges">
-                        ${p.tags.map(tag => `<span>${tag}</span>`).join('')}
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.innerHTML = isOpen 
+                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>'
+                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        });
+
+        // Close when clicking any nav link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+            });
+        });
+    }
+
+    // 2. RENDER VALUE STRIP
+    const valueStripContainer = document.getElementById('value-strip');
+    if (valueStripContainer && valueProps) {
+        valueStripContainer.innerHTML = valueProps.map(vp => `
+            <div class="value-card">
+                <div class="value-card-header">
+                    <span>${vp.icon}</span>
+                    <span>Pilar de Entrega</span>
+                </div>
+                <h3 class="value-card-title">${vp.title}</h3>
+                <p class="value-card-desc">${vp.desc}</p>
+            </div>
+        `).join('');
+    }
+
+    // 3. RENDER PROJECTS GRID & FILTERING
+    const projectsContainer = document.getElementById('projects-grid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    function renderProjects(filter = 'all') {
+        if (!projectsContainer || !projects) return;
+
+        const filtered = filter === 'all' 
+            ? projects 
+            : projects.filter(p => p.category === filter);
+
+        projectsContainer.innerHTML = filtered.map(p => `
+            <article class="project-card" data-category="${p.category}">
+                <div class="project-image-container">
+                    <picture>
+                        <source srcset="${p.image}" type="image/webp">
+                        <img 
+                            src="${p.image}" 
+                            alt="${p.title}" 
+                            class="project-image"
+                            loading="lazy"
+                            decoding="async"
+                            width="540"
+                            height="304"
+                        >
+                    </picture>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-category">${p.categoryLabel}</span>
+                        ${p.roiBadge ? `<span class="project-badge-roi">${p.roiBadge}</span>` : ''}
                     </div>
-                    <div class="project-cta" aria-hidden="true">Ver Projeto →</div>
+                    <h3 class="project-title">${p.title}</h3>
+
+                    <div class="story-block">
+                        <div class="story-item">
+                            <strong>🎯 Desafio:</strong> ${p.problem}
+                        </div>
+                        <div class="story-item">
+                            <strong>💡 Solução:</strong> ${p.solution}
+                        </div>
+                        <div class="story-item">
+                            <strong>📈 Impacto:</strong> ${p.impact}
+                        </div>
+                    </div>
+
+                    <div class="tech-pills">
+                        ${p.tags.map(t => `<span class="tech-pill">${t}</span>`).join('')}
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="${p.url}" class="btn btn-primary">
+                            <span>📖 Estudo de Caso</span>
+                        </a>
+                        <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Código no GitHub">
+                            <span>💻 Código</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `).join('');
+    }
+
+    // Initial project render
+    renderProjects('all');
+
+    // Filter event listeners
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filterValue = btn.getAttribute('data-filter');
+            renderProjects(filterValue);
+        });
+    });
+
+    // 4. RENDER TIMELINE / EXPERIENCE
+    const timelineContainer = document.getElementById('timeline-list');
+    if (timelineContainer && experience) {
+        timelineContainer.innerHTML = experience.map(exp => `
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-period">${exp.year}</div>
+                    <h3 class="timeline-role">${exp.role}</h3>
+                    <div class="timeline-company">${exp.company}</div>
+                    <p class="timeline-desc">${exp.desc}</p>
                 </div>
             </div>
         `).join('');
+    }
 
-        // Carousel State
-        let currentIndex = clonesCount;
-        let cachedTotalWidth = 0;
-        
-        function updateLayoutCache() {
-            const firstCard = projectsContainer.querySelector('.project-card');
-            if (!firstCard) return;
-            
-            const style = window.getComputedStyle(projectsContainer);
-            const gap = parseFloat(style.gap) || 0;
-            cachedTotalWidth = firstCard.offsetWidth + gap;
-        }
+    // 5. RENDER TECHNICAL PHILOSOPHY
+    const philosophyContainer = document.getElementById('philosophy-grid');
+    if (philosophyContainer && philosophy) {
+        philosophyContainer.innerHTML = philosophy.map(item => `
+            <div class="philosophy-card">
+                <span class="philosophy-icon">${item.icon}</span>
+                <h3 class="philosophy-title">${item.title}</h3>
+                <p class="philosophy-desc">${item.desc}</p>
+            </div>
+        `).join('');
+    }
 
-        function moveToIndex(index, animate = true) {
-            currentIndex = index;
-            const targetX = -currentIndex * cachedTotalWidth;
-
-            gsap.to(projectsContainer, {
-                x: targetX,
-                duration: animate ? 1.2 : 0,
-                ease: "power2.inOut",
-                onComplete: () => {
-                    if (currentIndex >= projects.length + clonesCount) {
-                        currentIndex = clonesCount;
-                        gsap.set(projectsContainer, { x: -currentIndex * cachedTotalWidth });
-                    } else if (currentIndex < clonesCount) {
-                        currentIndex = projects.length + clonesCount - 1;
-                        gsap.set(projectsContainer, { x: -currentIndex * cachedTotalWidth });
-                    }
-                }
+    // 6. COPY EMAIL BUTTON INTERACTION
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(config.email).then(() => {
+                const originalText = copyEmailBtn.innerHTML;
+                copyEmailBtn.innerHTML = '<span>✅ E-mail Copiado!</span>';
+                copyEmailBtn.classList.add('btn-primary');
+                copyEmailBtn.classList.remove('btn-outline');
+                setTimeout(() => {
+                    copyEmailBtn.innerHTML = originalText;
+                    copyEmailBtn.classList.remove('btn-primary');
+                    copyEmailBtn.classList.add('btn-outline');
+                }, 2500);
+            }).catch(err => {
+                console.warn('Clipboard write error:', err);
+                window.location.href = `mailto:${config.email}`;
             });
-        }
-
-        // Initial Layout
-        updateLayoutCache();
-        moveToIndex(currentIndex, false);
-
-        // Event Listeners for Nav Triggers (Buttons)
-        const pTrigger = document.querySelector('.prev-trigger');
-        const nTrigger = document.querySelector('.next-trigger');
-        
-        if (pTrigger) pTrigger.addEventListener('click', () => moveToIndex(currentIndex - 1));
-        if (nTrigger) nTrigger.addEventListener('click', () => moveToIndex(currentIndex + 1));
-
-        // Optimized Resize Handling
-        const ro = new ResizeObserver(() => {
-            updateLayoutCache();
-            moveToIndex(currentIndex, false);
         });
-        ro.observe(projectsContainer.parentElement);
-
-        // Auto-play
-        let autoPlay = setInterval(() => moveToIndex(currentIndex + 1), 5000);
-        const container = document.querySelector('.carousel-container');
-        if (container) {
-            container.addEventListener('mouseenter', () => clearInterval(autoPlay));
-            container.addEventListener('mouseleave', () => {
-                autoPlay = setInterval(() => moveToIndex(currentIndex + 1), 5000);
-            });
-        }
     }
 
-    // 3. EXPERIENCE TIMELINE & IDE
-    const timelineH = document.querySelector('.timeline-h');
-    const ideTabBar = document.querySelector('.ide-tab-bar');
-    const ideContent = document.querySelector('#ide-content');
+    // 7. ACTIVE NAVIGATION ON SCROLL
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
-    if (timelineH && ideTabBar) {
-        timelineH.innerHTML = experience.map((job, index) => `
-            <div class="timeline-dot-h ${index === 0 ? 'active' : ''}" data-year="${job.year}" data-job="${index}"></div>
-        `).join('');
+    function updateActiveNav() {
+        const scrollY = window.pageYOffset;
 
-        const windowControls = `<div class="window-controls"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>`;
-        ideTabBar.innerHTML = windowControls + experience.map((job, index) => `
-            <div class="ide-tab ${index === 0 ? 'active' : ''}" data-job="${index}">${job.id}.js <span class="close-icon">×</span></div>
-        `).join('');
+        sections.forEach(sec => {
+            const sectionHeight = sec.offsetHeight;
+            const sectionTop = sec.offsetTop - 120;
+            const sectionId = sec.getAttribute('id');
 
-        function switchJob(index) {
-            const job = experience[index];
-            document.querySelectorAll('.timeline-dot-h').forEach((dot, i) => dot.classList.toggle('active', i === index));
-            document.querySelectorAll('.ide-tab').forEach((tab, i) => tab.classList.toggle('active', i === index));
-            if (ideContent) {
-                gsap.to(ideContent, { opacity: 0, duration: 0.1, onComplete: () => {
-                    ideContent.textContent = job.code;
-                    gsap.to(ideContent, { opacity: 1, duration: 0.2 });
-                }});
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
             }
-        }
-
-        document.querySelectorAll('.timeline-dot-h').forEach((dot, index) => dot.addEventListener('click', () => switchJob(index)));
-        document.querySelectorAll('.ide-tab').forEach((tab, index) => tab.addEventListener('click', () => switchJob(index)));
-        switchJob(0);
+        });
     }
 
-    // 4. UFO ABDUCTION (CONTACT)
-    const ufoContainer = document.querySelector('.ufo-abduction-container');
-    if (ufoContainer) {
-        ufoContainer.addEventListener('mouseover', () => ufoContainer.classList.add('triggered'), { once: true });
-    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
 });

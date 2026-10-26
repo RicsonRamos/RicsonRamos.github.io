@@ -3,37 +3,76 @@ const PortfolioData = {
         name: "Ricson Ramos",
         role: "Data Scientist & Analytics Engineer",
         email: "ricsonramos@outlook.com",
+        location: "Brasil",
         social: {
             linkedin: "https://www.linkedin.com/in/ricsonramos-analise-dados/",
             github: "https://github.com/RicsonRamos"
         },
         hero: {
-            welcome: "Portfólio Executivo de",
-            highlight: "Soluções em Dados",
-            instruction: "ESTUDOS DE CASO DE NEGÓCIO // MODELAGEM PREDITIVA // RETORNO FINANCEIRO"
+            status: "Disponível para novas oportunidades em Dados",
+            title: "Ricson Ramos",
+            role: "Data Scientist & Analytics Engineer",
+            headline: "Transformando dados brutos em decisões de negócio, retorno financeiro (ROI) e sistemas preditivos escaláveis.",
+            instruction: "Explore os estudos de caso abaixo orientados a problemas reais de negócio."
         },
         seo: {
             title: "Ricson Ramos | Data Scientist & Analytics Engineer",
-            description: "Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso focados em retenção de receita, governança métrica e inteligência preditiva."
+            description: "Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso com impacto financeiro em churn, modelagem dimensional e previsão de demanda."
         }
     },
+
+    valueProps: [
+        {
+            icon: "📈",
+            title: "Machine Learning & MLOps",
+            desc: "Modelagem supervisionada com XGBoost, explicabilidade SHAP, rastreamento MLflow e versionamento DVC."
+        },
+        {
+            icon: "🏗️",
+            title: "Analytics Engineering",
+            desc: "Modelagem dimensional (Star Schema), governança e testes automatizados de dados com dbt e PostgreSQL."
+        },
+        {
+            icon: "🚀",
+            title: "Pipelines & Produção",
+            desc: "Deploy conteinerizado com Docker Compose, APIs assíncronas em FastAPI e orquestração com Apache Airflow."
+        },
+        {
+            icon: "💼",
+            title: "Foco em Negócio & ROI",
+            desc: "Soluções conectadas a métricas estratégicas: redução de churn, otimização de estoque e confiabilidade métrica."
+        }
+    ],
+
     projects: [
         {
             id: "churn",
             title: "Streaming Churn Radar",
             subtitle: "Predição Preditiva & ROI de Retenção",
-            image: "assets/images/churn.jpg",
-            tags: ["XGBoost", "MLOps", "Streamlit", "SHAP"],
+            image: "assets/images/churn.webp",
+            category: "ml",
+            categoryLabel: "Machine Learning & MLOps",
+            roiBadge: "ROI Positivo na Retenção",
+            problem: "Cancelamentos inesperados impactavam o faturamento anual recorrente (ARR) sem oportunidade de ação preventiva.",
+            solution: "Modelo supervisionado em XGBoost Native com calibração de probabilidade, explicabilidade SHAP e MLOps com MLflow.",
+            impact: "Dashboard em Streamlit com simulador financeiro que otimiza o corte de intervenção, preservando receita líquida.",
+            tags: ["XGBoost", "MLflow", "DVC", "SHAP", "Streamlit", "Docker"],
             url: "projetos/churn/index.html",
             github: "https://github.com/RicsonRamos/streaming_service_analysis_churn",
             featured: true
         },
         {
             id: "olist-data-platform",
-            title: "Olist Data Platform",
+            title: "Olist E-Commerce Data Platform",
             subtitle: "Lakehouse Híbrido & Confiabilidade Métrica",
-            image: "assets/images/olist_data_platform.png",
-            tags: ["dbt", "PostgreSQL", "Docker", "Star Schema"],
+            image: "assets/images/olist_data_platform.webp",
+            category: "data-eng",
+            categoryLabel: "Analytics Engineering",
+            roiBadge: "90% Menos Tempo de Pipeline",
+            problem: "Dados transacionais brutos fragmentados geravam relatórios conflitantes entre diretoria, financeiro e operações.",
+            solution: "Plataforma ELT moderna com arquitetura medalhão, transformações dimensionais no dbt e testes de qualidade automáticos.",
+            impact: "Criação da fonte única da verdade para BI (Metabase / Power BI) com auditoria ponta a ponta e zero dados duplicados.",
+            tags: ["dbt Core", "PostgreSQL", "Docker", "SQLFluff", "CI/CD", "Star Schema"],
             url: "projetos/olist-data-platform/index.html",
             github: "https://github.com/RicsonRamos/olist-data-platform",
             featured: true
@@ -42,18 +81,30 @@ const PortfolioData = {
             id: "sales-forecasting",
             title: "Retail Sales Intelligence",
             subtitle: "Previsão de Demanda & Segmentação",
-            image: "assets/images/salesforecasting.png",
-            tags: ["Scikit-Learn", "K-Means", "Streamlit", "Docker"],
+            image: "assets/images/salesforecasting.webp",
+            category: "analytics",
+            categoryLabel: "Data Science & Varejo",
+            roiBadge: "Estoque Otimizado",
+            problem: "Ruptura de estoque em itens de alto giro e capital de giro imobilizado em produtos encalhados.",
+            solution: "Segmentação comportamental via K-Means Clustering associada a modelos de regressão supervisionada para previsão de faturamento.",
+            impact: "Alocação precisa de compras e estoques com aplicação interativa conteinerizada em Docker.",
+            tags: ["Scikit-Learn", "K-Means", "Streamlit", "Pandas", "Docker"],
             url: "projetos/sales-forecasting/index.html",
             github: "https://github.com/RicsonRamos/sales-forecasting-and-performance-analytics",
             featured: true
         },
         {
             id: "macropulse",
-            title: "MacroPulse Intelligence",
+            title: "MacroPulse Intelligence Platform",
             subtitle: "Terminal Macroeconômico & Score de Risco",
-            image: "assets/images/macropulse.jpg",
-            tags: ["FastAPI", "Python", "Redis", "Real-Time ETL"],
+            image: "assets/images/macropulse.webp",
+            category: "analytics",
+            categoryLabel: "Inteligência & APIs",
+            roiBadge: "Decisão em Milissegundos",
+            problem: "Dispersão de dezenas de indicadores macroeconômicos atrasava decisões de proteção de capital e alocação de risco.",
+            solution: "Terminal em tempo real com pipelines de ingestão ETL automatizados, FastAPI assíncrono e motor de scoring de risco.",
+            impact: "Monitoramento centralizado de inflação, juros e câmbio para tomada de decisão ágil sob volatilidade.",
+            tags: ["FastAPI", "Python", "ETL", "PostgreSQL", "Docker"],
             url: "projetos/macropulse/index.html",
             github: "https://github.com/RicsonRamos/macropulse",
             featured: true
@@ -61,9 +112,15 @@ const PortfolioData = {
         {
             id: "spacex",
             title: "SpaceX Production ETL",
-            subtitle: "Orquestração de Pipelines de Dados",
-            image: "assets/images/spacexetl.jpg",
-            tags: ["Airflow", "dbt", "PostgreSQL", "Metabase"],
+            subtitle: "Orquestração de Pipelines com Airflow",
+            image: "assets/images/spacexetl.webp",
+            category: "data-eng",
+            categoryLabel: "Engenharia de Dados",
+            roiBadge: "Pipeline Automatizado",
+            problem: "Ingestão e correlação de eventos complexos de lançamentos espaciais e clima solar da NASA.",
+            solution: "DAGs orquestradas no Apache Airflow com transformações dimensionais no dbt e banco relacional PostgreSQL.",
+            impact: "Pipeline desacoplado e tolerante a falhas, conectado diretamente à camada analítica do Metabase.",
+            tags: ["Apache Airflow", "dbt", "PostgreSQL", "Metabase", "Docker"],
             url: "projetos/spacex/index.html",
             github: "https://github.com/RicsonRamos/spacex_etl_pipeline",
             featured: false
@@ -72,119 +129,61 @@ const PortfolioData = {
             id: "obsidian-ai",
             title: "Obsidian AI Second Brain",
             subtitle: "Knowledge Graph com LLMs & RAG",
-            image: "assets/images/obsidianai.png",
-            tags: ["LLM", "RAG Local", "Ollama", "Gemini"],
+            image: "assets/images/obsidianai.webp",
+            category: "ml",
+            categoryLabel: "IA Generativa & RAG",
+            roiBadge: "Privacidade Local-First",
+            problem: "Milhares de notas analíticas isoladas sem conexões semânticas automáticas, dificultando a recuperação de conhecimento.",
+            solution: "Arquitetura híbrida que processa vaults locais com Ollama e Google Gemini, gerando grafos de conhecimento interativos.",
+            impact: "Recuperação contextual rápida e geração de insights com interface web moderna em Next.js.",
+            tags: ["LLM", "Ollama", "Gemini", "Next.js", "Python"],
             url: "projetos/obsidian-ai/index.html",
             github: "https://github.com/RicsonRamos/obsidian-ai",
-            featured: false
-        },
-        {
-            id: "automation-saas",
-            title: "AutoProposta Platform",
-            subtitle: "Automação Operacional & Compliance",
-            image: "assets/images/automation_saas.png",
-            tags: ["Python", "Streamlit", "SQLite"],
-            url: "projetos/automation-saas/index.html",
-            github: "https://github.com/RicsonRamos/automation_saas",
-            featured: false
-        },
-        {
-            id: "smtp",
-            title: "Email Dispatcher Service",
-            subtitle: "Microsserviço de Mensageria",
-            image: "assets/images/smtpsender.png",
-            tags: ["SMTP", "Python", "Docker"],
-            url: "projetos/smtp/index.html",
-            github: "https://github.com/RicsonRamos/smtp_email_sender",
             featured: false
         }
     ],
 
     experience: [
         {
-            id: "job-1",
-            year: "2016",
-            title: "Public Security Officer & Operational Risk",
-            company: "Governo Estadual / Segurança Pública",
-            from: "Janeiro 2016",
-            to: "Presente",
-            code: "const carreira = {\n  setor: \"Segurança Pública\",\n  foco: \"Inteligência Operacional & Mitigação de Riscos\",\n  periodo: \"2016 - Presente\"\n};"
+            year: "2016 — Presente",
+            role: "Inteligência Operacional & Mitigação de Risco",
+            company: "Segurança Pública / Governo Estadual",
+            desc: "Atuação direta em operações críticas e tomada de decisão sob alto risco. Desenvolvimento de abordagens estruturadas de análise de padrões, consistência de dados e precisão de relatórios investigativos."
         },
         {
-            id: "job-2",
-            year: "2024",
-            title: "Graduação em Ciência de Dados",
+            year: "2024 — Presente",
+            role: "Graduação em Ciência de Dados",
             company: "Faculdade Anhanguera",
-            from: "Janeiro 2024",
-            to: "Presente",
-            code: "const academico = {\n  curso: \"Ciência de Dados\",\n  enfase: [\"Modelagem Estatística\", \"Machine Learning\", \"SQL\"],\n  instituicao: \"Faculdade Anhanguera\"\n};"
+            desc: "Formação superior com ênfase em modelagem estatística, inferência, aprendizado de máquina supervisionado e não-supervisionado, manipulação massiva com SQL e visualização analítica."
         },
         {
-            id: "job-3",
-            year: "2026",
-            title: "Graduação em Engenharia de Software",
+            year: "2026 — Presente",
+            role: "Graduação em Engenharia de Software",
             company: "Faculdade Gran",
-            from: "Janeiro 2026",
-            to: "Presente",
-            code: "const academico = {\n  curso: \"Engenharia de Software\",\n  enfase: [\"Sistemas Distribuídos\", \"Arquitetura de Dados\", \"DevOps\"],\n  instituicao: \"Faculdade Gran\"\n};"
+            desc: "Aprofundamento em sistemas distribuídos, arquitetura de software escalável, microsserviços, qualidade de código e práticas modernas de DevOps e conteinerização."
         }
     ],
 
-    about: {
-        id: "about-me",
-        storyline: [
-            {
-                phase: 'Fundamentos',
-                title: 'INTELIGÊNCIA &',
-                title2: 'RIGOR OPERACIONAL',
-                description: 'Desde 2016 atuando em ambientes de alta criticidade e tomada de decisão sob risco, onde precisão e integridade de informação são inegociáveis.',
-                image: 'assets/images/windows.png'
-            },
-            {
-                phase: 'Evolução',
-                title: 'CIÊNCIA DE DADOS',
-                title2: '& ANALYTICS',
-                description: 'Transição estruturada para Ciência de Dados e Analytics Engineering: unindo rigor matemático e estatístico a valor financeiro mensurável.',
-                image: 'assets/images/windows.png'
-            },
-            {
-                phase: 'Engenharia',
-                title: 'SISTEMAS ROBUSTOS',
-                title2: '& IA MODERNA',
-                description: 'Construção de pipelines de dados conteinerizados, modelos explicáveis (SHAP), governança com dbt e sistemas integrados com LLMs.',
-                image: 'assets/images/windows.png'
-            }
-        ],
-        sections: [
-            {
-                title: "Da Inteligência Operacional à Ciência de Dados",
-                paragraphs: [
-                    "Minha trajetória começou em operações de alta criticidade na segurança pública, onde aprendi na prática que **decisões sem dados estruturados custam caro**.",
-                    "Essa vivência forjou minha obsessão por **rigor analítico, validação estrita e resiliência**: pipelines que não quebram em momentos de pressão e dados que resistem a qualquer auditoria."
-                ]
-            },
-            {
-                title: "A Abordagem Orientada a Negócio",
-                paragraphs: [
-                    "Não construo modelos preditivos por mera vaidade algorítmica. O verdadeiro papel do Cientista de Dados é responder perguntas que movem os ponteiros da empresa: **qual cliente vai sair e por quê? Quanto vamos faturar no próximo trimestre? Onde estão os gargalos logísticos?**",
-                    "Trabalho na interseção entre **Machine Learning (XGBoost, Scikit-learn)** e **Analytics Engineering (dbt, PostgreSQL, Docker)** para garantir que as previsões cheguem diretamente à mesa dos tomadores de decisão em dashboards operacionais e APIs de alta performance."
-                ]
-            },
-            {
-                title: "Padrão de Engenharia & Tecnologias",
-                paragraphs: [
-                    "Acredito em código limpo, testes automatizados e reprodutibilidade total. Cada solução é entregue pronta para produção, documentada e conteinerizada.",
-                    "Abaixo estão os pilares tecnológicos que utilizo para transformar dados brutos em inteligência corporativa:"
-                ],
-                tech: [
-                    { name: "Python", icon: "python" },
-                    { name: "SQL & dbt", icon: "postgresql" },
-                    { name: "Docker", icon: "docker" },
-                    { name: "FastAPI", icon: "fastapi" },
-                    { name: "MLflow", icon: "scikitlearn" },
-                    { name: "Airflow", icon: "apacheairflow" }
-                ]
-            }
-        ]
-    }
+    philosophy: [
+        {
+            icon: "⚖️",
+            title: "Rigor de Engenharia",
+            desc: "Notebooks são para experimentação; código de produção deve ter modularização em Python, testes automatizados, controle de versão estrito e conteinerização Docker."
+        },
+        {
+            icon: "🎯",
+            title: "Foco no Retorno Financeiro",
+            desc: "Cada modelo preditivo deve ser avaliado pelo ROI que gera ou pelo custo que evita: AUC-ROC e LogLoss devem conversar diretamente com LTV, CAC e ARR."
+        },
+        {
+            icon: "🏛️",
+            title: "Governança & Confiabilidade",
+            desc: "Dados limpos antes de qualquer algoritmo. Utilização de dbt para modelagem dimensional (Star Schema), auditoria de integridade e fontes únicas da verdade."
+        },
+        {
+            icon: "🗣️",
+            title: "Storytelling Executivo",
+            desc: "Capacidade de traduzir sistemas complexos em narrativas claras e intuitivas para tomadores de decisão, C-levels e recrutadores não técnicos."
+        }
+    ]
 };

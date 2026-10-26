@@ -10,21 +10,21 @@ const ProjectContent = {
             title: 'O DESAFIO',
             title2: 'AUTOMAÇÃO DE EMAIL',
             description: 'Criar um microserviço Python robusto para disparar emails HTML e texto em massa, com suporte a anexos.',
-            image: '../../assets/images/windows.png'
+            image: '../../assets/images/windows.webp'
         },
         {
             phase: 'Implementação',
             title: 'SMTP SEGURO',
             title2: 'DISPATCHER',
             description: 'Integração com servidores SMTP via TLS, leitura de credenciais via .env e suporte a templates HTML.',
-            image: '../../assets/images/windows.png'
+            image: '../../assets/images/windows.webp'
         },
         {
             phase: 'Deploy',
             title: 'DOCKER',
             title2: 'CONTAINERIZADO',
             description: 'Empacotado em Docker para execução isolada e reproduzível em qualquer ambiente, com configuração mínima.',
-            image: '../../assets/images/windows.png'
+            image: '../../assets/images/windows.webp'
         }
     ],
     sections: [
