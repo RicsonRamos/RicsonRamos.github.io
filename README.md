@@ -1,8 +1,6 @@
-# 🚀 Premium Data Engineer Portfolio
+# 🚀 Ricson Ramos | Data Scientist & Analytics Engineer Web Portfolio
 
-A high-performance, minimalist, and dynamic portfolio designed for Data Engineers and Python Specialists. Built with a focus on speed, intent, and professional storytelling.
-
-![Portfolio Preview](assets/img/preview.png) *(Note: Add a screenshot of your portfolio here)*
+A high-performance, minimalist, and dynamic web portfolio built for technical recruitment and business storytelling. Designed to translate complex data science and engineering systems into measurable business solutions (ROI, retention, operational reliability). Live at: **[ricsonramos.github.io](https://ricsonramos.github.io)**
 
 ## ✨ Features
 

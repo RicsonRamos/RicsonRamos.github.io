@@ -1,58 +1,59 @@
 /* ===== SALES FORECASTING - MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "sales-forecasting",
-    github: "https://github.com/RicsonRamos/Sales-Forecasting",
+    github: "https://github.com/RicsonRamos/sales-forecasting-and-performance-analytics",
 
-    title: "Sales Forecasting & Analytics",
+    title: "Retail Sales Intelligence",
     storyline: [
         {
             phase: 'Contexto',
             title: 'O DESAFIO',
-            title2: 'PREVISÃO DE VENDAS',
-            description: 'Equipe comercial operando sem visibilidade do futuro. A falta de previsibilidade de receita comprometia o planejamento estratégico.',
-            image: '../../assets/images/windows.png'
+            title2: 'INCERTEZA DE DEMANDA',
+            description: 'Equipe comercial operando sem visibilidade do futuro: rupturas de estoque e capital de giro imobilizado em produtos de baixo giro.',
+            image: '../../assets/images/salesforecasting.png'
         },
         {
             phase: 'Modelagem',
-            title: 'TIME SERIES',
-            title2: 'ML PIPELINE',
-            description: 'Implementação de modelos de séries temporais com Scikit-Learn e Prophet, combinados com feature engineering avançada.',
-            image: '../../assets/images/windows.png'
+            title: 'CLUSTER & ML',
+            title2: 'PREVISÃO ESTRATÉGICA',
+            description: 'Segmentação comportamental de clientes com K-Means Clustering e modelos supervisionados para estimar receita futura por categoria.',
+            image: '../../assets/images/salesforecasting.png'
         },
         {
             phase: 'Resultados',
             title: 'DASHBOARD',
-            title2: 'INSIGHTS',
-            description: 'Dashboard interativo de performance de vendas com KPIs em tempo real e previsão de receita para os próximos 90 dias.',
-            image: '../../assets/images/windows.png'
+            title2: 'AÇÃO OPERACIONAL',
+            description: 'Aplicação analítica interativa em Streamlit conteinerizada com Docker, orientando decisões de compra e campanhas personalizadas.',
+            image: '../../assets/images/salesforecasting.png'
         }
     ],
     sections: [
         {
             title: "O Problema da Previsibilidade",
             paragraphs: [
-                "No setor comercial, a **incerteza é o maior custo**. Este projeto nasceu da necessidade de transformar dados históricos de vendas em um motor de previsão confiável para apoiar a tomada de decisão.",
-                "O principal desafio foi lidar com a sazonalidade agressiva e os efeitos externos que impactavam o comportamento de compra dos clientes B2B."
+                "No setor varejista, a **incerteza no planejamento de estoque gera prejuízos duplos**: a falta de produto perde vendas imediatas, enquanto o excesso imobiliza capital de giro.",
+                "Este projeto transformou dados históricos de vendas em um motor analítico duplo: **compreender quem compra** e **antecipar quanto será faturado**."
             ]
         },
         {
             title: "Arquitetura Analítica",
             paragraphs: [
-                "Utilizamos uma abordagem híbrida de modelagem. O **Facebook Prophet** foi empregado para capturar tendências de longo prazo e sazonalidades anuais, enquanto modelos de **Boosting** trataram as variações locais.",
-                "O pipeline de dados foi desenhado para ser totalmente automatizado, desde a extração do ERP até a atualização dos modelos sem intervenção manual."
+                "Desenvolvemos uma abordagem em duas frentes: segmentação não-supervisionada via **K-Means Clustering** para identificar grupos de clientes por volume e frequência de consumo, e modelos de regressão (**Random Forest**) para estimativa de receita.",
+                "O código foi modularizado em padrões de engenharia de software dentro da pasta `src/`, separando limpeza, engenharia de atributos e inferência."
             ]
         },
         {
-            title: "Performance e Stack",
+            title: "Performance e Entrega Operacional",
             paragraphs: [
-                "A previsão final alcançou um erro médio absoluto (**MAE**) de menos de 8%, permitindo uma redução significativa no excesso de estoque e uma melhor alocação da força de vendas.",
-                "A stack tecnológica foca em ferramentas de código aberto de alta performance, permitindo escalabilidade e facilidade de manutenção."
+                "A entrega final foi consolidada em uma aplicação operacional em **Streamlit**, empacotada em contêiner **Docker** para execução consistente em qualquer infraestrutura.",
+                "A liderança comercial ganha visibilidade instantânea de quais filiais e categorias de produtos demandam reforço logístico com semanas de antecedência."
             ],
             tech: [
                 { name: "Python", icon: "python" },
-                { name: "Pandas", icon: "pandas" },
                 { name: "Scikit-Learn", icon: "scikitlearn" },
-                { name: "Streamlit", icon: "streamlit" }
+                { name: "Pandas", icon: "pandas" },
+                { name: "Streamlit", icon: "streamlit" },
+                { name: "Docker", icon: "docker" }
             ]
         }
     ]

@@ -1,18 +1,18 @@
 {
     "name": "Ricson Ramos",
-    "role": "Data Engineer / Python Specialist",
+    "role": "Data Scientist & Analytics Engineer",
     "email": "ricsonramos@outlook.com",
     "social": {
-        "linkedin": "https://linkedin.com/in/ricson-ramos",
+        "linkedin": "https://www.linkedin.com/in/ricsonramos-analise-dados/",
         "github": "https://github.com/RicsonRamos"
     },
     "hero": {
-        "welcome": "Welcome to the web portfolio of",
-        "highlight": "web portfolio",
-        "instruction": "SCROLL DOWN TO LEARN MORE ABOUT MY SKILLS & EXPERIENCES"
+        "welcome": "Portfólio Executivo de",
+        "highlight": "Soluções em Dados",
+        "instruction": "ESTUDOS DE CASO DE NEGÓCIO // MODELAGEM PREDITIVA // RETORNO FINANCEIRO"
     },
     "seo": {
-        "title": "Ricson Ramos | Data Engineer Portfolio",
-        "description": "Engenheiro de Dados e Desenvolvedor Python. Automação, ETL e inteligência de dados com foco em performance."
+        "title": "Ricson Ramos | Data Scientist & Analytics Engineer",
+        "description": "Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso focados em retenção de receita, governança métrica e inteligência preditiva."
     }
 }

@@ -1,56 +1,56 @@
 /* ===== SPACEX ETL PIPELINE - MODULAR CONTENT ===== */
 const ProjectContent = {
     id: "spacex",
-    github: "https://github.com/RicsonRamos/SpaceX-ETL",
+    github: "https://github.com/RicsonRamos/spacex_etl_pipeline",
 
-    title: "SpaceX ETL Pipeline",
+    title: "SpaceX Production ETL Pipeline",
     storyline: [
         {
             phase: 'Contexto',
             title: 'O DESAFIO',
-            title2: 'DADOS ESPACIAIS',
-            description: 'Transformar dados brutos de APIs da SpaceX e NASA em inteligência de negócio acionável, com qualidade em cada camada.',
-            image: '../../assets/images/windows.png'
+            title2: 'INGESTÃO COMPLEXA',
+            description: 'Coletar e estruturar dados telemétricos e históricos de lançamentos da SpaceX e clima espacial da NASA em escala contínua.',
+            image: '../../assets/images/spacexetl.jpg'
         },
         {
             phase: 'Arquitetura',
-            title: 'MEDALLION',
-            title2: 'BRONZE > GOLD',
-            description: 'Arquitetura em três camadas: Bronze (ingestão raw), Silver (limpeza via dbt) e Gold (KPIs prontos para BI).',
-            image: '../../assets/images/windows.png'
+            title: 'ORQUESTRAÇÃO',
+            title2: 'AIRFLOW + DBT',
+            description: 'Orquestração de DAGs no Apache Airflow integradas a transformações dimensionais no dbt e banco PostgreSQL.',
+            image: '../../assets/images/spacexetl.jpg'
         },
         {
             phase: 'Qualidade',
-            title: 'CI/CD',
-            title2: '82% COBERTURA',
-            description: 'Pipeline com 58 testes automatizados rodando via GitHub Actions. Observabilidade completa com logs JSON.',
-            image: '../../assets/images/windows.png'
+            title: 'BI & QUALIDADE',
+            title2: 'DADOS CONFIÁVEIS',
+            description: 'Camada analítica conectada ao Metabase com testes automatizados de dados e validação de cobertura via CI/CD.',
+            image: '../../assets/images/spacexetl.jpg'
         }
     ],
     sections: [
         {
-            title: "O Desafio dos Dados Espaciais",
+            title: "Engenharia de Dados em Escala",
             paragraphs: [
-                "Este projeto implementa um pipeline de dados de produção que consome dados em tempo real das APIs públicas da SpaceX e NASA, transformando informações brutas em inteligência estratégica.",
-                "A principal dificuldade era lidar com esquemas de dados ultra-dinâmicos e garantir que as métricas de missão fossem consistentes através de múltiplas fontes de dados."
+                "Pipelines de dados modernos exigem mais do que simples scripts de extração; exigem **idempotência, tolerância a falhas e observabilidade contínua**.",
+                "O pipeline da SpaceX foi construído para demonstrar o padrão de produção corporativo na ingestão de eventos complexos da API pública da SpaceX correlacionados a fenômenos de clima espacial da NASA."
             ]
         },
         {
-            title: "A Arquitetura Medallion",
+            title: "Orquestração com Apache Airflow & dbt",
             paragraphs: [
-                "A arquitetura segue o padrão **Medallion**, garantindo rastreabilidade e governança completa. Os dados fluem de sua forma bruta na camada Bronze até tabelas analíticas otimizadas na camada Gold.",
-                "O **Apache Airflow** atua como o maestro, orquestrando as dependências entre a ingestão das APIs e as transformações complexas realizadas pelo dbt."
+                "Utilizando o **Apache Airflow**, as DAGs controlam desde o agendamento da extração até a inicialização dos modelos de transformação dimensional executados no **dbt**.",
+                "Essa arquitetura desacopla totalmente a orquestração do processamento, permitindo reprocessamentos parciais e auditoria de cada lote de carga."
             ]
         },
         {
-            title: "Qualidade e Stack Tecnológica",
+            title: "Camada de Apresentação e CI/CD",
             paragraphs: [
-                "O pipeline possui **82% de cobertura de testes**, com validações unitárias e de integração rodando automaticamente via GitHub Actions, garantindo que nenhuma regressão chegue ao dashboard.",
-                "Utilizamos ferramentas líderes de mercado para garantir uma infraestrutura robusta, escalável e fácil de monitorar."
+                "Os dados consolidados alimentam dashboards no **Metabase**, oferecendo visões analíticas de taxa de sucesso de lançamentos, reutilização de foguetes e correlação com anomalias solares.",
+                "O repositório possui suíte de testes automatizada e pipeline de CI no **GitHub Actions** para validação antes de cada deploy."
             ],
             tech: [
                 { name: "Python", icon: "python" },
-                { name: "Apache Airflow", icon: "apacheairflow" },
+                { name: "Airflow", icon: "apacheairflow" },
                 { name: "dbt", icon: "dbt" },
                 { name: "PostgreSQL", icon: "postgresql" },
                 { name: "Docker", icon: "docker" }

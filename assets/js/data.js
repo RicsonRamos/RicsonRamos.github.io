@@ -1,97 +1,97 @@
 const PortfolioData = {
     config: {
         name: "Ricson Ramos",
-        role: "Data Engineer / Python Specialist",
+        role: "Data Scientist & Analytics Engineer",
         email: "ricsonramos@outlook.com",
         social: {
-            linkedin: "https://www.linkedin.com/in/ricsonramos/",
+            linkedin: "https://www.linkedin.com/in/ricsonramos-analise-dados/",
             github: "https://github.com/RicsonRamos"
         },
         hero: {
-            welcome: "Welcome to the web portfolio of",
-            highlight: "web portfolio",
-            instruction: "SCROLL DOWN TO LEARN MORE ABOUT MY SKILLS & EXPERIENCES"
+            welcome: "Portfólio Executivo de",
+            highlight: "Soluções em Dados",
+            instruction: "ESTUDOS DE CASO DE NEGÓCIO // MODELAGEM PREDITIVA // RETORNO FINANCEIRO"
         },
         seo: {
-            title: "Ricson Ramos | Data Engineer Portfolio",
-            description: "Engenheiro de Dados e Desenvolvedor Python. Automação, ETL e inteligência de dados com foco em performance."
+            title: "Ricson Ramos | Data Scientist & Analytics Engineer",
+            description: "Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso focados em retenção de receita, governança métrica e inteligência preditiva."
         }
     },
     projects: [
         {
-            id: "automation-saas",
-            title: "AutoProposta SaaS",
-            subtitle: "Automação de Propostas e Gestão",
-            image: "assets/images/automation_saas.png",
-            tags: ["Python", "Streamlit", "SQLite"],
-            url: "projetos/automation-saas/index.html",
-            github: "https://github.com/RicsonRamos/automation_saas",
-            featured: true
-        },
-        {
-            id: "olist-data-platform",
-            title: "Olist Data Platform",
-            subtitle: "Lakehouse Híbrido e Pipeline",
-            image: "assets/images/olist_data_platform.png",
-            tags: ["Python", "Docker", "dbt", "PostgreSQL"],
-            url: "projetos/olist-data-platform/index.html",
-            github: "https://github.com/RicsonRamos/olist-data-platform",
-            featured: true
-        },
-        {
-            id: "macropulse",
-            title: "Macropulse",
-            subtitle: "Inteligência Macroeconômica",
-            image: "assets/images/macropulse.jpg",
-            tags: ["Python", "FastAPI", "Redis"],
-            url: "projetos/macropulse/index.html",
-            github: "https://github.com/RicsonRamos/MacroPulse",
-            featured: true
-        },
-        {
             id: "churn",
-            title: "Churn Analysis",
-            subtitle: "ML Pipeline with XGBoost",
+            title: "Streaming Churn Radar",
+            subtitle: "Predição Preditiva & ROI de Retenção",
             image: "assets/images/churn.jpg",
-            tags: ["XGBoost", "Streamlit"],
+            tags: ["XGBoost", "MLOps", "Streamlit", "SHAP"],
             url: "projetos/churn/index.html",
             github: "https://github.com/RicsonRamos/streaming_service_analysis_churn",
             featured: true
         },
         {
-            id: "sales-forecasting",
-            title: "Sales Forecasting",
-            subtitle: "Performance Analytics Dashboard",
-            image: "assets/images/salesforecasting.png",
-            tags: ["Python", "Pandas", "Scikit-Learn"],
-            url: "projetos/sales-forecasting/index.html",
-            github: "https://github.com/RicsonRamos/sales-forecasting-and-performance-analytics",
-            featured: false
+            id: "olist-data-platform",
+            title: "Olist Data Platform",
+            subtitle: "Lakehouse Híbrido & Confiabilidade Métrica",
+            image: "assets/images/olist_data_platform.png",
+            tags: ["dbt", "PostgreSQL", "Docker", "Star Schema"],
+            url: "projetos/olist-data-platform/index.html",
+            github: "https://github.com/RicsonRamos/olist-data-platform",
+            featured: true
         },
         {
-            id: "obsidian-ai",
-            title: "Obsidian AI",
-            subtitle: "Knowledge Graph Intelligence",
-            image: "assets/images/obsidianai.png",
-            tags: ["Python", "googlegemini", "RAG"],
-            url: "projetos/obsidian-ai/index.html",
-            github: "https://github.com/RicsonRamos/obsidian-ai",
-            featured: false
+            id: "sales-forecasting",
+            title: "Retail Sales Intelligence",
+            subtitle: "Previsão de Demanda & Segmentação",
+            image: "assets/images/salesforecasting.png",
+            tags: ["Scikit-Learn", "K-Means", "Streamlit", "Docker"],
+            url: "projetos/sales-forecasting/index.html",
+            github: "https://github.com/RicsonRamos/sales-forecasting-and-performance-analytics",
+            featured: true
+        },
+        {
+            id: "macropulse",
+            title: "MacroPulse Intelligence",
+            subtitle: "Terminal Macroeconômico & Score de Risco",
+            image: "assets/images/macropulse.jpg",
+            tags: ["FastAPI", "Python", "Redis", "Real-Time ETL"],
+            url: "projetos/macropulse/index.html",
+            github: "https://github.com/RicsonRamos/macropulse",
+            featured: true
         },
         {
             id: "spacex",
-            title: "SpaceX ETL",
-            subtitle: "Data Pipeline Automation",
+            title: "SpaceX Production ETL",
+            subtitle: "Orquestração de Pipelines de Dados",
             image: "assets/images/spacexetl.jpg",
-            tags: ["Python", "Apache Airflow"],
+            tags: ["Airflow", "dbt", "PostgreSQL", "Metabase"],
             url: "projetos/spacex/index.html",
             github: "https://github.com/RicsonRamos/spacex_etl_pipeline",
             featured: false
         },
         {
+            id: "obsidian-ai",
+            title: "Obsidian AI Second Brain",
+            subtitle: "Knowledge Graph com LLMs & RAG",
+            image: "assets/images/obsidianai.png",
+            tags: ["LLM", "RAG Local", "Ollama", "Gemini"],
+            url: "projetos/obsidian-ai/index.html",
+            github: "https://github.com/RicsonRamos/obsidian-ai",
+            featured: false
+        },
+        {
+            id: "automation-saas",
+            title: "AutoProposta Platform",
+            subtitle: "Automação Operacional & Compliance",
+            image: "assets/images/automation_saas.png",
+            tags: ["Python", "Streamlit", "SQLite"],
+            url: "projetos/automation-saas/index.html",
+            github: "https://github.com/RicsonRamos/automation_saas",
+            featured: false
+        },
+        {
             id: "smtp",
-            title: "Email SMTP",
-            subtitle: "Messaging Microservice",
+            title: "Email Dispatcher Service",
+            subtitle: "Microsserviço de Mensageria",
             image: "assets/images/smtpsender.png",
             tags: ["SMTP", "Python", "Docker"],
             url: "projetos/smtp/index.html",
@@ -104,29 +104,29 @@ const PortfolioData = {
         {
             id: "job-1",
             year: "2016",
-            title: "Public Security Officer",
-            company: "Government Agency",
-            from: "January 2016",
-            to: "Actual",
-            code: "const job = {\n  title: \"Public Security Officer\",\n  from: \"January 2016\",\n  to: \"Actual\",\n  sector: \"Public Safety\"\n}"
+            title: "Public Security Officer & Operational Risk",
+            company: "Governo Estadual / Segurança Pública",
+            from: "Janeiro 2016",
+            to: "Presente",
+            code: "const carreira = {\n  setor: \"Segurança Pública\",\n  foco: \"Inteligência Operacional & Mitigação de Riscos\",\n  periodo: \"2016 - Presente\"\n};"
         },
         {
             id: "job-2",
             year: "2024",
-            title: "Data Science Student",
-            company: "Anhanguera University",
-            from: "January 2024",
-            to: "Present",
-            code: "const job = {\n  title: \"Data Science Student\",\n  from: \"January 2024\",\n  to: \"Present\",\n  institution: \"Anhanguera University\"\n}"
+            title: "Graduação em Ciência de Dados",
+            company: "Faculdade Anhanguera",
+            from: "Janeiro 2024",
+            to: "Presente",
+            code: "const academico = {\n  curso: \"Ciência de Dados\",\n  enfase: [\"Modelagem Estatística\", \"Machine Learning\", \"SQL\"],\n  instituicao: \"Faculdade Anhanguera\"\n};"
         },
         {
             id: "job-3",
             year: "2026",
-            title: "Software Engineering Student",
-            company: "Gran University",
-            from: "January 2026",
-            to: "Present",
-            code: "const job = {\n  title: \"Software Engineering Student\",\n  from: \"January 2026\",\n  to: \"Present\",\n  institution: \"Gran Faculty\"\n}"
+            title: "Graduação em Engenharia de Software",
+            company: "Faculdade Gran",
+            from: "Janeiro 2026",
+            to: "Presente",
+            code: "const academico = {\n  curso: \"Engenharia de Software\",\n  enfase: [\"Sistemas Distribuídos\", \"Arquitetura de Dados\", \"DevOps\"],\n  instituicao: \"Faculdade Gran\"\n};"
         }
     ],
 
@@ -134,55 +134,55 @@ const PortfolioData = {
         id: "about-me",
         storyline: [
             {
-                phase: 'Foundations',
-                title: 'ACADEMICS &',
-                title2: 'EARLY RESEARCH',
-                description: 'Starting with a deep curiosity for systems and logic, my journey began in theoretical research where I learned the rigor of data validation.',
+                phase: 'Fundamentos',
+                title: 'INTELIGÊNCIA &',
+                title2: 'RIGOR OPERACIONAL',
+                description: 'Desde 2016 atuando em ambientes de alta criticidade e tomada de decisão sob risco, onde precisão e integridade de informação são inegociáveis.',
                 image: 'assets/images/windows.png'
             },
             {
-                phase: 'Evolution',
-                title: 'DATA',
-                title2: 'ENGINEERING',
-                description: 'Transitioning into the corporate world, I focused on building high-performance Python backends and scalable ETL pipelines.',
+                phase: 'Evolução',
+                title: 'CIÊNCIA DE DADOS',
+                title2: '& ANALYTICS',
+                description: 'Transição estruturada para Ciência de Dados e Analytics Engineering: unindo rigor matemático e estatístico a valor financeiro mensurável.',
                 image: 'assets/images/windows.png'
             },
             {
-                phase: 'Vision',
-                title: 'AI & DATA',
-                title2: 'ARCHITECTURE',
-                description: 'Currently leveraging advanced LLMs and RAG architectures to build the next generation of knowledge intelligence systems.',
+                phase: 'Engenharia',
+                title: 'SISTEMAS ROBUSTOS',
+                title2: '& IA MODERNA',
+                description: 'Construção de pipelines de dados conteinerizados, modelos explicáveis (SHAP), governança com dbt e sistemas integrados com LLMs.',
                 image: 'assets/images/windows.png'
             }
         ],
         sections: [
             {
-                title: "O Início da Jornada",
+                title: "Da Inteligência Operacional à Ciência de Dados",
                 paragraphs: [
-                    "Sempre fui fascinado por como os dados podem contar histórias. Minha formação acadêmica me deu as ferramentas para traduzir problemas complexos em algoritmos eficientes.",
-                    "Desde o início, foquei em **Python** como minha linguagem principal, explorando suas capacidades em automação e processamento científico."
+                    "Minha trajetória começou em operações de alta criticidade na segurança pública, onde aprendi na prática que **decisões sem dados estruturados custam caro**.",
+                    "Essa vivência forjou minha obsessão por **rigor analítico, validação estrita e resiliência**: pipelines que não quebram em momentos de pressão e dados que resistem a qualquer auditoria."
                 ]
             },
             {
-                title: "A Especialização em Engenharia",
+                title: "A Abordagem Orientada a Negócio",
                 paragraphs: [
-                    "No mercado financeiro e em tech-hubs, percebi que o dado bruto é apenas o começo. O verdadeiro valor está na **infraestrutura**: pipelines que não quebram e sistemas que escalam.",
-                    "Especializei-me em arquiteturas orientadas a eventos e processamento em tempo real, garantindo que a informação certa chegue no momento exato."
+                    "Não construo modelos preditivos por mera vaidade algorítmica. O verdadeiro papel do Cientista de Dados é responder perguntas que movem os ponteiros da empresa: **qual cliente vai sair e por quê? Quanto vamos faturar no próximo trimestre? Onde estão os gargalos logísticos?**",
+                    "Trabalho na interseção entre **Machine Learning (XGBoost, Scikit-learn)** e **Analytics Engineering (dbt, PostgreSQL, Docker)** para garantir que as previsões cheguem diretamente à mesa dos tomadores de decisão em dashboards operacionais e APIs de alta performance."
                 ]
             },
             {
-                title: "Propósito e Tecnologias",
+                title: "Padrão de Engenharia & Tecnologias",
                 paragraphs: [
-                    "Hoje, meu foco está na interseção entre a **Engenharia de Dados Tradicional** e a **Inteligência Artificial Generativa**. Acredito em sistemas que não apenas armazenam, mas compreendem a informação.",
-                    "Utilizo uma stack moderna focada em performance, segurança e, acima de tudo, estabilidade operacional."
+                    "Acredito em código limpo, testes automatizados e reprodutibilidade total. Cada solução é entregue pronta para produção, documentada e conteinerizada.",
+                    "Abaixo estão os pilares tecnológicos que utilizo para transformar dados brutos em inteligência corporativa:"
                 ],
                 tech: [
                     { name: "Python", icon: "python" },
-                    { name: "FastAPI", icon: "fastapi" },
+                    { name: "SQL & dbt", icon: "postgresql" },
                     { name: "Docker", icon: "docker" },
-                    { name: "PostgreSQL", icon: "postgresql" },
-                    { name: "Airflow", icon: "apacheairflow" },
-                    { name: "Gemini", icon: "googlegemini" }
+                    { name: "FastAPI", icon: "fastapi" },
+                    { name: "MLflow", icon: "scikitlearn" },
+                    { name: "Airflow", icon: "apacheairflow" }
                 ]
             }
         ]

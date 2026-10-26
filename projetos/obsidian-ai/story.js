@@ -8,51 +8,51 @@ const ProjectContent = {
         {
             phase: 'Contexto',
             title: 'O DESAFIO',
-            title2: 'CONHECIMENTO PERDIDO',
-            description: 'Notas acumuladas ao longo de anos sem conexão entre si. Informações valiosas enterradas em arquivos Markdown.',
-            image: '../../assets/images/windows.png'
+            title2: 'CONHECIMENTO DISPERSO',
+            description: 'Milhares de notas analíticas e documentos isolados sem conexões semânticas, dificultando a recuperação rápida de insights.',
+            image: '../../assets/images/obsidianai.png'
         },
         {
             phase: 'Solução',
             title: 'LOCAL-FIRST',
-            title2: 'LLM + RAG',
-            description: 'Sistema que usa LLMs locais e nuvem para transformar notas Obsidian em grafos de conhecimento estruturados.',
-            image: '../../assets/images/windows.png'
+            title2: 'LLM + RAG HÍBRIDO',
+            description: 'Arquitetura que utiliza modelos de linguagem locais (Ollama) e Google Gemini para transformar notas em grafos de conhecimento estruturados.',
+            image: '../../assets/images/obsidianai.png'
         },
         {
             phase: 'Resultado',
             title: 'KNOWLEDGE GRAPH',
-            title2: 'PRIVACY FIRST',
-            description: 'Processamento 100% local com Ollama. Sem dados saindo do seu computador. Integração nativa com o vault Obsidian.',
-            image: '../../assets/images/windows.png'
+            title2: 'PRIVACIDADE & CONTROLE',
+            description: 'Interface web moderna conectada a um motor de pesquisa semântica que opera sobre os vaults locais do Obsidian.',
+            image: '../../assets/images/obsidianai.png'
         }
     ],
     sections: [
         {
-            title: "O Problema do Excesso de Informação",
+            title: "Inteligência Estruturada para Conhecimento",
             paragraphs: [
-                "Nossas notas digitais costumam ser um cemitério de ideias. O **Obsidian AI** nasceu da frustração de ter mil arquivos Markdown e não conseguir encontrar conexões semânticas entre eles de forma automática.",
-                "O objetivo era criar um mentor digital que conhecesse cada palavra escrita nas minhas notas de estudo e pesquisa, respeitando a privacidade total."
+                "Profissionais analíticos geram diariamente volumes massivos de notas técnicas, briefings e documentação. Sem um mecanismo inteligente de vinculação, esse capital intelectual se perde.",
+                "O Obsidian AI foi projetado como um sistema de **Segundo Cérebro Autônomo**, capaz de ler bases textuais em Markdown e inferir relacionamentos conceituais automaticamente."
             ]
         },
         {
-            title: "Arquitetura Local-First",
+            title: "Arquitetura Híbrida: Local-First e Nuvem",
             paragraphs: [
-                "Implementamos um pipeline **RAG (Retrieval-Augmented Generation)** que roda inteiramente no seu hardware. Utilizamos o **Ollama** para inferência de modelos como Llama 3 e Mistral.",
-                "O sistema cria um banco de dados de vetores local, permitindo que você 'converse' com suas notas em linguagem natural, recebendo respostas com citações diretas dos seus arquivos."
+                "Para proteger a privacidade de informações confidenciais, a ingestão e extração de entidades operam prioritariamente com modelos locais via **Ollama**, com opção de enriquecimento semântico com a API do **Google Gemini**.",
+                "O motor constrói um grafo de entidades e tópicos que é gravado de volta diretamente na estrutura nativa do vault do Obsidian, sem vendor lock-in."
             ]
         },
         {
-            title: "Resultados e Stack",
+            title: "Interface de Interação e Visualização",
             paragraphs: [
-                "A solução permite a geração automática de resumos, identificação de links faltantes e a criação de novos arquivos de síntese baseados em temas recorrentes no seu vault.",
-                "A stack prioriza a soberania de dados, garantindo que sua propriedade intelectual nunca saia do seu computador."
+                "Além da integração de arquivo, o projeto dispõe de uma interface desenvolvida em **Next.js e React** que permite chat contextual e navegação interativa pelas conexões do grafo.",
+                "Demonstra a convergência entre **Sistemas de Informação, Engenharia de Software Moderna e Inteligência Artificial Generativa**."
             ],
             tech: [
                 { name: "Python", icon: "python" },
-                { name: "Ollama", icon: "ollama" },
-                { name: "Gemini API", icon: "google-googlegemini" },
-                { name: "LangChain", icon: "langchain" }
+                { name: "Ollama", icon: "python" },
+                { name: "Next.js", icon: "javascript" },
+                { name: "Gemini", icon: "googlegemini" }
             ]
         }
     ]
