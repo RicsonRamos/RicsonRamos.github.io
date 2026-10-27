@@ -5,7 +5,7 @@ const PortfolioData = {
         email: "ricsonramos@outlook.com",
         location: "Brasil",
         social: {
-            linkedin: "https://www.linkedin.com/in/ricsonramos-analise-dados/",
+            linkedin: "https://www.linkedin.com/in/ricsonramos/",
             github: "https://github.com/RicsonRamos"
         },
         hero: {
