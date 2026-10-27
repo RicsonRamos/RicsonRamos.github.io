@@ -1,6 +1,6 @@
 {
     "name": "Ricson Ramos",
-    "role": "Data Scientist & Analytics Engineer",
+    "role": "Tecnólogo em Ciência de Dados | Foco em Inteligência de Risco, Cybersecurity & OSINT",
     "email": "ricsonramos@outlook.com",
     "social": {
         "linkedin": "https://www.linkedin.com/in/ricsonramos/",
@@ -8,11 +8,11 @@
     },
     "hero": {
         "welcome": "Portfólio Executivo de",
-        "highlight": "Soluções em Dados",
-        "instruction": "ESTUDOS DE CASO DE NEGÓCIO // MODELAGEM PREDITIVA // RETORNO FINANCEIRO"
+        "highlight": "Ciência de Dados & Inteligência de Risco",
+        "instruction": "ESTUDOS DE CASO DE NEGÓCIO // MODELAGEM PREDITIVA // DADOS PÚBLICOS & OSINT"
     },
     "seo": {
-        "title": "Ricson Ramos | Data Scientist & Analytics Engineer",
-        "description": "Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso focados em retenção de receita, governança métrica e inteligência preditiva."
+        "title": "Ricson Ramos | Tecnólogo em Ciência de Dados | Risco, Cyber & OSINT",
+        "description": "Portfólio de Ciência de Dados e Inteligência de Risco: projetos práticos de ponta a ponta aplicados a dados públicos, mitigação de risco e aprendizado de máquina."
     }
 }

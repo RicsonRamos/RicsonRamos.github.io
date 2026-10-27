@@ -1,7 +1,7 @@
 const PortfolioData = {
     config: {
         name: "Ricson Ramos",
-        role: "Data Scientist & Analytics Engineer",
+        role: "Tecnólogo em Ciência de Dados | Foco em Inteligência de Risco, Cybersecurity & OSINT",
         email: "ricsonramos@outlook.com",
         location: "Brasil",
         social: {
@@ -9,15 +9,15 @@ const PortfolioData = {
             github: "https://github.com/RicsonRamos"
         },
         hero: {
-            status: "Disponível para novas oportunidades em Dados",
+            status: "Transição para Tecnologia • Foco em Dados & Inteligência de Risco",
             title: "Ricson Ramos",
-            role: "Data Scientist & Analytics Engineer",
-            headline: "Transformando dados brutos em decisões de negócio, retorno financeiro (ROI) e sistemas preditivos escaláveis.",
-            instruction: "Explore os estudos de caso abaixo orientados a problemas reais de negócio."
+            role: "Tecnólogo em Ciência de Dados (2026)",
+            headline: "Construindo soluções analíticas de ponta a ponta com dados públicos: aprendizado de máquina, engenharia analítica e inteligência investigativa.",
+            instruction: "Explore os projetos práticos desenvolvidos com dados públicos e padrões de mercado."
         },
         seo: {
-            title: "Ricson Ramos | Data Scientist & Analytics Engineer",
-            description: "Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso com impacto financeiro em churn, modelagem dimensional e previsão de demanda."
+            title: "Ricson Ramos | Tecnólogo em Ciência de Dados | Risco, Cyber & OSINT",
+            description: "Portfólio de Ciência de Dados e Inteligência de Risco: projetos práticos de ponta a ponta aplicados a dados públicos, mitigação de risco e aprendizado de máquina."
         }
     },
 
@@ -28,6 +28,11 @@ const PortfolioData = {
             desc: "Modelagem supervisionada com XGBoost, explicabilidade SHAP, rastreamento MLflow e versionamento DVC."
         },
         {
+            icon: "🔍",
+            title: "Inteligência de Risco & OSINT",
+            desc: "Investigação com fontes abertas (OSINT), análise de padrões críticos, detecção de anomalias e integridade de dados."
+        },
+        {
             icon: "🏗️",
             title: "Analytics Engineering",
             desc: "Modelagem dimensional (Star Schema), governança e testes automatizados de dados com dbt e PostgreSQL."
@@ -35,12 +40,7 @@ const PortfolioData = {
         {
             icon: "🚀",
             title: "Pipelines & Produção",
-            desc: "Deploy conteinerizado com Docker Compose, APIs assíncronas em FastAPI e orquestração com Apache Airflow."
-        },
-        {
-            icon: "💼",
-            title: "Foco em Negócio & ROI",
-            desc: "Soluções conectadas a métricas estratégicas: redução de churn, otimização de estoque e confiabilidade métrica."
+            desc: "Deploy conteinerizado com Docker Compose, APIs assíncronas em FastAPI e automação de fluxos analíticos."
         }
     ],
 
@@ -147,20 +147,20 @@ const PortfolioData = {
         {
             year: "2016 — Presente",
             role: "Inteligência Operacional & Mitigação de Risco",
-            company: "Segurança Pública / Governo Estadual",
-            desc: "Atuação direta em operações críticas e tomada de decisão sob alto risco. Desenvolvimento de abordagens estruturadas de análise de padrões, consistência de dados e precisão de relatórios investigativos."
+            company: "Setor Público",
+            desc: "Atuação direta em operações de alta criticidade e tomada de decisão sob risco. Desenvolvimento de abordagens estruturadas para reconhecimento de padrões, consistência de dados e precisão relatorial."
         },
         {
-            year: "2024 — Presente",
-            role: "Graduação em Ciência de Dados",
+            year: "2024 — 2026",
+            role: "Tecnólogo em Ciência de Dados",
             company: "Faculdade Anhanguera",
             desc: "Formação superior com ênfase em modelagem estatística, inferência, aprendizado de máquina supervisionado e não-supervisionado, manipulação massiva com SQL e visualização analítica."
         },
         {
             year: "2026 — Presente",
-            role: "Graduação em Engenharia de Software",
+            role: "Bacharelado em Engenharia de Software",
             company: "Faculdade Gran",
-            desc: "Aprofundamento em sistemas distribuídos, arquitetura de software escalável, microsserviços, qualidade de código e práticas modernas de DevOps e conteinerização."
+            desc: "Aprofundamento em sistemas distribuídos, arquitetura segura, microsserviços, qualidade de código e práticas modernas de DevOps e conteinerização."
         }
     ],
 

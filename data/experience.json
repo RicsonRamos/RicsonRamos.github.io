@@ -2,28 +2,28 @@
     {
         "id": "job-1",
         "year": "2016",
-        "title": "Public Security Officer & Operational Risk",
-        "company": "Governo Estadual / Segurança Pública",
+        "title": "Inteligência Operacional & Mitigação de Risco",
+        "company": "Setor Público / Segurança",
         "from": "Janeiro 2016",
         "to": "Presente",
-        "code": "const carreira = {\n  setor: \"Segurança Pública\",\n  foco: \"Inteligência Operacional & Mitigação de Riscos\",\n  periodo: \"2016 - Presente\"\n};"
+        "code": "const carreira = {\n  setor: \"Setor Público\",\n  foco: \"Inteligência Operacional & Mitigação de Riscos\",\n  periodo: \"2016 - Presente\"\n};"
     },
     {
         "id": "job-2",
         "year": "2024",
-        "title": "Graduação em Ciência de Dados",
+        "title": "Tecnólogo em Ciência de Dados",
         "company": "Faculdade Anhanguera",
         "from": "Janeiro 2024",
-        "to": "Presente",
-        "code": "const academico = {\n  curso: \"Ciência de Dados\",\n  enfase: [\"Modelagem Estatística\", \"Machine Learning\", \"SQL\"],\n  instituicao: \"Faculdade Anhanguera\"\n};"
+        "to": "Concluído (2026)",
+        "code": "const academico = {\n  curso: \"Tecnólogo em Ciência de Dados\",\n  status: \"Concluído em 2026\",\n  enfase: [\"Modelagem Estatística\", \"Machine Learning\", \"SQL\"],\n  instituicao: \"Faculdade Anhanguera\"\n};"
     },
     {
         "id": "job-3",
         "year": "2026",
-        "title": "Graduação em Engenharia de Software",
+        "title": "Bacharelado em Engenharia de Software",
         "company": "Faculdade Gran",
         "from": "Janeiro 2026",
-        "to": "Presente",
-        "code": "const academico = {\n  curso: \"Engenharia de Software\",\n  enfase: [\"Sistemas Distribuídos\", \"Arquitetura de Dados\", \"DevOps\"],\n  instituicao: \"Faculdade Gran\"\n};"
+        "to": "Em andamento",
+        "code": "const academico = {\n  curso: \"Bacharelado em Engenharia de Software\",\n  status: \"Em andamento\",\n  enfase: [\"Sistemas Distribuídos\", \"Arquitetura Segura\", \"DevOps\"],\n  instituicao: \"Faculdade Gran\"\n};"
     }
 ]
