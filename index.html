@@ -8,6 +8,23 @@
     <meta name="description" content="Portfólio executivo de Ciência de Dados e Analytics Engineering: estudos de caso focados em retenção de receita, governança métrica e inteligência preditiva.">
     <meta name="theme-color" content="#07090e">
 
+    <!-- Theme & Language Preload (Zero FOUC) -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = savedTheme ? savedTheme : (systemDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+
+                const savedLang = localStorage.getItem('lang');
+                const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+                const lang = savedLang ? savedLang : (browserLang.startsWith('en') ? 'en' : 'pt-BR');
+                document.documentElement.setAttribute('lang', lang);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ricsonramos.github.io/">
@@ -35,20 +52,13 @@
                 <span>Ricson Ramos</span>
             </a>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu de Navegação" aria-expanded="false" aria-controls="nav-menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-
+            <!-- Navigation Links -->
             <nav>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#projects" class="nav-link">Estudos de Caso</a></li>
-                    <li><a href="#experience" class="nav-link">Trajetória</a></li>
-                    <li><a href="#philosophy" class="nav-link">Como Trabalho</a></li>
-                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Estudos de Caso</a></li>
+                    <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Trajetória</a></li>
+                    <li><a href="#philosophy" class="nav-link" data-i18n="nav.philosophy">Como Trabalho</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contato</a></li>
                     <li>
                         <a href="https://www.linkedin.com/in/ricsonramos/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn ↗</a>
                     </li>
@@ -57,6 +67,48 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- Nav Actions: Theme + Language + Mobile Toggle -->
+            <div class="nav-actions">
+                <div class="nav-controls">
+                    <!-- Language Switcher: PT-BR / EN -->
+                    <div class="lang-switch" role="group" aria-label="Selecionar idioma / Select language">
+                        <button type="button" class="lang-btn active" data-lang="pt-BR" aria-pressed="true" aria-label="Português">PT</button>
+                        <span class="lang-divider" aria-hidden="true">/</span>
+                        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+                    </div>
+
+                    <!-- Theme Toggle: Dark / Light -->
+                    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Alternar modo claro / escuro" title="Alternar modo claro / escuro">
+                        <span class="theme-icon-sun" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-icon-moon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+                <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu de Navegação" aria-expanded="false" aria-controls="nav-menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -66,22 +118,22 @@
             <div class="container hero-content">
                 <div class="status-badge">
                     <span class="pulse-dot"></span>
-                    <span>Disponível para novas oportunidades em Dados</span>
+                    <span data-i18n="hero.status">Disponível para novas oportunidades em Dados</span>
                 </div>
 
                 <h1 class="hero-title">
                     Ricson <span class="hero-title-gradient">Ramos</span>
                 </h1>
 
-                <div class="hero-role">Data Scientist & Analytics Engineer</div>
+                <div class="hero-role" data-i18n="hero.role">Data Scientist & Analytics Engineer</div>
 
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.description">
                     Transformando dados brutos em <strong>decisões de negócio</strong>, <strong>retorno financeiro mensurável (ROI)</strong> e <strong>sistemas preditivos de produção</strong>.
                 </p>
 
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">
-                        <span>Explorar Projetos & Estudos de Caso</span>
+                        <span data-i18n="hero.cta_projects">Explorar Projetos & Estudos de Caso</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
                     </a>
                     <a href="https://www.linkedin.com/in/ricsonramos/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
@@ -93,7 +145,7 @@
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                     </a>
                     <button id="copy-email-btn" class="btn btn-outline" type="button" aria-label="Copiar email de contato">
-                        <span>📋 Copiar E-mail</span>
+                        <span data-i18n="hero.copy_email">📋 Copiar E-mail</span>
                     </button>
                 </div>
 
@@ -108,19 +160,19 @@
         <section id="projects" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Estudos de Caso de Negócio</span>
-                    <h2 class="section-title">Soluções que Geram Impacto Real</h2>
-                    <p class="section-subtitle">
+                    <span class="section-tag" data-i18n="projects.tag">Estudos de Caso de Negócio</span>
+                    <h2 class="section-title" data-i18n="projects.title">Soluções que Geram Impacto Real</h2>
+                    <p class="section-subtitle" data-i18n="projects.subtitle">
                         Cada projeto resolve um problema concreto de faturamento, eficiência ou governança métrica. Clique em "Estudo de Caso" para explorar a narrativa de negócio ou em "Código" para auditar a arquitetura técnica.
                     </p>
                 </div>
 
                 <!-- Category Filters -->
                 <div class="filter-tabs" role="tablist" aria-label="Filtro de Projetos">
-                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos os Projetos</button>
-                    <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false">Machine Learning & MLOps</button>
-                    <button class="filter-btn" data-filter="data-eng" role="tab" aria-selected="false">Analytics Engineering</button>
-                    <button class="filter-btn" data-filter="analytics" role="tab" aria-selected="false">Inteligência & Varejo</button>
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-i18n="projects.filter_all">Todos os Projetos</button>
+                    <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false" data-i18n="projects.filter_ml">Machine Learning & MLOps</button>
+                    <button class="filter-btn" data-filter="data-eng" role="tab" aria-selected="false" data-i18n="projects.filter_data_eng">Analytics Engineering</button>
+                    <button class="filter-btn" data-filter="analytics" role="tab" aria-selected="false" data-i18n="projects.filter_analytics">Inteligência & Varejo</button>
                 </div>
 
                 <!-- Responsive Project Grid -->
@@ -131,12 +183,12 @@
         </section>
 
         <!-- Experience & Education Timeline -->
-        <section id="experience" class="section" style="background: rgba(255,255,255,0.01);">
+        <section id="experience" class="section section-alt">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Trajetória & Formação</span>
-                    <h2 class="section-title">Rigor Analítico e Prática Contínua</h2>
-                    <p class="section-subtitle">
+                    <span class="section-tag" data-i18n="experience.tag">Trajetória & Formação</span>
+                    <h2 class="section-title" data-i18n="experience.title">Rigor Analítico e Prática Contínua</h2>
+                    <p class="section-subtitle" data-i18n="experience.subtitle">
                         Combinação sólida de experiência em tomada de decisão crítica com formação superior em Ciência de Dados e Engenharia de Software.
                     </p>
                 </div>
@@ -151,9 +203,9 @@
         <section id="philosophy" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Padrão de Qualidade</span>
-                    <h2 class="section-title">Como Eu Trabalho</h2>
-                    <p class="section-subtitle">
+                    <span class="section-tag" data-i18n="philosophy.tag">Padrão de Qualidade</span>
+                    <h2 class="section-title" data-i18n="philosophy.title">Como Eu Trabalho</h2>
+                    <p class="section-subtitle" data-i18n="philosophy.subtitle">
                         Princípios inegociáveis que garantem que modelos e pipelines funcionem com estabilidade, transparência e valor financeiro.
                     </p>
                 </div>
@@ -168,9 +220,9 @@
         <section id="contact" class="section">
             <div class="container">
                 <div class="contact-card">
-                    <span class="section-tag">Contato Direto</span>
-                    <h2 class="section-title" style="margin-bottom: 0.5rem;">Vamos Conversar sobre Dados?</h2>
-                    <p class="section-subtitle" style="margin-bottom: 1.5rem;">
+                    <span class="section-tag" data-i18n="contact.tag">Contato Direto</span>
+                    <h2 class="section-title" style="margin-bottom: 0.5rem;" data-i18n="contact.title">Vamos Conversar sobre Dados?</h2>
+                    <p class="section-subtitle" style="margin-bottom: 1.5rem;" data-i18n="contact.subtitle">
                         Estou aberto para oportunidades em <strong>Ciência de Dados</strong>, <strong>Analytics Engineering</strong> e projetos de alta criticidade.
                     </p>
 
@@ -193,8 +245,8 @@
     <!-- Clean Accessible Footer -->
     <footer class="footer">
         <div class="container footer-inner">
-            <p>© 2026 Ricson Ramos. Todos os direitos reservados.</p>
-            <p>⚡ Carregamento Ultrarrápido • Otimizado em WebP • Código 100% Autoral</p>
+            <p data-i18n="footer.copy">© 2026 Ricson Ramos. Todos os direitos reservados.</p>
+            <p data-i18n="footer.tagline">⚡ Carregamento Ultrarrápido • Otimizado em WebP • Código 100% Autoral</p>
         </div>
     </footer>
 

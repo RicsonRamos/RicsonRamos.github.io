@@ -1,6 +1,6 @@
 /* ==============================================================================
    RICSON RAMOS | HOMEPAGE CONTROLLER (2026)
-   Vanilla JS • Zero Bloat • 60fps Native Performance
+   Vanilla JS • Dark/Light Theme • Multilingual (PT-BR / EN) • Zero Bloat
    ============================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,39 +9,90 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const { config, valueProps, projects, experience, philosophy } = PortfolioData;
+    // =========================================================================
+    // 1. THEME CONTROLLER (Dark Mode / Light Mode)
+    // =========================================================================
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
 
-    // 1. MOBILE NAVBAR CONTROLS
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
+    function getPreferredTheme() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark' || storedTheme === 'light') {
+            return storedTheme;
+        }
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches 
+            ? 'light' 
+            : 'dark';
+    }
 
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = navMenu.classList.toggle('open');
-            navToggle.setAttribute('aria-expanded', isOpen);
-            navToggle.innerHTML = isOpen 
-                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>'
-                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-        });
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
 
-        // Close when clicking any nav link
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-            });
+        if (themeMeta) {
+            themeMeta.setAttribute('content', theme === 'dark' ? '#07090e' : '#f8fafc');
+        }
+
+        if (themeToggleBtn) {
+            const isDark = theme === 'dark';
+            themeToggleBtn.setAttribute('aria-pressed', (!isDark).toString());
+            const currentLang = getCurrentLanguage();
+            const localeData = PortfolioData.getData(currentLang);
+            const label = isDark ? localeData.i18n.theme.light : localeData.i18n.theme.dark;
+            themeToggleBtn.setAttribute('title', label);
+            themeToggleBtn.setAttribute('aria-label', label);
+        }
+    }
+
+    // Set initial theme
+    const initialTheme = getPreferredTheme();
+    applyTheme(initialTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
         });
     }
 
-    // 2. RENDER VALUE STRIP
-    const valueStripContainer = document.getElementById('value-strip');
-    if (valueStripContainer && valueProps) {
+    // Listen to system theme changes if user hasn't explicitly set preference
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
+
+    // =========================================================================
+    // 2. LANGUAGE CONTROLLER (PT-BR / EN)
+    // =========================================================================
+    let currentLanguage = 'pt-BR';
+    let currentFilter = 'all';
+
+    function getNestedValue(obj, path) {
+        return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : undefined), obj);
+    }
+
+    function getCurrentLanguage() {
+        const storedLang = localStorage.getItem('lang');
+        if (storedLang === 'en' || storedLang === 'pt-BR') {
+            return storedLang;
+        }
+        const browserLang = navigator.language || navigator.userLanguage || 'pt';
+        return browserLang.toLowerCase().startsWith('en') ? 'en' : 'pt-BR';
+    }
+
+    function renderValueStrip(valueProps, badgeText) {
+        const valueStripContainer = document.getElementById('value-strip');
+        if (!valueStripContainer || !valueProps) return;
+
         valueStripContainer.innerHTML = valueProps.map(vp => `
             <div class="value-card">
                 <div class="value-card-header">
                     <span>${vp.icon}</span>
-                    <span>Pilar de Entrega</span>
+                    <span>${badgeText}</span>
                 </div>
                 <h3 class="value-card-title">${vp.title}</h3>
                 <p class="value-card-desc">${vp.desc}</p>
@@ -49,13 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // 3. RENDER PROJECTS GRID & FILTERING
-    const projectsContainer = document.getElementById('projects-grid');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-
     function renderProjects(filter = 'all') {
+        const projectsContainer = document.getElementById('projects-grid');
+        const localeData = PortfolioData.getData(currentLanguage);
+        const { projects, i18n } = localeData;
+
         if (!projectsContainer || !projects) return;
 
+        currentFilter = filter;
         const filtered = filter === 'all' 
             ? projects 
             : projects.filter(p => p.category === filter);
@@ -85,13 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div class="story-block">
                         <div class="story-item">
-                            <strong>🎯 Desafio:</strong> ${p.problem}
+                            <strong>${i18n.projects.challenge}</strong> ${p.problem}
                         </div>
                         <div class="story-item">
-                            <strong>💡 Solução:</strong> ${p.solution}
+                            <strong>${i18n.projects.solution}</strong> ${p.solution}
                         </div>
                         <div class="story-item">
-                            <strong>📈 Impacto:</strong> ${p.impact}
+                            <strong>${i18n.projects.impact}</strong> ${p.impact}
                         </div>
                     </div>
 
@@ -101,10 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div class="project-actions">
                         <a href="${p.url}" class="btn btn-primary">
-                            <span>📖 Estudo de Caso</span>
+                            <span>${i18n.projects.case_study}</span>
                         </a>
-                        <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Código no GitHub">
-                            <span>💻 Código</span>
+                        <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="GitHub">
+                            <span>${i18n.projects.code}</span>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                         </a>
                     </div>
@@ -113,22 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // Initial project render
-    renderProjects('all');
+    function renderTimeline(experience) {
+        const timelineContainer = document.getElementById('timeline-list');
+        if (!timelineContainer || !experience) return;
 
-    // Filter event listeners
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filterValue = btn.getAttribute('data-filter');
-            renderProjects(filterValue);
-        });
-    });
-
-    // 4. RENDER TIMELINE / EXPERIENCE
-    const timelineContainer = document.getElementById('timeline-list');
-    if (timelineContainer && experience) {
         timelineContainer.innerHTML = experience.map(exp => `
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -142,9 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // 5. RENDER TECHNICAL PHILOSOPHY
-    const philosophyContainer = document.getElementById('philosophy-grid');
-    if (philosophyContainer && philosophy) {
+    function renderPhilosophy(philosophy) {
+        const philosophyContainer = document.getElementById('philosophy-grid');
+        if (!philosophyContainer || !philosophy) return;
+
         philosophyContainer.innerHTML = philosophy.map(item => `
             <div class="philosophy-card">
                 <span class="philosophy-icon">${item.icon}</span>
@@ -154,28 +195,137 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // 6. COPY EMAIL BUTTON INTERACTION
+    function applyLanguage(lang) {
+        currentLanguage = lang.startsWith('en') ? 'en' : 'pt-BR';
+        document.documentElement.setAttribute('lang', currentLanguage);
+        localStorage.setItem('lang', currentLanguage);
+
+        const localeData = PortfolioData.getData(currentLanguage);
+        const { config, i18n, valueProps, experience, philosophy } = localeData;
+
+        // 1. Update static elements with data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const translation = getNestedValue(i18n, key);
+            if (translation !== undefined) {
+                el.innerHTML = translation;
+            }
+        });
+
+        // 2. Update page title and SEO
+        if (config.seo) {
+            document.title = config.seo.title;
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.setAttribute('content', config.seo.description);
+        }
+
+        // 3. Update Language switcher UI buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            const btnLang = btn.getAttribute('data-lang');
+            const isActive = (btnLang === currentLanguage) || 
+                             (btnLang === 'pt-BR' && currentLanguage.startsWith('pt')) ||
+                             (btnLang === 'en' && currentLanguage.startsWith('en'));
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', isActive.toString());
+        });
+
+        // 4. Update Theme button title/aria-label in current language
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        if (themeToggleBtn) {
+            const label = currentTheme === 'dark' ? i18n.theme.light : i18n.theme.dark;
+            themeToggleBtn.setAttribute('title', label);
+            themeToggleBtn.setAttribute('aria-label', label);
+        }
+
+        // 5. Render dynamic components
+        renderValueStrip(valueProps, i18n.value.badge);
+        renderProjects(currentFilter);
+        renderTimeline(experience);
+        renderPhilosophy(philosophy);
+    }
+
+    // Language switcher buttons click handlers
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetLang = btn.getAttribute('data-lang');
+            if (targetLang && targetLang !== currentLanguage) {
+                applyLanguage(targetLang);
+            }
+        });
+    });
+
+    // Initialize Language
+    currentLanguage = getCurrentLanguage();
+    applyLanguage(currentLanguage);
+
+    // =========================================================================
+    // 3. PROJECT CATEGORY FILTERS
+    // =========================================================================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filterValue = btn.getAttribute('data-filter') || 'all';
+            renderProjects(filterValue);
+        });
+    });
+
+    // =========================================================================
+    // 4. MOBILE NAVBAR CONTROLS
+    // =========================================================================
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.innerHTML = isOpen 
+                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>'
+                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        });
+
+        // Close when clicking any nav link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+            });
+        });
+    }
+
+    // =========================================================================
+    // 5. COPY EMAIL BUTTON INTERACTION
+    // =========================================================================
     const copyEmailBtn = document.getElementById('copy-email-btn');
     if (copyEmailBtn) {
         copyEmailBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText(config.email).then(() => {
-                const originalText = copyEmailBtn.innerHTML;
-                copyEmailBtn.innerHTML = '<span>✅ E-mail Copiado!</span>';
+            const localeData = PortfolioData.getData(currentLanguage);
+            const email = localeData.config.email;
+            const successText = localeData.i18n.hero.email_copied;
+            const originalText = localeData.i18n.hero.copy_email;
+
+            navigator.clipboard.writeText(email).then(() => {
+                copyEmailBtn.innerHTML = `<span>${successText}</span>`;
                 copyEmailBtn.classList.add('btn-primary');
                 copyEmailBtn.classList.remove('btn-outline');
                 setTimeout(() => {
-                    copyEmailBtn.innerHTML = originalText;
+                    copyEmailBtn.innerHTML = `<span>${originalText}</span>`;
                     copyEmailBtn.classList.remove('btn-primary');
                     copyEmailBtn.classList.add('btn-outline');
                 }, 2500);
             }).catch(err => {
                 console.warn('Clipboard write error:', err);
-                window.location.href = `mailto:${config.email}`;
+                window.location.href = `mailto:${email}`;
             });
         });
     }
 
-    // 7. ACTIVE NAVIGATION ON SCROLL
+    // =========================================================================
+    // 6. ACTIVE NAVIGATION ON SCROLL
+    // =========================================================================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
